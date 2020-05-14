@@ -96,3 +96,5 @@ class Master_absen extends CI_Controller {
 		}
 	}
 }
+
+/* controller absen */
