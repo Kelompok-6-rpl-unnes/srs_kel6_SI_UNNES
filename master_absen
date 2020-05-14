@@ -1,0 +1,98 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Master_absen extends CI_Controller {
+
+	public function __construct()
+	{
+		parent::__construct();
+		$this->fungsi->restrict();
+		$this->load->model('master/m_master_absen');
+	}
+
+	public function index()
+	{
+		$this->fungsi->check_previleges('nama_anggota');
+		$data['master_bahan'] = $this->m_master_absen->getData();
+		$this->load->view('master/nama_anggota/v_anggota_list',$data);
+	}
+
+	public function form($param='')
+	{
+		$content   = "<div id='divsubcontent'></div>";
+		$header    = "Form Master Nama anggota";
+		$subheader = "nama_anggota";
+		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
+		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
+		if($param=='base'){
+			$this->fungsi->run_js('load_silent("master/nama_anggota/show_addForm/","#divsubcontent")');	
+		}else{
+			$base_kom=$this->uri->segment(5);
+			$this->fungsi->run_js('load_silent("master/nama_anggota/show_editForm/'.$base_kom.'","#divsubcontent")');	
+		}
+	}
+
+	public function show_addForm()
+	{
+		$this->fungsi->check_previleges('nama_anggota');
+		$this->load->library('form_validation');
+		$config = array(
+				array(
+					'field'	=> 'nama_anggota',
+					'label' => 'nama_anggota',
+					'rules' => 'required'
+				)
+			);
+		$this->form_validation->set_rules($config);
+		$this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
+
+		if ($this->form_validation->run() == FALSE)
+		{
+			$data['status']='';
+			$this->load->view('master/nama_anggota/v_anggota_add',$data);
+		}
+		else
+		{
+			$datapost = get_post_data(array('kode','nama_anggota','keterangan','id_status'));
+			$this->m_nama_alat->insertData($datapost);
+			$this->fungsi->run_js('load_silent("master/nama_anggota","#content")');
+			$this->fungsi->message_box("Data Master Nama Anggota sukses disimpan...","success");
+			$this->fungsi->catat($datapost,"Menambah Master nama_anggota dengan data sbb:",true);
+		}
+	}
+
+	public function show_editForm($id='')
+	{
+		$this->fungsi->check_previleges('nama_anggota');
+		$this->load->library('form_validation');
+		$config = array(
+				array(
+					'field'	=> 'id',
+					'label' => 'wes mbarke',
+					'rules' => ''
+				),
+				array(
+					'field'	=> 'nama_anggota',
+					'label' => 'nama_anggota',
+					'rules' => 'required'
+				)
+			);
+		$this->form_validation->set_rules($config);
+		$this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
+
+		if ($this->form_validation->run() == FALSE)
+		{
+			$data['edit'] = $this->db->get_where('master_nama_anggota',array('id'=>$id));
+			$data['status']='';
+			$this->load->view('master/nama_anggota/v_nama_anggota_edit',$data);
+		}
+		else
+		{
+			$datapost = get_post_data(array('id','kode','nama_anggota','keterangan','id_status'));
+			$this->m_nama_alat->updateData($datapost);
+			$this->fungsi->run_js('load_silent("master/nama_anggota","#content")');
+			$this->fungsi->message_box("Data Master Anggota sukses diperbarui...","success");
+			$this->fungsi->catat($datapost,"Mengedit Master nama_anggota dengan data sbb:",true);
+		}
+	}
+}
