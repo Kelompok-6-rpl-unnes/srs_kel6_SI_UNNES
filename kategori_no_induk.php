@@ -38,8 +38,8 @@ class kategori_no_induk extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'kategori_no_induk',
-					'label' => 'kategori_no_induk',
+					'field'	=> 'no_induk',
+					'label' => 'no_induk',
 					'rules' => 'required'
 				)
 			);
@@ -71,8 +71,8 @@ class kategori_no_induk extends CI_Controller {
 					'rules' => ''
 				),
 				array(
-					'field'	=> 'kategori_no_induk',
-					'label' => 'kategori_no_induk',
+					'field'	=> 'no_induk',
+					'label' => 'no_induk',
 					'rules' => 'required'
 				)
 			);
