@@ -10,8 +10,8 @@
             <label class="col-sm-4 control-label">Kategori No Induk</label>
             <div class="col-sm-8">
             <?php echo form_hidden('id',$row->id); ?>
-            <?php echo form_input(array('name'=>'master_kategori_alat_dan_bahan','value'=>$row->no_induk,'class'=>'form-control'));?>
-            <?php echo form_error('master_kategori_alat_dan_bahan');?>
+            <?php echo form_input(array('name'=>'no_induk','value'=>$row->no_induk,'class'=>'form-control'));?>
+            <?php echo form_error('no_induk');?>
             <span id="check_data"></span>
             </div>
         </div>
@@ -19,15 +19,15 @@
             <label class="col-sm-4 control-label">Nama</label>
             <div class="col-sm-8">
             <?php echo form_hidden('id',$row->id); ?>
-            <?php echo form_input(array('name'=>'master_kategori_alat_dan_bahan','value'=>$row->nama,'class'=>'form-control'));?>
-            <?php echo form_error('master_kategori_alat_dan_bahan');?>
+            <?php echo form_input(array('name'=>'nama','value'=>$row->nama,'class'=>'form-control'));?>
+            <?php echo form_error('nama');?>
             <span id="check_data"></span>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Keterangan</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'master_kategori_alat_dan_bahan','value'=>$row->keterangan,'class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'keterangan','value'=>$row->keterangan,'class'=>'form-control'));?>
             <?php echo form_error('master_kategori_alat_dan_bahan');?>
             </div>
         </div>
