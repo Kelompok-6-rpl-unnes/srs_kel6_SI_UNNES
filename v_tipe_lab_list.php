@@ -10,7 +10,7 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("master/tipe_lab/form/base","#modal")','Add New Tipe Lab','btn btn-success');
+                echo button('load_silent("master/tipe_lab/form/base","#modal")','Add Tipe Lab','btn btn-success');
               } else {
                 # code...
               }
@@ -21,27 +21,31 @@
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
                 <th>No</th>
-                <th>Nama</th>
+                <th>Kode</th>
+                <th>Tipe Lab</th>
                 <th>Keterangan</th>
                 <th>Act</th>
               </thead>
               <tbody>
-          <?php 
+              <?php 
           $i = 1;
           foreach($tipe_lab->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
-            <td align="center"><?=$row->nama?></td>
+            <td align="center"><?=$row->kode?></td>
+            <td align="center"><?=$row->tipe_lab?></td>
             <td align="center"><?=$row->keterangan?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("master/tipe_lab/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("master/tipe_lab/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
+             
               } else {
                 # code...
               }
               ?>
+              <a href="<?= site_url('master/tipe_lab/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus tipe lab ?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
 
