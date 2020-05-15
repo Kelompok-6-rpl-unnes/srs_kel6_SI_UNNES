@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class m_satuan extends CI_Model {
+class M_tipe_lab extends CI_Model {
 
 	public function getData($value='')
 	{
@@ -22,7 +22,6 @@ class m_satuan extends CI_Model {
 		 $this->db->where('id',$data['id']);
             $this->db->update('master_tipe_lab',$data);
 	}
-
 	public function deleteData($id='')
 	{
 		$this->db->where('id', $id);
@@ -30,6 +29,3 @@ class m_satuan extends CI_Model {
 	}
 
 }
-
-/* End of file m_tipe_lab.php */
-/* Location: ./application/models/master/m_tipe_lab.php */
