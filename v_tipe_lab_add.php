@@ -33,7 +33,7 @@
             <label class="col-sm-4 control-label">Simpan ya?</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"master/tipe_lab/show_addForm/","#divsubcontent")','SimpanLah','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"master/tipe_lab/show_addForm/","#divsubcontent")','Simpan','btn btn-success')." ";
             ?>
             </div>
         </div>
