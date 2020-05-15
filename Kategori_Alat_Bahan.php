@@ -20,24 +20,24 @@ class Kategori_Alat_Bahan extends CI_Controller {
 	{
 		$content   = "<div id='divsubcontent'></div>";
 		$header    = "Form Master Kategori Alat dan Bahan";
-		$subheader = "kategori_alat_bahan";
+		$subheader = "Kategori_Alat_Bahan";
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
 		if($param=='base'){
-			$this->fungsi->run_js('load_silent("master/kategori_alat_bahan/show_addForm/","#divsubcontent")');	
+			$this->fungsi->run_js('load_silent("master/Kategori_Alat_Bahan/show_addForm/","#divsubcontent")');	
 		}else{
 			$base_kom=$this->uri->segment(5);
-			$this->fungsi->run_js('load_silent("master/kategori_alat_bahan/show_editForm/'.$base_kom.'","#divsubcontent")');	
+			$this->fungsi->run_js('load_silent("master/Kategori_Alat_Bahan/show_editForm/'.$base_kom.'","#divsubcontent")');	
 		}
 	}
 	public function show_addForm()
 	{
-		$this->fungsi->check_previleges('kategori_alat_bahan');
+		$this->fungsi->check_previleges('Kategori_Alat_Bahan');
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'kategori_alat_bahan',
-					'label' => 'kategori_alat_bahan',
+					'field'	=> 'Kategori',
+					'label' => 'Kategori',
 					'rules' => 'required'
 				)
 			);
@@ -51,11 +51,11 @@ class Kategori_Alat_Bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','Kategori_alat','Keterangan','id_status'));
-			$this->m_kategori_alat_dan_bahan-->insertData($datapost);
-			$this->fungsi->run_js('load_silent("master/kategori_alat_bahan","#content")');
+			$datapost = get_post_data(array('id','Kategori','Keterangan'));
+			$this->m_kategori_alat_dan_bahan->insertData($datapost);
+			$this->fungsi->run_js('load_silent("master/Kategori_Alat_Bahan","#content")');
 			$this->fungsi->message_box("Data Master Nama Alat sukses disimpan...","success");
-			$this->fungsi->catat($datapost,"Menambah Master Kategori_alat_bahan dengan data sbb:",true);
+			$this->fungsi->catat($datapost,"Menambah Master Kategori_Alat_Bahan dengan data sbb:",true);
 		}
 	}
 	public function show_editForm($id='')
@@ -69,8 +69,8 @@ class Kategori_Alat_Bahan extends CI_Controller {
 					'rules' => ''
 				),
 				array(
-					'field'	=> 'kategori_alat_bahan',
-					'label' => 'kategori_alat_bahan',
+					'field'	=> 'Kategori',
+					'label' => 'Kategori',
 					'rules' => 'required'
 				)
 			);
@@ -88,7 +88,7 @@ class Kategori_Alat_Bahan extends CI_Controller {
 			$datapost = get_post_data(array('id','Kategori','Keterangan','id_status'));
 			$this->m_kategori_alat_dan_bahan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/Kategori_Alat_Bahan","#content")');
-			$this->fungsi->message_box("Data Master Nama Alat sukses diperbarui...","success");
+			$this->fungsi->message_box("Data Master Nama Kategori Alat dan Bahan sukses diperbarui...","success");
 			$this->fungsi->catat($datapost,"Mengedit Master Kategori_Alat_Bahan dengan data sbb:",true);
 		}
 	}
