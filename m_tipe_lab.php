@@ -31,5 +31,5 @@ class m_satuan extends CI_Model {
 
 }
 
-/* End of file m_nama_alat.php */
-/* Location: ./application/models/master/m_nama_alat.php */
+/* End of file m_tipe_lab.php */
+/* Location: ./application/models/master/m_tipe_lab.php */
