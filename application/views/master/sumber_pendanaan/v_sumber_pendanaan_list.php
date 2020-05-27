@@ -28,7 +28,7 @@
               <tbody>
               <?php 
           $i = 1;
-          foreach($tipe_lab->result() as $row): ?>
+          foreach($sumber_pendanaan->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->sumber_pendanaan?></td>
