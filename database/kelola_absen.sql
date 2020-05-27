@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2020 at 04:21 PM
+-- Generation Time: May 27, 2020 at 05:38 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -43,9 +43,9 @@ CREATE TABLE `kelola_absen` (
 --
 
 INSERT INTO `kelola_absen` (`id`, `nomor_induk`, `nama`, `tanggal`, `keterangan`, `jumlah_kehadiran`, `prodi`, `mata_kuliah`, `rombel`) VALUES
-(1, 2147483647, 'popo', '2020-05-19', 'Tanpa Keterangan', 4, 'ti', 'mtk', 6),
-(2, 9, 'sdf', '2020-09-09', 'Tidak Hadir', 4, 'sff', 'sfewf', 1),
-(6, 4, 'sdf', '2020-09-09', 'Hadir', 3, 'df', 'fee', 3),
+(1, 2147483647, 'Erika Noor Dianti', '2020-05-19', 'Tanpa Keterangan', 4, 'Sistem Informasi', 'Bahasa Pemrograman', 6),
+(2, 246657, 'Risa Naili Fitriana', '2020-09-09', 'Tidak Hadir', 8, 'Hukum ', 'Pendidikan Pancasila', 1),
+(6, 4098907, 'Diva Kratya Prayogo', '2020-09-09', 'Hadir', 3, 'Teknik Informatika', 'Pendidikan Konservasi', 3),
 (7, 76, 'aku', '0000-00-00', 'Hadir', 6, 'uyu', 'ju', 3);
 
 --
