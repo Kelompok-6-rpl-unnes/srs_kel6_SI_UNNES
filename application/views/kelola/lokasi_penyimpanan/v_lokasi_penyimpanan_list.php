@@ -43,7 +43,7 @@
                 # code...
               }
               ?>
-              <a href="<?= site_url('kelola/lokasi_penyimpanan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus alat ?')"><i class="fa fa-trash"></i></a>
+              <a href="<?= site_url('kelola/lokasi_penyimpanan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus lokasi penyimpanan ?')"><i class="fa fa-trash"></i></a>
 
             </td>
           </tr>
