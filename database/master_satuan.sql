@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2020 at 04:20 PM
+-- Generation Time: May 27, 2020 at 05:37 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -37,9 +37,9 @@ CREATE TABLE `master_satuan` (
 --
 
 INSERT INTO `master_satuan` (`id`, `Kode`, `Nama`) VALUES
-(1, '2', 'svfafa'),
-(2, '8', 'uuu'),
-(3, '9', 'fhfd');
+(1, '4345', 'Centimeter'),
+(2, '78789', 'Gram'),
+(3, '4567', 'Kilogram');
 
 --
 -- Indexes for dumped tables
@@ -49,6 +49,7 @@ INSERT INTO `master_satuan` (`id`, `Kode`, `Nama`) VALUES
 -- Indexes for table `master_satuan`
 --
 ALTER TABLE `master_satuan`
+  ADD UNIQUE KEY `id_2` (`id`),
   ADD KEY `id` (`id`);
 
 --
