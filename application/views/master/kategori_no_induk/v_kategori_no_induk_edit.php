@@ -28,7 +28,7 @@
             <label class="col-sm-4 control-label">Keterangan</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'keterangan','value'=>$row->keterangan,'class'=>'form-control'));?>
-            <?php echo form_error('master_kategori_alat_dan_bahan');?>
+            <?php echo form_error('keterangan');?>
             </div>
         </div>
         <div class="form-group">

@@ -14,7 +14,7 @@ class kategori_no_induk extends CI_Controller {
 	{
 		$this->fungsi->check_previleges('kategori_no_induk');
 		$data['kategori_no_induk'] = $this->m_kategori_no_induk->getData();
-		$this->load->view('master/no_induk/v_kategori_no_induk_list',$data);
+		$this->load->view('master/kategori_no_induk/v_kategori_no_induk_list',$data);
   }
 
 	public function form($param='')
@@ -49,7 +49,7 @@ class kategori_no_induk extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['status']='';
-			$this->load->view('master/no_induk/v_kategori_no_induk_add',$data);
+			$this->load->view('master/kategori_no_induk/v_kategori_no_induk_add',$data);
 		}
 		else
 		{
@@ -83,7 +83,7 @@ class kategori_no_induk extends CI_Controller {
 		{
 			$data['edit'] = $this->db->get_where('master_no_induk',array('id'=>$id));
 			$data['status']='';
-			$this->load->view('master/no_induk/v_kategori_no_induk_edit',$data);
+			$this->load->view('master/kategori_no_induk/v_kategori_no_induk_edit',$data);
 		}
 		else
 		{
