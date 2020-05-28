@@ -36,6 +36,14 @@
             <span id="check_data"></span>
             </div>
         </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Pengarang</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'pengarang','class'=>'form-control'));?>
+            <?php echo form_error('pengarang');?>
+            <span id="check_data"></span>
+            </div>
+        </div>
 
         <div class="form-group">
             <label class="col-sm-4 control-label">Save</label>

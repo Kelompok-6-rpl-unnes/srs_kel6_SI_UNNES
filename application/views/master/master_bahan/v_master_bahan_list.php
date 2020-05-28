@@ -10,7 +10,7 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("master/bahan_list/form/base","#modal")','Add New Nama Bahan','btn btn-success');
+                echo button('load_silent("master/master_bahan/form/base","#modal")','Add New Nama Bahan','btn btn-success');
               } else {
                 # code...
               }
@@ -43,11 +43,12 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("master/nama_bahan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("master/master_bahan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
               } else {
                 # code...
               }
               ?>
+              <a href="<?= site_url('master/master_bahan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus data ?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
 
