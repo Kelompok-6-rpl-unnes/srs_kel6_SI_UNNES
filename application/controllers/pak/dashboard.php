@@ -2,21 +2,24 @@
 
 class Dashboard extends CI_Controller {
 
+
 	public function __construct()
 	{
 		parent::__construct();
 		$this->fungsi->restrict();
-	}
-
+    }
+    
 	public function index()
 	{
-		$this->status_pak();
-	}
+        $this->status_pak();
+    }
 
-	public function status_pak()
-	{
-		$this->load->view('v_dashboard');
-	}
+    public function status_pak()
+    {
+        $this->load->view('v_dashboard');
+
+    }
+    
 }
 
 /* End of file dashboard.php */
