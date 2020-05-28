@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Bulan Mei 2020 pada 17.30
+-- Waktu pembuatan: 28 Bulan Mei 2020 pada 09.53
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 5.6.40
 
@@ -50,7 +50,7 @@ INSERT INTO `cms_menu` (`id`, `alias`, `nama`, `deskripsi`, `allowed_level`, `ur
 (35, 'semua', 'semua', 'untuk login semua', '+1+2+3+4+5+6+8+7+', 'cms/login/admin_page', 1, 1, 3),
 (88, 'crud_user', 'Tambah,edit,delete user', 'tambah_edit_delete', '+1+2+3+4+', 'apl/crud', 1, 1, 3),
 (102, 'log', 'Log System', 'Log System', '+1+2+', 'cms/catatan/catat', 1, 2, 1),
-(14, 'master_sumber_pendanaan', 'Sumber Pendanaan', '-', '+1+3+', 'master/sumber_pendanaan', 1, 1, 2),
+(14, 'sumber_pendanaan', 'Sumber Pendanaan', '-', '+1+3+', 'master/sumber_pendanaan', 1, 1, 2),
 (104, 'status_pak', 'Home', 'Status Pengajuan PAK', '+1+2+3+4+5+6+', 'pak/dashboard/status_pak', 1, 1, 101),
 (11, 'nama_bahan', 'Nama Bahan', '-', '+1+2+4+', 'master/master_bahan', 1, 2, 2),
 (134, 'nama_alat', 'Nama Alat', '-', '+1+', 'master/nama_alat', 1, 7, 2),
@@ -64,7 +64,9 @@ INSERT INTO `cms_menu` (`id`, `alias`, `nama`, `deskripsi`, `allowed_level`, `ur
 (10, 'absen', 'absen', '-', '+1+2+3+4+5+6+7+8+', 'kelola/absen', 1, 2, 4),
 (12, 'master_inven', 'inventaris', '-', '+1+2+4+', 'master/inven', 1, 7, 4),
 (13, 'kategori_no_induk', 'Kategori No Induk', '-', '+1+2+', 'master/kategori_no_induk', 1, 3, 2),
-(15, 'pesan_alat_bahan', 'pesan alat bahan', '-', '+1+2+4+5+6+7+8+', 'master/pesan_alat_bahan', 1, 1, 6);
+(15, 'pesan_alat_bahan', 'pesan alat bahan', '-', '+1+2+4+5+6+7+8+', 'master/pesan_alat_bahan', 1, 1, 6),
+(16, 'periode_pengajuan', 'Periode Pengajuan', '-', '+1+3+', 'pengajuan/periode_pengajuan', 1, 1, 5),
+(17, 'satuan', 'Satuan', '-', '+1+2+', 'master/satuan', 1, 8, 2);
 
 --
 -- Indexes for dumped tables
