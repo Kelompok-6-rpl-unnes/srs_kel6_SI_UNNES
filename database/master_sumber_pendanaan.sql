@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2020 at 04:54 PM
+-- Generation Time: May 29, 2020 at 03:57 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -28,9 +28,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `master_sumber_pendanaan` (
   `id` int(11) NOT NULL,
-  `sumber pendanaan` varchar(255) NOT NULL,
+  `sumber_pendanaan` varchar(255) NOT NULL,
   `keterangan` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `master_sumber_pendanaan`
+--
+
+INSERT INTO `master_sumber_pendanaan` (`id`, `sumber_pendanaan`, `keterangan`) VALUES
+(101, 'Dekanat FMIPA', 'Rp 10.000.000'),
+(102, 'Gudang Garam', 'Rp. 100.000.000');
 
 --
 -- Indexes for dumped tables
@@ -50,7 +58,7 @@ ALTER TABLE `master_sumber_pendanaan`
 -- AUTO_INCREMENT for table `master_sumber_pendanaan`
 --
 ALTER TABLE `master_sumber_pendanaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
