@@ -7,7 +7,7 @@ class Inven_alat_bahan extends CI_Controller {
 	{
 		parent::__construct();
 		$this->fungsi->restrict();
-		$this->load->model('master/m_inven_alat_bahan');
+		$this->load->model('master/m_inven');
 	}
 
 	public function index()
@@ -53,8 +53,8 @@ class Inven_alat_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('kode','mata_kuliah','sks','id_status'));
-			$this->m_mata_kuliah->insertData($datapost);
+			$datapost = get_post_data(array('kode','alat_bahan','tanggal','keterangan','id_status'));
+			$this->m_inven->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/inven_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Master Inventaris Alat dan Bahan sukses disimpan...","success");
 			$this->fungsi->catat($datapost,"Menambah Master inven_alat_bahan dengan data sbb:",true);
@@ -88,7 +88,7 @@ class Inven_alat_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','kode','mata_kuliah','sks','id_status'));
+			$datapost = get_post_data(array('id','kode','alat_bahan','tanggal','keterangan','id_status'));
 			$this->m_inven->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/inven_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Inventaris Alat dan Bahan sukses diperbarui...","success");

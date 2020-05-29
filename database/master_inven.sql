@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2020 at 01:44 PM
+-- Generation Time: May 29, 2020 at 04:10 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -35,6 +35,14 @@ CREATE TABLE `master_inven` (
   `tanggal` varchar(255) NOT NULL,
   `keterangan` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `master_inven`
+--
+
+INSERT INTO `master_inven` (`id`, `kode`, `alat_bahan`, `tanggal`, `keterangan`) VALUES
+(0, 'AL242', 'Magnesium', '22 Januari 2018', 'tambahan magnesium 500g'),
+(1, 'AL242', 'Klorin', '18 Januari 2018', 'subsidi klorin pt kimia farma 500g');
 
 --
 -- Indexes for dumped tables
