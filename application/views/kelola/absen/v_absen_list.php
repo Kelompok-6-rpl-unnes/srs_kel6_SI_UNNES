@@ -45,7 +45,7 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
-                <th>No</th>
+                <th>ID</th>
                 <th>Nomor Induk</th>
                 <th>Nama</th>
                 <th>Tanggal</th>
@@ -64,7 +64,7 @@
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->nomor_induk?></td>
             <td align="center"><?=$row->nama?></td>
-            <td align="center"><?=$row->tanggal?></td>
+            <td align="center"><?=$row->tanggal?></td> 
             <td align="center"><?=$row->keterangan?></td>
             <td align="center"><?=$row->jumlah_kehadiran?></td>
             <td align="center"><?=$row->prodi?></td>
@@ -85,8 +85,8 @@
           <?php endforeach;?>
         </tbody>
         </table>
-        <b>
-          <a href="<?php if(isset($_SERVER['HTTP_REFERER'])){echo $_SERVER['HTTP_REFERER'];}?>">Back</a>
+        <a href="" class="btn btn-warning" style="margin-bottom;
+        10px; "title="view/utily/v_dashboard.php"></i>Back</a>
         </div>
        </div>
       </div>

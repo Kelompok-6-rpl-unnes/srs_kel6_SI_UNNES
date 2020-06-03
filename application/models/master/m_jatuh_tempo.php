@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_Jatuh_Tempo extends CI_Model {
+class M_jatuh_tempo extends CI_Model {
 //select->read
 	public function getData($value='')
 	{
-		$this->db->from('jatuh_tempo');
-		$this->db->order_by('ma.id', 'desc');
+		$this->db->from('jatuh_tempo ma');
+		$this->db->order_by('ma.id','desc');
 		return $this->db->get();
 	}
     //insert->create
@@ -32,4 +32,4 @@ class M_Jatuh_Tempo extends CI_Model {
 }
 
 /* End of file m_jatuh_tempo.php */
-/* Location: ./application/models/peminjaman/m_jatuh_tempo.php */
+/* Location: ./application/models/master/m_jatuh_tempo.php */

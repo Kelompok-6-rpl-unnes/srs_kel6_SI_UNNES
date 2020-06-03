@@ -22,22 +22,10 @@
         <div class="form-group">
         <label class="col-sm-4 control-label">Tanggal</label>
         <div class="col-sm-8">
-        <input type="text" id="date">
-            <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-            <link rel="stylesheet" href="/resources/demos/style.css">
-            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-            <script>
-            $(function() {
-            $ ("#date").datepicker({
-                dateFormat:"yy-mm-dd"
-            });
-            });
-            </script>
-            <body>
-            <span id="check_data"></span>
-            </div>
+        <?php echo form_input(array('name'=>'tanggal','class'=>'form-control'));?>
+        <?php echo form_error('tanggal');?>
+        <span id="check_data"></span>
+        </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Keterangan</label>
@@ -87,12 +75,12 @@
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"kelola/absen/show_editForm/","#divsubcontent")','Simpan','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"kelola/absen/show_addForm/","#divsubcontent")','Simpan','btn btn-success')." ";
             ?>
             </div>
         </div>
     </form>
-</div>
+    </div>
 
 
 <script type="text/javascript">

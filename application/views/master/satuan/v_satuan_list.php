@@ -43,14 +43,14 @@
               }
               ?>
               <a href="<?= site_url('master/satuan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus satuan?')"><i class="fa fa-trash"></i></a>
-
+              
             </td>
           </tr>
         <?php endforeach;?>
         </tbody>
         </table>
-        <b>
-          <a href="<?php if(isset($_SERVER['HTTP_REFERER'])){echo $_SERVER['HTTP_REFERER'];}?>">Back</a>
+        <a href="" class="btn btn-warning" style="margin-bottom;
+        10px; "title="view/utily/v_dashboard.php"></i>Back</a>
         </div>
       </div>
     </div>

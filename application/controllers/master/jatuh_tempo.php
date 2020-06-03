@@ -7,28 +7,28 @@ class jatuh_tempo extends CI_Controller {
 	{
 		parent::__construct();
 		$this->fungsi->restrict();
-		$this->load->model('peminjaman/m_jatuh_tempo');
+		$this->load->model('master/m_jatuh_tempo');
 	}
 
 	public function index()
 	{
 		$this->fungsi->check_previleges('jatuh_tempo');
 		$data['jatuh_tempo'] = $this->m_jatuh_tempo->getData();
-		$this->load->view('peminjaman/jatuh_tempo/v_jatuh_tempo_list',$data);
+		$this->load->view('master/jatuh_tempo/v_jatuh_tempo_list',$data);
 	}
 
 	public function form($param='')
 	{
 		$content   = "<div id='divsubcontent'></div>";
 		$header    = "Form Jatuh Tempo";
-		$subheader = "jatuh tempo";
+		$subheader = "jatuh_tempo";
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
 		if($param=='base'){
-			$this->fungsi->run_js('load_silent("peminjaman/jatuh_tempo/show_addForm/","#divsubcontent")');	
+			$this->fungsi->run_js('load_silent("master/jatuh_tempo/show_addForm/","#divsubcontent")');	
 		}else{
 			$base_kom=$this->uri->segment(5);
-			$this->fungsi->run_js('load_silent("peminjaman/jatuh_tempo/show_editForm/'.$base_kom.'","#divsubcontent")');	
+			$this->fungsi->run_js('load_silent("master/jatuh_tempo/show_editForm/'.$base_kom.'","#divsubcontent")');	
 		}
 	}
 
@@ -49,13 +49,13 @@ class jatuh_tempo extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['status']='';
-			$this->load->view('peminjaman/jatuh_tempo/v_jatuh_tempo_add',$data);
+			$this->load->view('master/jatuh_tempo/v_jatuh_tempo_add',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('id_peminjaman','nama_peminjam','nomor_induk','status_user','kategori_peminjaman','tanggal_pinjam','cetak','status'));
+			$datapost = get_post_data(array('id_peminjaman','nama_peminjam','nomor_induk','status_user','kategori_peminjaman','tanggal_pinjam','status_peminjaman','status'));
 			$this->m_jatuh_tempo->insertData($datapost);
-			$this->fungsi->run_js('load_silent("peminjaman/jatuh_tempo","#content")');
+			$this->fungsi->run_js('load_silent("master/jatuh_tempo","#content")');
 			$this->fungsi->message_box("Data Jatuh Tempo sukses disimpan...","success");
             $this->fungsi->catat($datapost,"Menambah Jatuh Tempo dengan data sbb:",true);
         }
@@ -68,7 +68,7 @@ class jatuh_tempo extends CI_Controller {
 		$config = array(
 				array(
 					'field'	=> 'id',
-					'label' => 'id',
+					'label' => '',
 					'rules' => ''
 				),
 				array(
@@ -82,27 +82,27 @@ class jatuh_tempo extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['edit'] = $this->db->get_where('peminjaman_jatuh_tempo',array('id'=>$id));
+			$data['edit'] = $this->db->get_where('jatuh_tempo',array('id'=>$id));
 			$data['status']='';
-			$this->load->view('peminjaman/jatuh_tempo/v_jatuh_tempo_edit',$data);
+			$this->load->view('master/jatuh_tempo/v_jatuh_tempo_edit',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','id_peminjaman','nama_peminjam','nomor_induk','status_user','kategori_peminjaman','tanggal_pinjam','cetak','status'));
-			$this->m_satuan->updateData($datapost);
-			$this->fungsi->run_js('load_silent("peminjaman/jatuh_tempo","#content")');
+			$datapost = get_post_data(array('id','id_peminjaman','nama_peminjam','nomor_induk','status_user','kategori_peminjaman','tanggal_pinjam','status_peminjaman','status'));
+			$this->m_jatuh_tempo->updateData($datapost);
+			$this->fungsi->run_js('load_silent("master/jatuh_tempo","#content")');
 			$this->fungsi->message_box("Data Jatuh Tempo sukses diperbarui...","success");
             $this->fungsi->catat($datapost,"Mengedit Jatuh Tempo dengan data sbb:",true);   
         }  
-    }
+	}
+	public function delete()
+	{
+		$id = $this->uri->segment(4);
+		$this->m_jatuh_tempo->deleteData($id);
+		redirect('admin');
+	}
 
-    public function delete()
-            {
-                $id = $this->uri->segment(4);
-                $this->m_jatuh_tempo->deleteData($id);
-                redirect('admin');
-            }
 }
 
 /* End of file jatuh_tempo.php */
-/* Location: ./application/controllers/peminjaman/jatuh_tempo.php */
+/* Location: ./application/controllers/master/jatuh_tempo.php */
