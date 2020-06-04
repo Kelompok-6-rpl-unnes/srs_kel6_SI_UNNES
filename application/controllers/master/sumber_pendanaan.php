@@ -19,7 +19,7 @@ class sumber_pendanaan extends CI_Controller {
 	public function form($param='')
 	{
 		$content   = "<div id='divsubcontent'></div>";
-		$header    = "Form Master Tipe Lab";
+		$header    = "Form Master Sumber Pendanaan";
 		$subheader = "sumber_pendanaan";
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
@@ -51,7 +51,7 @@ class sumber_pendanaan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','sumber_pendanaan','keterangan','id_status'));
+			$datapost = get_post_data(array('id','sumber_pendanaan','keterangan',));
 			$this->m_sumber_pendanaan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/sumber_pendanaan","#content")');
 			$this->fungsi->message_box("Data Master Sumber Pendanaan sukses disimpan...","success");
@@ -64,8 +64,8 @@ class sumber_pendanaan extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'sumber_pendanaan',
-					'label' => 'keterangan',
+					'field'	=> 'id',
+					'label' => '',
 					'rules' => ''
 				),
 				array(
@@ -85,7 +85,7 @@ class sumber_pendanaan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','kode','sumber_pendanaan','keterangan','is_status'));
+			$datapost = get_post_data(array('id','sumber_pendanaan','keterangan'));
 			$this->m_sumber_pendanaan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/sumber_pendanaan","#content")');
 			$this->fungsi->message_box("Data Master Sumber Pendanaan sukses disimpan...","success");
