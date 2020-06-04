@@ -51,7 +51,7 @@ class sumber_pendanaan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','kode','sumber_pendanaan','keterangan','id_status'));
+			$datapost = get_post_data(array('id','sumber_pendanaan','keterangan','id_status'));
 			$this->m_sumber_pendanaan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/sumber_pendanaan","#content")');
 			$this->fungsi->message_box("Data Master Sumber Pendanaan sukses disimpan...","success");
@@ -64,7 +64,7 @@ class sumber_pendanaan extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'kode',
+					'field'	=> 'sumber_pendanaan',
 					'label' => 'keterangan',
 					'rules' => ''
 				),

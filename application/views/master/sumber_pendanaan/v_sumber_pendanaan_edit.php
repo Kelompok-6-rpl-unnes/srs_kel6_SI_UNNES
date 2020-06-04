@@ -9,10 +9,11 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Sumber Pendanaan</label>
             <div class="col-sm-8">
+            <?php echo form_hidden('id',$row->id); ?>
             <?php echo form_input(array('name'=>'sumber_pendanaan','value'=>$row->sumber_pendanaan,'class'=>'form-control'));?>
-            <?php echo form_error('kategori_alat_bahan');?>
+            <?php echo form_error('sumber_pendanaan');?>
             </div>
-        </div>
+            </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Keterangan</label>
             <div class="col-sm-8">
@@ -31,6 +32,7 @@
     </form>
 </div>
 
+
 <script type="text/javascript">
 $(document).ready(function() {
     $(".select2").select2();
@@ -39,4 +41,3 @@ $(document).ready(function() {
     });
 });
 </script>
-

@@ -22,7 +22,7 @@
         </div>
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">Simpan ya?</label>
+            <label class="col-sm-4 control-label">Simpan?</label>
             <div class="col-sm-8 tutup">
             <?php
             echo button('send_form(document.faddmenugrup,"master/sumber_pendanaan/show_addForm/","#divsubcontent")','Simpan','btn btn-success')." ";
@@ -39,4 +39,3 @@ $(document).ready(function() {
     });
 });
 </script>
-
