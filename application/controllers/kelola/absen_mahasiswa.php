@@ -96,7 +96,7 @@ class absen_mahasiswa extends CI_Controller {
     public function delete()
             {
                 $id = $this->uri->segment(4);
-                $this->m_absen->deleteData($id);
+                $this->m_absen_mahasiswa->deleteData($id);
                 redirect('admin');
             }
   
