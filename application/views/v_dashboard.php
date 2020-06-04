@@ -44,7 +44,7 @@
 		<div class="icon">
 		<i class ="fa fa-desktop"></i>
 		</div>
-		<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+		<a href="?page" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
 		</div>
 		</div>
 
@@ -60,7 +60,7 @@
 		<div class="icon">
 		<i class="fa fa-cogs"></i>
 		</div>
-		<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+		<a href="application/master/nama_alat" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
 		</div>
 		</div>
 
@@ -75,7 +75,7 @@
 		<div class="icon">
 		<i class="fa fa-flask"></i>
 		</div>
-		<a href="?master=nama_alat" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+		<a href="?page" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
 		</div>
     </div>
 
@@ -90,7 +90,7 @@
 		<div class="icon">
 		<i class="fa fa-globe"></i>
 		</div>
-		<a href="" class="small-box-footer">More info <i class ="fa fa-arrow-circle-right"></i></a>
+		<a href="?page" class="small-box-footer">More info <i class ="fa fa-arrow-circle-right"></i></a>
 		</div>
 		</div>
     </div>

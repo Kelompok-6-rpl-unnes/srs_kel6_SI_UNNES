@@ -4,7 +4,7 @@
       <div class="col-lg-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Kelola Absen</h3>
+            <h3 class="box-title">Kelola Absen Mahasiswa</h3>
             </div>
             </head>
             <body>
@@ -13,28 +13,11 @@
             </div>
             </div>
             &emsp;
-            <?php
-              $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("kelola/absen/form/base","#modal")','Tim Lab','btn btn-success');
-              } else {
-                # code...
-              }
-              ?>
-              &emsp;
-               <?php
-              $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("kelola/absen/form/base","#modal")','Dosen','btn btn-success');
-              } else {
-                # code...
-              }
-              ?>
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("kelola/absen/form/base","#modal")','Add New Absen Mahasiswa','btn btn-success');
+                echo button('load_silent("kelola/absen_mahasiswa/form/base","#modal")','Add New Absen Mahasiswa','btn btn-success');
               } else {
                 # code...
               }
@@ -59,7 +42,7 @@
               <tbody>
               <?php 
           $i = 1;
-          foreach($absen->result() as $row): ?>
+          foreach($absen_mahasiswa->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->nomor_induk?></td>
@@ -74,12 +57,12 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("kelola/absen/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("kelola/absen_mahasiswa/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
               } else {
                 # code...
               }
               ?>
-              <a href="<?= site_url('kelola/absen/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus absen')"><i class="fa fa-trash"></i></a>
+              <a href="<?= site_url('kelola/absen_mahasiswa/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus absen mahasiswa')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
           <?php endforeach;?>
