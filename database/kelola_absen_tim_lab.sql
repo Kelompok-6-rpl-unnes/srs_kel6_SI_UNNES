@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2020 at 09:20 PM
+-- Generation Time: Jun 04, 2020 at 09:15 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -23,36 +23,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelola_absen_mahasiswa`
+-- Table structure for table `kelola_absen_tim_lab`
 --
 
-CREATE TABLE `kelola_absen_mahasiswa` (
+CREATE TABLE `kelola_absen_tim_lab` (
   `id` int(11) NOT NULL,
-  `nomor_induk_mahasiswa` varchar(100) DEFAULT NULL,
-  `nama_lengkap` text,
+  `nomor_induk` int(100) DEFAULT NULL,
+  `nama_lengkap` varchar(100) DEFAULT NULL,
   `tanggal` date DEFAULT NULL,
   `keterangan` varchar(100) DEFAULT NULL,
   `jumlah_kehadiran` int(100) DEFAULT NULL,
-  `prodi` varchar(100) DEFAULT NULL,
-  `mata_kuliah` varchar(100) DEFAULT NULL,
-  `rombel` int(100) DEFAULT NULL
+  `jabatanb` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `kelola_absen_mahasiswa`
---
-
-INSERT INTO `kelola_absen_mahasiswa` (`id`, `nomor_induk_mahasiswa`, `nama_lengkap`, `tanggal`, `keterangan`, `jumlah_kehadiran`, `prodi`, `mata_kuliah`, `rombel`) VALUES
-(1, '461241', 'Bilal', '2020-09-09', 'Hadir', 8, 'Teknik Informatika', 'Interaksi Manusia dan Komputer', 8);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `kelola_absen_mahasiswa`
+-- Indexes for table `kelola_absen_tim_lab`
 --
-ALTER TABLE `kelola_absen_mahasiswa`
+ALTER TABLE `kelola_absen_tim_lab`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -60,10 +51,10 @@ ALTER TABLE `kelola_absen_mahasiswa`
 --
 
 --
--- AUTO_INCREMENT for table `kelola_absen_mahasiswa`
+-- AUTO_INCREMENT for table `kelola_absen_tim_lab`
 --
-ALTER TABLE `kelola_absen_mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `kelola_absen_tim_lab`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

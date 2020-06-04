@@ -7,11 +7,11 @@
     <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">Nomor Induk Mahasiswa</label>
+            <label class="col-sm-4 control-label">Nomor Induk</label>
             <div class="col-sm-8">
             <?php echo form_hidden('id',$row->id); ?>
-            <?php echo form_input(array('name'=>'nomor_induk_mahasiswa','value'=>$row->nomor_induk_mahasiswa,'class'=>'form-control'));?>
-            <?php echo form_error('nomor_induk_mahasiswa');?>
+            <?php echo form_input(array('name'=>'nomor_induk','value'=>$row->nomor_induk,'class'=>'form-control'));?>
+            <?php echo form_error('nomor_induk');?>
             </div>
         </div>
         <div class="form-group">
@@ -48,31 +48,21 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Prodi</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'prodi','value'=>$row->prodi,'class'=>'form-control'));?>
-            <?php echo form_error('prodi');?>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Mata Kuliah</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'mata_kuliah','value'=>$row->mata_kuliah,'class'=>'form-control'));?>
-            <?php echo form_error('mata_kuliah');?>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Rombel</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'rombel','value'=>$row->rombel,'class'=>'form-control'));?>
-            <?php echo form_error('rombel');?>
-            </div>
+            <label class="col-sm-4 control-label">Jabatan/Profesi</label>
+            <select name ='jabatan'>
+          <div class="col-sm-8">
+          <option value ='Asisten Laboratorium'>Asisten Laboratorium</option>
+          <option value ='Ketua Laboratorium'>Ketua Laboratorium</option>
+          <option value ='Laboran'>Laboran</option>
+          <option value ='Koordinator Laboratorium'>Koordinator Laboratorium</option>
+          </select>
+          </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"kelola/absen_mahasiswa/show_editForm/","#divsubcontent")','Simpan','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"kelola/absen_tim_lab/show_editForm/","#divsubcontent")','Simpan','btn btn-success')." ";
             ?>
             </div>
         </div>

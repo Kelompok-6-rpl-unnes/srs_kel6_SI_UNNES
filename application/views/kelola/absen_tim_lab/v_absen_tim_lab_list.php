@@ -4,7 +4,7 @@
       <div class="col-lg-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Kelola Absen Mahasiswa</h3>
+            <h3 class="box-title">Kelola Absen Tim Laboratorium</h3>
             </div>
             </head>
             <body>
@@ -17,7 +17,7 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("kelola/absen_mahasiswa/form/base","#modal")','Add New Absen Mahasiswa','btn btn-success');
+                echo button('load_silent("kelola/absen_tim_lab/form/base","#modal")','Add New Absen Tim Laboratorium','btn btn-success');
               } else {
                 # code...
               }
@@ -29,40 +29,36 @@
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
                 <th>ID</th>
-                <th>Nomor Induk Mahasiswa</th>
+                <th>Nomor Induk</th>
                 <th>Nama Lengkap</th>
                 <th>Tanggal</th>
                 <th>Keterangan</th>
                 <th>Jumlah Kehadiran</th>
-                <th>Prodi</th>
-                <th>Mata Kuliah</th>
-                <th>Rombel</th>
+                <th>Jabatan/Profesi</th>
                 <th>Act</th>
               </thead>
               <tbody>
               <?php 
           $i = 1;
-          foreach($absen_mahasiswa->result() as $row): ?>
+          foreach($absen_tim_lab->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
-            <td align="center"><?=$row->nomor_induk_mahasiswa?></td>
+            <td align="center"><?=$row->nomor_induk?></td>
             <td align="center"><?=$row->nama_lengkap?></td>
             <td align="center"><?=$row->tanggal?></td> 
             <td align="center"><?=$row->keterangan?></td>
             <td align="center"><?=$row->jumlah_kehadiran?></td>
-            <td align="center"><?=$row->prodi?></td>
-            <td align="center"><?=$row->mata_kuliah?></td>
-            <td align="center"><?=$row->rombel?></td>
+            <td align="center"><?=$row->jabatan?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("kelola/absen_mahasiswa/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("kelola/absen_tim_lab/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
               } else {
                 # code...
               }
               ?>
-              <a href="<?= site_url('kelola/absen_mahasiswa/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus absen mahasiswa')"><i class="fa fa-trash"></i></a>
+              <a href="<?= site_url('kelola/absen_tim_lab/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus absen tim laboratorium?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
           <?php endforeach;?>

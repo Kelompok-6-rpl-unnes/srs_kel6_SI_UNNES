@@ -35,8 +35,8 @@ class absen_mahasiswa extends CI_Controller {
         $this->load->library('form_validation');
         $config = array(
                 array(
-                    'field' => 'nomor_induk',
-                    'label' => 'nomor_induk',
+                    'field' => 'nomor_induk_mahasiswa',
+                    'label' => 'nomor_induk_mahasiswa',
                     'rules' => 'required'
                 )
             );
@@ -50,7 +50,7 @@ class absen_mahasiswa extends CI_Controller {
         }
         else
         {
-            $datapost = get_post_data(array('id','nomor_induk','nama','tanggal','keterangan','jumlah_kehadiran','prodi','mata_kuliah','rombel'));
+            $datapost = get_post_data(array('id','nomor_induk_mahasiswa','nama_lengkap','tanggal','keterangan','jumlah_kehadiran','prodi','mata_kuliah','rombel'));
             $this->m_absen_mahasiswa->insertData($datapost);
             $this->fungsi->run_js('load_silent("kelola/absen_mahasiswa","#content")');
             $this->fungsi->message_box("Data absen mahasiswa sukses disimpan...","success");
@@ -69,8 +69,8 @@ class absen_mahasiswa extends CI_Controller {
                     'rules' => ''
                 ),
                 array(
-                    'field' => 'nomor_induk',
-                    'label' => 'nomor_induk',
+                    'field' => 'nomor_induk_mahasiswa',
+                    'label' => 'nomor_induk_mahasiswa',
                     'rules' => 'required'
                 )
             );
@@ -85,7 +85,7 @@ class absen_mahasiswa extends CI_Controller {
         }
         else
         {
-            $datapost = get_post_data(array('id','nomor_induk','nama','tanggal','keterangan','jumlah_kehadiran','prodi','mata_kuliah','rombel'));
+            $datapost = get_post_data(array('id','nomor_induk_mahasiswa','nama_lengkap','tanggal','keterangan','jumlah_kehadiran','prodi','mata_kuliah','rombel'));
             $this->m_absen_mahasiswa->updateData($datapost);
             $this->fungsi->run_js('load_silent("kelola/absen_mahasiswa","#content")');
             $this->fungsi->message_box("Data absen mahasiswa sukses diperbarui...","success");

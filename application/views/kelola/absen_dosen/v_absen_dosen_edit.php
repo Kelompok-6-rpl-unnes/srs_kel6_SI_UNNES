@@ -30,13 +30,13 @@
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Keterangan</label>
-            <input type="radio" name="keterangan" value="Hadir">Hadir<br/>
+            <input type="radio" name="keterangan" value="Masuk">Masuk<br/>
             <div class="col-sm-8">
             </div> 
-           <input type="radio" name="keterangan" value="Tidak Hadir">Tidak Hadir<br/> 
+           <input type="radio" name="keterangan" value="Tidak Masuk">Tidak Masuk<br/> 
            <div class="col-sm-4">
            </div>
-            <input type="radio" name="keterangan" value="Tanpa Keterangan">Tanpa Keterangan<br/>
+            <input type="radio" name="keterangan" value="Ijin">Ijin<br/>
             <div class="col-sm-8">
             </div>
         </div>
