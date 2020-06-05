@@ -4,18 +4,18 @@
     <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">Nomor Induk</label>
+            <label class="col-sm-4 control-label">Nomor Induk Pegawai</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nomor_induk','class'=>'form-control'));?>
-            <?php echo form_error('nomor_induk');?>
+            <?php echo form_input(array('name'=>'nomor_induk_pegawai','class'=>'form-control'));?>
+            <?php echo form_error('nomor_induk_pegawai');?>
             <span id="check_data"></span>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Nama</label>
+            <label class="col-sm-4 control-label">Nama Lengkap</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nama','class'=>'form-control'));?>
-            <?php echo form_error('nama');?>
+            <?php echo form_input(array('name'=>'nama_lengkap','class'=>'form-control'));?>
+            <?php echo form_error('nama_lengkap');?>
             <span id="check_data"></span>
             </div>
         </div>
@@ -29,13 +29,13 @@
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Keterangan</label>
-            <input type="radio" name="keterangan" value="Hadir">Hadir<br/>
+            <input type="radio" name="keterangan" value="Masuk">Masuk<br/>
             <div class="col-sm-8">
             </div> 
-           <input type="radio" name="keterangan" value="Tidak Hadir">Tidak Hadir<br/> 
+           <input type="radio" name="keterangan" value="Tidak Masuk">Tidak Masuk<br/> 
            <div class="col-sm-4">
            </div>
-            <input type="radio" name="keterangan" value="Tanpa Keterangan">Tanpa Keterangan<br/>
+            <input type="radio" name="keterangan" value="Ijin">Ijin<br/>
             <div class="col-sm-8">
             </div>
         </div>
@@ -75,7 +75,7 @@
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"kelola/absen/show_addForm/","#divsubcontent")','Simpan','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"kelola/absen_dosen/show_addForm/","#divsubcontent")','Simpan','btn btn-success')." ";
             ?>
             </div>
         </div>
