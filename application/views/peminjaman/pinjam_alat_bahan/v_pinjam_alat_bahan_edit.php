@@ -15,10 +15,10 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Pinjam Alat dan Bahan</label>
+            <label class="col-sm-4 control-label">Peminjaman Alat dan Bahan</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'pinjam_alat_bahan','value'=>$row->pinjam_alat_bahan,'class'=>'form-control'));?>
-            <?php echo form_error('pinjam_alat_bahan');?>
+            <?php echo form_input(array('name'=>'pesan_alat_bahan','value'=>$row->pesan_alat_bahan,'class'=>'form-control'));?>
+            <?php echo form_error('pesan_alat_bahan');?>
             </div>
         </div>
         <div class="form-group">
@@ -46,7 +46,7 @@
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"master/pinjam_alat_bahan/show_editForm/","#divsubcontent")','Simpan','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"peminjaman/pinjam_alat_bahan/show_editForm/","#divsubcontent")','Simpan','btn btn-success')." ";
             ?>
             </div>
         </div>

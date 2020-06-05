@@ -10,7 +10,7 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("master/pinjam_alat_bahan/form/base","#modal")','Add Peminjaman Alat atau Bahan','btn btn-success');
+                echo button('load_silent("peminjaman/pinjam_alat_bahan/form/base","#modal")','Add Peminjaman Alat atau Bahan','btn btn-success');
               } else {
                 # code...
               }
@@ -22,7 +22,7 @@
               <thead>
                 <th>No</th>
                 <th>Kode</th>
-                <th>Peminjaman Alat atau Bahan</th>
+                <th>Peminjaman Alat dan Bahan</th>
                 <th>Jumlah</th>
                 <th>Tanggal</th>
                 <th>Keterangan</th>
@@ -31,11 +31,11 @@
               <tbody>
           <?php 
           $i = 1;
-          foreach($pesan_alat_bahan->result() as $row): ?>
+          foreach($pinjam_alat_bahan->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->kode?></td>
-            <td align="center"><?=$row->pinjam_alat_bahan?></td>
+            <td align="center"><?=$row->pesan_alat_bahan?></td>
             <td align="center"><?=$row->jumlah?></td>
             <td align="center"><?=$row->tanggal?></td>
             <td align="center"><?=$row->keterangan?></td>
@@ -43,14 +43,13 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("master/pinjam_alat_bahan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("peminjaman/pinjam_alat_bahan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
               } else {
                 # code...
               }
               ?>
             </td>
           </tr>
-
         <?php endforeach;?>
         </tbody>
             </table>
