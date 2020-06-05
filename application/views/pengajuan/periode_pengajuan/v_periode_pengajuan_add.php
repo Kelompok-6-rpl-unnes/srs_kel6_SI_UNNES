@@ -60,20 +60,20 @@
 
         <div class="form-group">
             <label class="col-sm-4 control-label">Status Pengajuan</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'status_pengajuan','class'=>'form-control'));?>
-            <?php echo form_error('status_pengajuan');?>
-            <span id="check_data"></span>
-            </div>
+            <select name ='status_pengajuan'>
+          <div class="col-sm-8">
+          <option value ='Sudah Disetujui '>Sudah Disetujui</option>
+          <option value ='Belum Disetujui'>Belum Disetujui</option>
+          <option value ='Sudah Terdistribusikan'>Sudah Terdistribusikan</option>
+          </select>
         </div>
-
         <div class="form-group">
-            <label class="col-sm-4 control-label">Status</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'status','class'=>'form-control'));?>
-            <?php echo form_error('status');?>
-            <span id="check_data"></span>
-            </div>
+        <label class="col-sm-4 control-label">Status</label>
+          <select name ='status'>
+          <div class="col-sm-8">
+          <option value ='Ada'>Ada</option>
+          <option value ='Tidak Ada'>Tidak Ada</option>
+          </select>
         </div>
         
         <div class="form-group">
