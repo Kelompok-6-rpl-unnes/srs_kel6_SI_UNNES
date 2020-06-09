@@ -6,8 +6,7 @@
              <!--  <h3 class="widget-user-username"><?=from_session('nama')?></h3>
               <h5 class="widget-user-desc"><?=from_session('nama_level')?></h5>
             </div>
-            <div class="widget-user-image"> -->
-            
+            <div class="widget-user-image"> -->          
     <div class="box-footer">
               <div class="row">
                 <div class="col-sm-12 border-right">
@@ -90,7 +89,7 @@
 		<div class="icon">
 		<i class="fa fa-globe"></i>
 		</div>
-		<a href="?page" class="small-box-footer">More info <i class ="fa fa-arrow-circle-right"></i></a>
+		<a href="?page=jatuh_tempo" class="small-box-footer">More info <i class ="fa fa-arrow-circle-right"></i></a>
 		</div>
 		</div>
     </div>
