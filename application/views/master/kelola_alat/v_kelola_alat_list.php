@@ -9,7 +9,7 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("kelola/kelola_alat/form/base","#modal")','Tambah kelola alat','btn btn-success');
+                echo button('load_silent("master/kelola_alat/form/base","#modal")','Tambah kelola alat','btn btn-success');
               } else {
                 # code...
               }
@@ -50,17 +50,17 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("kelola/kelola_alat/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("master/kelola_alat/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
               } else {
                 # code...
               }
               ?>
               
-              <a href="<?= site_url('kelola/kelola_alat/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Nama Alat Ini ?')"><i class="fa fa-fw fa-trash"></i></a>
+              <a href="<?= site_url('master/kelola_alat/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus Kelola Alat ?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
-
-        <?php endforeach;?>
+      
+          <?php endforeach;?>
         </tbody>
             </table>
           </div>

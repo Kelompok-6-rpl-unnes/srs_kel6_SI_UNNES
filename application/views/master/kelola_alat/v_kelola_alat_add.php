@@ -110,7 +110,7 @@
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"kelola/kelola_alat/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"master/kelola_alat/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
             ?>
             </div>
         </div>

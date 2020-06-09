@@ -9,12 +9,13 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Alat</label>
             <div class="col-sm-8">
+            <?php echo form_hidden('id',$row->id); ?>
             <div class="form-group">
-                <select class="form-control" name="nama_alat">
-                <?php foreach ($nama_alat->result() as $nama_alat): ?>
-                    <option value="<?= $nama_alat->id ?>"><?= $nama_alat->nama_alat?></option>
-                <?php endforeach; ?>
-                </select>
+            <select class="form-control" name="nama_alat">
+            <?php foreach ($nama_alat->result() as $nama_alat): ?>
+            <option value="<?= $nama_alat->nama_alat ?>" <?= $nama_alat->id == $row->nama_alat ? "selected" : null ?>><?= $nama_alat->nama_alat ?></option>
+            <?php endforeach; ?>
+            </select>
             </div>
             <?php echo form_error('nama_alat');?>
             </div>
@@ -25,7 +26,7 @@
             <div class="form-group">
             <select class="form-control" name="satuan_alat">
             <?php foreach ($satuan->result() as $satuan): ?>
-            <option value="<?= $satuan->id ?>"><?= $satuan->Nama ?></option>
+            <option value="<?= $satuan->satuan ?>" <?= $satuan->id == $row->satuan_alat ? "selected" : null ?>><?= $satuan->Nama ?></option>
             <?php endforeach; ?>
             </select>
             </div>
@@ -38,7 +39,7 @@
             <div class="form-group">
             <select class="form-control" name="kategori">
             <?php foreach ($Kategori_Alat_Bahan->result() as $Kategori_Alat_Bahan): ?>
-            <option value="<?= $Kategori_Alat_Bahan->id ?>" ><?= $Kategori_Alat_Bahan->Kategori?></option>
+            <option value="<?= $Kategori_Alat_Bahan->Kategori_Alat_Bahan ?>" <?= $Kategori_Alat_Bahan->id == $row->kategori ? "selected" : null ?>><?= $Kategori_Alat_Bahan->Kategori ?></option>
             <?php endforeach; ?>
             </select>
             </div>
@@ -48,15 +49,15 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Stock</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'stok','class'=>'form-control'));?>
-            <?php echo form_error('stok');?>
+            <?php echo form_input(array('name'=>'stok', 'class'=>'form-control', 'value'=>$row->stok));?>
+            <?php echo form_error('kode');?>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Stock Minimal</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'stok_minimal','class'=>'form-control'));?>
-            <?php echo form_error('stok_minimal');?>
+            <?php echo form_input(array('name'=>'stok_minimal','class'=>'form-control','value'=>$row->stok_minimal));?>
+            <?php echo form_error('kode');?>
             </div>
         </div>
         <div class="form-group">
@@ -65,11 +66,11 @@
             <div class="form-group">
             <select class="form-control" name="lokasi">
             <?php foreach ($lokasi_penyimpanan->result() as $lokasi_penyimpanan): ?>
-            <option value="<?= $lokasi_penyimpanan->id ?>" ><?= $lokasi_penyimpanan->nama_lokasi_penyimpanan ?></option>
+            <option value="<?= $lokasi_penyimpanan->lokasi_penyimpanan ?>" <?= $lokasi_penyimpanan->id == $row->lokasi? "selected" : null ?>><?= $lokasi_penyimpanan->nama_lokasi_penyimpanan ?></option>
             <?php endforeach; ?>
             </select>
             </div>
-            <?php echo form_error('lokasi');?>
+            <?php echo form_error('kode');?>
             </div>
         </div>            
         <div class="form-group">
@@ -78,32 +79,32 @@
             <div class="form-group">
             <select class="form-control" name="pendanaan">
             <?php foreach ($sumber_pendanaan->result() as $sumber_pendanaan): ?>
-            <option value="<?= $sumber_pendanaan->id ?>"><?= $sumber_pendanaan->sumber_pendanaan ?></option>
+            <option value="<?= $sumber_pendanaan->sumber_pendanaan ?>" <?= $sumber_pendanaan->id == $row->pendanaan? "selected" : null ?>><?= $sumber_pendanaan->sumber_pendanaan ?></option>
             <?php endforeach; ?>
             </select>
             </div>
-            <?php echo form_error('pendanaan');?>
+            <?php echo form_error('kode');?>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Harga</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'harga','class'=>'form-control'));?>
-            <?php echo form_error('harga');?>
+            <?php echo form_input(array('name'=>'harga','class'=>'form-control','value'=>$row->harga));?>
+            <?php echo form_error('kode');?>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Kondisi</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'kondisi','class'=>'form-control'));?>
-            <?php echo form_error('kondisi');?>
+            <?php echo form_input(array('name'=>'kondisi','class'=>'form-control','value'=>$row->kondisi));?>
+            <?php echo form_error('kode');?>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"kelola/kelola_alat/show_editForm/","#divsubcontent")','Save','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"master/kelola_alat/show_editForm/","#divsubcontent")','Save','btn btn-success')." ";
             ?>
             </div>
         </div>
