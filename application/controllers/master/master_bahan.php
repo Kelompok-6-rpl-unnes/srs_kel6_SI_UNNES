@@ -53,7 +53,7 @@ class Master_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('kode','jenis_bahan','nama_bahan','tahun','pengarang'));
+			$datapost = get_post_data(array('kode','jenis_bahan','nama_bahan','nama_satuan','status'));
 			$this->m_master_bahan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/master_bahan","#content")');
 			$this->fungsi->message_box("Data Master Nama Bahan sukses disimpan...","success");
@@ -88,7 +88,7 @@ class Master_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','kode','jenis_bahan','nama_bahan','tahun','pengarang'));
+			$datapost = get_post_data(array('id','kode','jenis_bahan','nama_bahan','nama_satuan','status'));
 			$this->m_master_bahan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/master_bahan","#content")');
 			$this->fungsi->message_box("Data Master Nama Bahan sukses diperbarui...","success");

@@ -29,18 +29,18 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Tahun</label>
+            <label class="col-sm-4 control-label">Nama Satuan</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tahun','class'=>'form-control'));?>
-            <?php echo form_error('tahun');?>
+            <?php echo form_input(array('name'=>'nama_satuan','class'=>'form-control'));?>
+            <?php echo form_error('nama_satuan');?>
             <span id="check_data"></span>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Pengarang</label>
+            <label class="col-sm-4 control-label">Status</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'pengarang','class'=>'form-control'));?>
-            <?php echo form_error('pengarang');?>
+            <?php echo form_input(array('name'=>'status','class'=>'form-control'));?>
+            <?php echo form_error('status');?>
             <span id="check_data"></span>
             </div>
         </div>
