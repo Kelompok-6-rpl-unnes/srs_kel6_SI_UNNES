@@ -17,8 +17,8 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Peminjaman Alat dan Bahan</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'pesan_alat_bahan','value'=>$row->pesan_alat_bahan,'class'=>'form-control'));?>
-            <?php echo form_error('pesan_alat_bahan');?>
+            <?php echo form_input(array('name'=>'pesan_alat_bahan','value'=>$row->pinjam_alat_bahan,'class'=>'form-control'));?>
+            <?php echo form_error('pinjam_alat_bahan');?>
             </div>
         </div>
         <div class="form-group">
