@@ -35,7 +35,7 @@
           <tr>
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->kode?></td>
-            <td align="center"><?=$row->pesan_alat_bahan?></td>
+            <td align="center"><?=$row->pinjam_alat_bahan?></td>
             <td align="center"><?=$row->jumlah?></td>
             <td align="center"><?=$row->tanggal?></td>
             <td align="center"><?=$row->keterangan?></td>
