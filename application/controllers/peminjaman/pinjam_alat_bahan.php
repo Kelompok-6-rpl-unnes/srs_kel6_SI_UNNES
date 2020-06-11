@@ -95,6 +95,13 @@ class Pinjam_alat_bahan extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit Peminjaman Alat Dan Bahan dengan data sbb:",true);
 		}
 	}
-}
+	public function delete()
+	{
+		$id = $this->uri->segment(4);
+		$this->m_pinjam_alat_bahan->deleteData($id);
+		redirect('admin');
+	}
+	}
+
 /* End of file pinjam_alat_bahan.php */
 /* Location: ./application/controllers/peminjaman/pinjam_alat_bahan.php */
