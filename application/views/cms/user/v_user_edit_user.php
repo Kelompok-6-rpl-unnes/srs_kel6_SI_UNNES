@@ -48,12 +48,6 @@
                 <?php echo form_error('no_hp');?>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Alamat</label>
-                <div class="col-sm-8">
-                <?php echo form_input(array('name'=>'alamat','id'=>'alamat','value'=>$row->alamat,'class'=>'form-control'));?>
-                <?php echo form_error('alamat');?>
-                </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">Save</label>
