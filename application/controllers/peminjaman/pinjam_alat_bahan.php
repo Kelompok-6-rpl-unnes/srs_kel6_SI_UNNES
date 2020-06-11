@@ -38,8 +38,8 @@ class Pinjam_alat_bahan extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'pinjam_alat_bahan',
-					'label' => 'pinjam_alat_bahan',
+					'field'	=> 'pesan_alat_bahan',
+					'label' => 'pesan_alat_bahan',
 					'rules' => 'required'
 				)
 			);
@@ -72,8 +72,8 @@ class Pinjam_alat_bahan extends CI_Controller {
 					'rules' => ''
 				),
 				array(
-					'field'	=> 'pinjam_alat_bahan',
-					'label' => 'pinjam_alat_bahan',
+					'field'	=> 'pesan_alat_bahan',
+					'label' => 'pesan_alat_bahan',
 					'rules' => 'required'
 				)
 			);

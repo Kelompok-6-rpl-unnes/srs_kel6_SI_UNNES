@@ -48,7 +48,7 @@
                 # code...
               }
               ?>
-               <a href="<?= site_url('kelola/lokasi_penyimpanan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus peminjaman ?')"><i class="fa fa-trash"></i></a>
+               <a href="<?= site_url('peminjaman/pinjam_alat_bahan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus peminjaman ?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
         <?php endforeach;?>
