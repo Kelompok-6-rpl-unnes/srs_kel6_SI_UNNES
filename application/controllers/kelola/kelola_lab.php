@@ -79,7 +79,7 @@ class kelola_lab extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE)
         {
-            $data['edit'] = $this->db->get_where('kelola_kelola_lab',array('id'=>$id));
+            $data['edit'] = $this->db->get_where('kelola_lab',array('id'=>$id));
             $data['status']='';
             $this->load->view('kelola/kelola_lab/v_kelola_lab_edit',$data);
         }

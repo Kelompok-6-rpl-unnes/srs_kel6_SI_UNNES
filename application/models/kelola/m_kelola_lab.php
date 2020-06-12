@@ -13,20 +13,20 @@ class M_kelola_lab extends CI_Model {
 	public function insertData($data='')
 	{
 		
-        $this->db->insert('kelola_kelola_lab',$data);
+        $this->db->insert('kelola_lab',$data);
        
 	}
 //update
 	public function updateData($data='')
 	{
 		 $this->db->where('id', $data['id']);
-            $this->db->update('kelola_kelola_lab',$data);
+            $this->db->update('kelola_lab',$data);
 	}
 //delete
 	public function deleteData($id='')
 	{
 		$this->db->where('id', $id);
-        $this->db->delete('kelola_kelola_lab');
+        $this->db->delete('kelola_lab');
 	}
 
 }
