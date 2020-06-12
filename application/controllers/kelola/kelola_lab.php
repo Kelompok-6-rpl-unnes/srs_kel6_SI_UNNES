@@ -50,7 +50,7 @@ class kelola_lab extends CI_Controller {
         }
         else
         {
-            $datapost = get_post_data(array('nama_lab','alamat_lab','tipe_lab','kor_lab','laboran','foto_lab','status'));
+            $datapost = get_post_data(array('id','nama_lab','alamat_lab','tipe_lab','kor_lab','laboran','foto_lab','status'));
             $this->m_kelola_lab->insertData($datapost);
             $this->fungsi->run_js('load_silent("kelola/kelola_lab","#content")');
             $this->fungsi->message_box("Data Kelola Laboratorium sukses disimpan...","success");
@@ -85,7 +85,7 @@ class kelola_lab extends CI_Controller {
         }
         else
         {
-            $datapost = get_post_data(array('nama_lab','alamat_lab','tipe_lab','kor_lab','laboran','foto_lab','status'));
+            $datapost = get_post_data(array('id','nama_lab','alamat_lab','tipe_lab','kor_lab','laboran','foto_lab','status'));
             $this->m_kelola_lab->updateData($datapost);
             $this->fungsi->run_js('load_silent("kelola/kelola_lab","#content")');
             $this->fungsi->message_box("Data Kelola Laboratorium sukses diperbarui...","success");
