@@ -44,10 +44,10 @@
             </div>
         </div>
         <div class="form-group">
-        <label class="col-sm-4 control-label">Tanggal Pinjam</label>
-        <div class="col-sm-8">
-        <?php echo form_input(array('name'=>'tanggal_pinjam','class'=>'form-control'));?>
-        <?php echo form_error('tanggal_pinjam');?>
+            <label class="col-sm-4 control-label">Tanggal Pinjam</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'tanggal_pinjam','type'=>'date','class'=>'form-control'));?>
+            <?php echo form_error('tanggal_pinjam');?>
             <span id="check_data"></span>
             </div>
         </div>
