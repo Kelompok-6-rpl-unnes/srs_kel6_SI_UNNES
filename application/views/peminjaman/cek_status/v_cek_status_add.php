@@ -20,18 +20,18 @@
             </div>
         </div>
         <div class="form-group">
-        <label class="col-sm-4 control-label">Tanggal Peminjaman</label>
-        <div class="col-sm-8">
-        <?php echo form_input(array('name'=>'tanggal_peminjaman','class'=>'form-control'));?>
-        <?php echo form_error('tanggal_peminjaman');?>
+            <label class="col-sm-4 control-label">Tanggal Peminjaman</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'tanggal_peminjaman','type'=>'date','class'=>'form-control'));?>
+            <?php echo form_error('tanggal_peminjaman');?>
             <span id="check_data"></span>
             </div>
         </div>
         <div class="form-group">
-        <label class="col-sm-4 control-label">Tanggal Kembali</label>
-        <div class="col-sm-8">
-        <?php echo form_input(array('name'=>'tanggal_kembali','class'=>'form-control'));?>
-        <?php echo form_error('tanggal_kembali');?>
+            <label class="col-sm-4 control-label">Tanggal kembali</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'tanggal_kembali','type'=>'date','class'=>'form-control'));?>
+            <?php echo form_error('tanggal_kembali');?>
             <span id="check_data"></span>
             </div>
         </div>
