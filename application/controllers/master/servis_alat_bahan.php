@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Servis_alat_bahan extends CI_Controller {
+class servis_alat_bahan extends CI_Controller {
 
 	public function __construct()
 	{
@@ -35,11 +35,11 @@ class Servis_alat_bahan extends CI_Controller {
 	public function show_addForm()
 	{
 		$this->fungsi->check_previleges('servis_alat_bahan');
-		$this->load->library('servis_alat_bahan');
+		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'servis_alat_bahan',
-					'label' => 'servis_alat_bahan',
+					'field'	=> 'alat_bahan',
+					'label' => 'alat_bahan',
 					'rules' => 'required'
 				)
 			);
@@ -53,11 +53,11 @@ class Servis_alat_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('kode','alat_bahan','tgl_servis','status','keterangan','id_status'));
-			$this->m_servis_->insertData($datapost);
+			$datapost = get_post_data(array('kode','alat_bahan','tgl_servis','status','keterangan'));
+			$this->m_servis->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/servis_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Master Servis Inventaris Alat dan Bahan sukses disimpan...","success");
-			$this->fungsi->catat($datapost,"Menambah Master servis_alat_bahan dengan data sbb:",true);
+			$this->fungsi->catat($datapost,"Menambah Master servis alat bahan dengan data sbb:",true);
 		}
 	}
 
@@ -72,8 +72,8 @@ class Servis_alat_bahan extends CI_Controller {
 					'rules' => ''
 				),
 				array(
-					'field'	=> 'servis_alat_bahan',
-					'label' => 'servis_alat_bahan',
+					'field'	=> 'alat_bahan',
+					'label' => 'alat_bahan',
 					'rules' => 'required'
 				)
 			);
@@ -82,7 +82,7 @@ class Servis_alat_bahan extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['edit'] = $this->db->get_where('servis_alat_bahan',array('id'=>$id));
+			$data['edit'] = $this->db->get_where('master_servis',array('id'=>$id));
 			$data['status']='';
 			$this->load->view('master/servis_alat_bahan/v_servis_alat_bahan_edit',$data);
 		}
@@ -92,7 +92,13 @@ class Servis_alat_bahan extends CI_Controller {
 			$this->m_servis->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/servis_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Servis Inventaris Alat dan Bahan sukses diperbarui...","success");
-			$this->fungsi->catat($datapost,"Mengedit Master servis_alat_bahan dengan data sbb:",true);
+			$this->fungsi->catat($datapost,"Mengedit Master servis alat bahan dengan data sbb:",true);
 		}
 	}
+	public function delete()
+    {
+    $id = $this->uri->segment(4);
+    $this->m_servis->deleteData($id);
+    redirect('admin');
+    }
 }

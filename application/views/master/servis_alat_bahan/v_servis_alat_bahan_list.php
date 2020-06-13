@@ -48,16 +48,17 @@
                 # code...
               }
               ?>
+              <a href="<?= site_url('master/servis_alat_bahan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus servis alat bahan ?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
 
         <?php endforeach;?>
-        </tbody>
+                </tbody>
             </table>
           </div>
         </div>
       </div>
-    </div>
+    </div> 
 <script type="text/javascript">
   $(document).ready(function() {
     var table = $('#tableku').DataTable( {

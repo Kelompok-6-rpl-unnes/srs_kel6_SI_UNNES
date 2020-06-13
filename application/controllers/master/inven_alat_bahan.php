@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Inven_alat_bahan extends CI_Controller {
+class inven_alat_bahan extends CI_Controller {
 
 	public function __construct()
 	{
@@ -38,8 +38,8 @@ class Inven_alat_bahan extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'inven_alat_bahan',
-					'label' => 'inven_alat_bahan',
+					'field'	=> 'alat_bahan',
+					'label' => 'alat_bahan',
 					'rules' => 'required'
 				)
 			);
@@ -53,7 +53,7 @@ class Inven_alat_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('kode','alat_bahan','tanggal','keterangan','id_status'));
+			$datapost = get_post_data(array('kode','alat_bahan','tanggal','keterangan'));
 			$this->m_inven->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/inven_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Master Inventaris Alat dan Bahan sukses disimpan...","success");
@@ -68,12 +68,12 @@ class Inven_alat_bahan extends CI_Controller {
 		$config = array(
 				array(
 					'field'	=> 'id',
-					'label' => 'wes mbarke',
+					'label' => '',
 					'rules' => ''
 				),
 				array(
-					'field'	=> 'inven_alat_bahan',
-					'label' => 'inven_alat_bahan',
+					'field'	=> 'alat_bahan',
+					'label' => 'alat_bahan',
 					'rules' => 'required'
 				)
 			);
@@ -82,17 +82,25 @@ class Inven_alat_bahan extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['edit'] = $this->db->get_where('inven_alat_bahan',array('id'=>$id));
+			$data['edit'] = $this->db->get_where('master_inven',array('id'=>$id));
 			$data['status']='';
 			$this->load->view('master/inven_alat_bahan/v_inven_alat_bahan_edit',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','kode','alat_bahan','tanggal','keterangan','id_status'));
+			$datapost = get_post_data(array('id','kode','alat_bahan','tanggal','keterangan'));
 			$this->m_inven->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/inven_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Inventaris Alat dan Bahan sukses diperbarui...","success");
 			$this->fungsi->catat($datapost,"Mengedit Master inven_alat_bahan dengan data sbb:",true);
 		}
 	}
+		public function delete()
+	{
+		$id = $this->uri->segment(4);
+		$this->m_inven->deleteData($id);
+		redirect('admin');
+	}
 }
+/* End of file inven_alat_bahan.php */
+/* Location: ./application/controllers/master/inven_alat_bahan.php */

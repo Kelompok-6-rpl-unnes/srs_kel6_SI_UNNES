@@ -46,11 +46,12 @@
                 # code...
               }
               ?>
+              <a href="<?= site_url('master/inven_alat_bahan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus lokasi penyimpanan ?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
 
         <?php endforeach;?>
-        </tbody>
+                </tbody>
             </table>
           </div>
         </div>
