@@ -100,11 +100,13 @@
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Kondisi</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'kondisi','class'=>'form-control'));?>
-            <?php echo form_error('kondisi');?>
-            <span id="check_data"></span>
-            </div>
+            <select name ='kondisi'>
+          <div class="col-sm-8">
+          <option value ='Bagus'>Bagus</option>
+          <option value ='Rusak'>Rusak</option>
+          <option value ='Perlu Diservice'>Perlu Diservice</option>
+          </select>
+          </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
