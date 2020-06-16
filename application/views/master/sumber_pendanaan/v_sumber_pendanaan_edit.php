@@ -16,11 +16,12 @@
             </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Keterangan</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'keterangan','value'=>$row->keterangan,'class'=>'form-control'));?>
-            <?php echo form_error('keterangan');?>
+            <select name ='keterangan'>
+          <div class="col-sm-8">
+          <option value ='Sudah Masuk'>Sudah Masuk</option>
+          <option value ='Belum Masuk'>Belum Masuk</option>
+          </select>
             </div>
-        </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">

@@ -32,7 +32,7 @@
           <tr>
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->sumber_pendanaan?></td>
-            <td align="center"><?=$row->keterangan?></td>
+            <td align="center"><span class="badge bg-green"><?=$row->keterangan?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');

@@ -36,7 +36,7 @@
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->kode?></td>
             <td align="center"><?=$row->nama_alat?></td>
-            <td align="center"><?=$row->keterangan?></td>
+            <td align="center"><span class="badge bg-green"><?=$row->keterangan?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');
@@ -46,6 +46,7 @@
                 # code...
               }
               ?>
+              <a href="<?= site_url('master/nama_alat/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus nama alat ?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
 

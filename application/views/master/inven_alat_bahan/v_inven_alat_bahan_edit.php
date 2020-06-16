@@ -24,17 +24,18 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tanggal','value'=>$row->tanggal,'class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'tanggal','type'=>'date','value'=>$row->tanggal,'class'=>'form-control'));?>
             <?php echo form_error('tanggal');?>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Keterangan</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'keterangan','value'=>$row->keterangan,'class'=>'form-control'));?>
-            <?php echo form_error('keterangan');?>
+            <select name ='keterangan'>
+          <div class="col-sm-8">
+          <option value ='Ada dan Kondisi Baik'>Ada dan Kondisi Baik</option>
+          <option value ='Rusak'>Rusak</option>
+          </select>
             </div>
-        </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">

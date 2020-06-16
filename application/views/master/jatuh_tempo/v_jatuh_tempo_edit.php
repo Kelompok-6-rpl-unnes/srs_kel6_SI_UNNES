@@ -54,9 +54,8 @@
             <label class="col-sm-4 control-label">Status Peminjaman</label>
             <select name ='status_peminjaman'>
           <div class="col-sm-8">
-          <option value ='Peminjaman Disetujui'>Peminjaman Disetujui</option>
-          <option value ='Peminjaman Belum Disetujui'>Peminjaman Belum Disetujui</option>
-          <option value ='Sedang Menunggu Antrian'>Sedang Menunggu Antrian</option>
+          <option value ='Sedang Dipinjam'>Sedang Dipinjam</option>
+          <option value ='Sudah Dikembalikan'>Sudah Dikembalikan</option>
           </select>
         </div>
         <div class="form-group">

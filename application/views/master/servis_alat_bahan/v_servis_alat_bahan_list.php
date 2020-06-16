@@ -25,7 +25,6 @@
                 <th>Nama Alat atau Bahan</th>
                 <th>Tanggal Servis</th>
                 <th>status</th>
-                <th>Keterangan</th>
                 <th>Act</th>
               </thead>
               <tbody>
@@ -37,8 +36,7 @@
             <td align="center"><?=$row->kode?></td>
             <td align="center"><?=$row->alat_bahan?></td>
             <td align="center"><?=$row->tgl_servis?></td>
-            <td align="center"><?=$row->status?></td>
-            <td align="center"><?=$row->keterangan?></td>
+            <td align="center"><span class="badge bg-green"><?=$row->status?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');

@@ -38,12 +38,14 @@
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Keterangan</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'keterangan','class'=>'form-control'));?>
-            <?php echo form_error('keterangan');?>
+            <select name ='keterangan'>
+          <div class="col-sm-8">
+          <option value ='Menunggu Persetujuan'>Menunggu Persetujuan</option>
+          <option value ='Permintaan Peminjaman Diterima'>Permintaan Peminjaman Diterima</option>
+          <option value ='Sudah Dikembalikan'>Sudah Dikembalikan</option>
+          </select>
             <span id="check_data"></span>
             </div>
-        </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Save</label>
             <div class="col-sm-8 tutup">
