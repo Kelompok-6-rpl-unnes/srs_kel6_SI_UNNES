@@ -41,7 +41,7 @@
             <select name ='keterangan'>
           <div class="col-sm-8">
           <option value ='Menunggu Persetujuan'>Menunggu Persetujuan</option>
-          <option value ='Permintaan Peminjaman Diterima'>Permintaan Peminjaman Diterima</option>
+          <option value ='Peminjaman Disetujui'>Peminjaman Disetujui</option>
           <option value ='Sudah Dikembalikan'>Sudah Dikembalikan</option>
           </select>
             </div>
