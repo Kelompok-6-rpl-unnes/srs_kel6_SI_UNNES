@@ -648,4 +648,9 @@ class Fungsi
         
 
     }
+    public function itung_lab()
+    {
+        $this->CI->load->model('kelola/m_kelola_lab');
+        return $this->CI->m_kelola_lab->getData()->num_rows();
+    }
 }

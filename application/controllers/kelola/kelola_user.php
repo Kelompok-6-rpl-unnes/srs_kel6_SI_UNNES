@@ -571,7 +571,6 @@ class kelola_user extends CI_Controller {
 
 		}
 	}
-
 	public function delete($id)
 	{
 		$this->fungsi->check_previleges('kelola_user');
