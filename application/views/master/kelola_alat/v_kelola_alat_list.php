@@ -57,16 +57,19 @@
               ?>
               
               <a href="<?= site_url('master/kelola_alat/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus Kelola Alat ?')"><i class="fa fa-trash"></i></a>
-            </td>
+              </td>
           </tr>
-      
           <?php endforeach;?>
         </tbody>
-            </table>
-          </div>
+        </table>
+        <a href="" class="btn btn-warning" style="margin-bottom;
+        10px; "title="view/utily/v_dashboard.php"></i>Back</a>
         </div>
+       </div>
       </div>
-    </div>
+      </div>
+      </div>
+      </div>
 <script type="text/javascript">
   $(document).ready(function() {
     var table = $('#tableku').DataTable( {

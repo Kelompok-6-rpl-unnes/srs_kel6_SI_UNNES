@@ -95,10 +95,13 @@
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Kondisi</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'kondisi','class'=>'form-control','value'=>$row->kondisi));?>
-            <?php echo form_error('kode');?>
-            </div>
+            <select name ='kondisi'>
+          <div class="col-sm-8">
+          <option value ='Bagus'>Bagus</option>
+          <option value ='Rusak'>Rusak</option>
+          <option value ='Perlu Diservice'>Perlu Diservice</option>
+          </select>
+          </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>

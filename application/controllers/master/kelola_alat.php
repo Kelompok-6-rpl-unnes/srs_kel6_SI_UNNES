@@ -114,9 +114,9 @@ class kelola_alat extends CI_Controller {
 	}
 	public function delete()
 	{
-		$id = $this->uri->segment(5);
+		$id = $this->uri->segment(4);
 		$this->m_kelola_alat->deleteData($id);
-		redirect('');
+		redirect('admin');
 	}
 }
 /* End of file kelola_alat.php */
