@@ -20,6 +20,7 @@
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
               <th>No</th>
+                <th>Kategori No Induk</th>
                 <th>No Induk</th>
                 <th>Nama</th>
                 <th>Keterangan</th>
@@ -31,9 +32,10 @@
           foreach($kategori_no_induk->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
+            <td align="center"><?=$row->kategori_no_induk?></td>
             <td align="center"><?=$row->no_induk?></td>
             <td align="center"><?=$row->nama?></td>
-            <td align="center"><?=$row->keterangan?></td>
+            <td align="center"><span class="badge bg-green"><?=$row->keterangan?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');

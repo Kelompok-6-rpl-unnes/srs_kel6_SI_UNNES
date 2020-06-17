@@ -50,7 +50,7 @@
             <td align="center"><?=$row->kor_lab?></td>
             <td align="center"><?=$row->laboran?></td>
             <td align="center"><?=$row->foto_lab?></td>
-            <td align="center"><?=$row->status?></td>
+            <td align="center"><span class="badge bg-green"><?=$row->status?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');

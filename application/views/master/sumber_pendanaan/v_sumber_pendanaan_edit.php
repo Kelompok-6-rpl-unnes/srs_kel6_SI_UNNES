@@ -14,6 +14,13 @@
             <?php echo form_error('sumber_pendanaan');?>
             </div>
             </div>
+            <div class="form-group">
+            <label class="col-sm-4 control-label">Sejumlah</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'sejumlah','value'=>$row->sejumlah,'class'=>'form-control'));?>
+            <?php echo form_error('sejumlah');?>
+            </div>
+            </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Keterangan</label>
             <select name ='keterangan'>

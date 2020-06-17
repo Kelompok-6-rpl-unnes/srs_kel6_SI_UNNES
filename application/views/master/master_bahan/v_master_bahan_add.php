@@ -38,13 +38,14 @@
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Status</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'status','class'=>'form-control'));?>
-            <?php echo form_error('status');?>
+            <select name ='status'>
+          <div class="col-sm-8">
+          <option value ='Stok Menipis'>Stok Menipis</option>
+          <option value ='Masih Ada Stok'>Masih Ada Stok</option>
+          <option value ='Stok Habis'>Stok Habis</option>
+          </select>
             <span id="check_data"></span>
             </div>
-        </div>
-
         <div class="form-group">
             <label class="col-sm-4 control-label">Save</label>
             <div class="col-sm-8 tutup">

@@ -49,7 +49,7 @@
                         <td align="center"><?=$row->nama_lokasi_penyimpanan?></td>
                         <td align="center"><?=$row->kondisi?></td>
                         <td align="center"><?=$row->tipe?></td>
-                        <td align="center"><?=$row->status?></td>
+                        <td align="center"><span class="badge bg-green"><?=$row->status?></td>
                         <td align="center">
                         <?php
                         $sesi = from_session('level');

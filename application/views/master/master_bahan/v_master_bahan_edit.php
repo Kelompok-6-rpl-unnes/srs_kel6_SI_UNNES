@@ -30,19 +30,20 @@
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Satuan</label>
-            <div class="col-sm-8">
+        <div class="col-sm-8">
             <?php echo form_input(array('name'=>'nama_satuan','value'=>$row->nama_satuan,'class'=>'form-control'));?>
             <?php echo form_error('nama_satuan');?>
             </div>
-        </div>
+            </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Status</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'status','value'=>$row->status,'class'=>'form-control'));?>
-            <?php echo form_error('status');?>
+            <select name ='status'>
+          <div class="col-sm-8">
+          <option value ='Stok Menipis'>Stok Menipis</option>
+          <option value ='Masih Ada Stok'>Masih Ada Stok</option>
+          <option value ='Stok Habis'>Stok Habis</option>
+          </select>
             </div>
-        </div>
-
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">

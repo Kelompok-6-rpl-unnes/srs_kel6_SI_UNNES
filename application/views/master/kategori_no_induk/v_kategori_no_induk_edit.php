@@ -10,6 +10,18 @@
             <label class="col-sm-4 control-label">Kategori No Induk</label>
             <div class="col-sm-8">
             <?php echo form_hidden('id',$row->id); ?>
+            <select name ='kategori_no_induk'>
+          <option value ='Mahasiswa'>Mahasiswa</option>
+          <option value ='Dosen'>Dosen</option>
+          <option value ='Birokrat'>Birokrat</option>
+          <option value ='Pegawai Instansi'>Pegawai Instansi</option>
+          </select>
+            <span id="check_data"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">No Induk</label>
+            <div class="col-sm-8">
             <?php echo form_input(array('name'=>'no_induk','value'=>$row->no_induk,'class'=>'form-control'));?>
             <?php echo form_error('no_induk');?>
             <span id="check_data"></span>
@@ -26,11 +38,12 @@
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Keterangan</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'keterangan','value'=>$row->keterangan,'class'=>'form-control'));?>
-            <?php echo form_error('keterangan');?>
+            <select name ='keterangan'>
+          <div class="col-sm-8">
+          <option value ='Aktif'>Aktif</option>
+          <option value ='Tidak Aktif'>Tidak Aktif</option>
+          </select>
             </div>
-        </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Save</label>
             <div class="col-sm-8 tutup">

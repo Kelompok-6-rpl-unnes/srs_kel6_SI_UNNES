@@ -38,7 +38,7 @@
             <td align="center"><?=$row->jenis_bahan?></td>
             <td align="center"><?=$row->nama_bahan?></td>
             <td align="center"><?=$row->nama_satuan?></td>
-            <td align="center"><?=$row->status?></td>
+            <td align="center"><span class="badge bg-green"><?=$row->status?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');

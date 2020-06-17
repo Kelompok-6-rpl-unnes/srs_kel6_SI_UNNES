@@ -44,7 +44,7 @@
             <td align="center"><?=$row->sumber_pendanaan?></td>
             <td align="center"><?=$row->pajak?></td>
             <td align="center"><?=$row->status_pengajuan?></td>
-            <td align="center"><?=$row->status?></td>
+            <td align="center"><span class="badge bg-green"><?=$row->status?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');
