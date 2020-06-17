@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2020 at 10:59 AM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 5.6.36
+-- Generation Time: Jun 17, 2020 at 04:30 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -30,6 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `master_no_induk` (
   `id` int(11) NOT NULL,
+  `kategori_no_induk` varchar(100) NOT NULL,
   `no_induk` varchar(255) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `keterangan` varchar(255) NOT NULL
@@ -39,8 +38,8 @@ CREATE TABLE `master_no_induk` (
 -- Dumping data for table `master_no_induk`
 --
 
-INSERT INTO `master_no_induk` (`id`, `no_induk`, `nama`, `keterangan`) VALUES
-(1, '4612418019', 'Diva Kratya', '-');
+INSERT INTO `master_no_induk` (`id`, `kategori_no_induk`, `no_induk`, `nama`, `keterangan`) VALUES
+(1, 'Mahasiswa', '4612418019', 'Diva Kratya', 'Aktif');
 
 --
 -- Indexes for dumped tables
@@ -60,9 +59,7 @@ ALTER TABLE `master_no_induk`
 -- AUTO_INCREMENT for table `master_no_induk`
 --
 ALTER TABLE `master_no_induk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
