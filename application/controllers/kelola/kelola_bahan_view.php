@@ -17,7 +17,7 @@ class kelola_bahan_view extends CI_Controller {
 
 	public function index()
 	{
-		$this->fungsi->check_previleges('kelola_bahan');
+		//$this->fungsi->check_previleges('kelola_bahan');
 		$data['kelola_bahan'] = $this->m_kelola_bahan->getData();
 		$this->load->view('kelola/kelola_bahan/kelola_bahan_view',$data);
     }

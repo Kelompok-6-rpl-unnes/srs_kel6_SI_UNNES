@@ -653,4 +653,23 @@ class Fungsi
         $this->CI->load->model('kelola/m_kelola_lab');
         return $this->CI->m_kelola_lab->getData()->num_rows();
     }
+
+    public function itung_alat()
+    {
+        $this->CI->load->model('master/m_kelola_alat');
+        return $this->CI->m_kelola_alat->join()->num_rows();
+    }
+
+    public function itung_bahan()
+    {
+        $this->CI->load->model('kelola/m_kelola_bahan');
+        return $this->CI->m_kelola_bahan->getData()->num_rows();
+    }
+    
+    public function itung_user()
+    {
+        $this->CI->load->model('cms/m_user');
+        return $this->CI->m_user->getList()->num_rows();
+    }
+    
 }

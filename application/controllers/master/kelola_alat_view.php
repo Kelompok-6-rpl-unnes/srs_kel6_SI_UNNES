@@ -17,7 +17,7 @@ class kelola_alat_view extends CI_Controller {
 
 	public function index()
 	{
-		$this->fungsi->check_previleges('kelola_alat');
+		//$this->fungsi->check_previleges('kelola_alat');
 		$data['kelola_alat'] = $this->m_kelola_alat->join();
 		$this->load->view('master/kelola_alat/v_kelola_alat_view',$data);
     }

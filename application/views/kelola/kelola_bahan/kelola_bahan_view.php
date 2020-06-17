@@ -43,7 +43,7 @@
                         <td align="center"><?=$row->tipe?></td>
                         <td align="center"><?=$row->status?></td>
                         <td align="center">
-                        
+
                         </td>
                     </tr>
                 <?php endforeach;?>
@@ -59,4 +59,4 @@
       "ordering": false,
     } );
   });
-</script>
+</script> 

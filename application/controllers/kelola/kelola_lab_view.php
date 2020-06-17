@@ -11,7 +11,7 @@ class kelola_lab_view extends CI_Controller {
     }
     public function index()
 	{
-		$this->fungsi->check_previleges('kelola_lab');
+		//$this->fungsi->check_previleges('kelola_lab');
 		$data['kelola_lab'] = $this->m_kelola_lab->getData();
 		$this->load->view('kelola/kelola_lab/v_kelola_lab_view',$data);
     }

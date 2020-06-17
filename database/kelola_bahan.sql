@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Jun 2020 pada 03.43
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 5.6.40
+-- Generation Time: Jun 10, 2020 at 01:11 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 5.6.36
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,51 +25,48 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kelola_bahan`
+-- Table structure for table `kelola_bahan`
 --
 
 CREATE TABLE `kelola_bahan` (
-  `id` int(20) NOT NULL,
-  `nama_bahan` varchar(15) NOT NULL,
-  `nama_satuan` varchar(10) NOT NULL,
-  `kategori` varchar(10) NOT NULL,
-  `merk` varchar(10) NOT NULL,
-  `seri` varchar(10) NOT NULL,
-  `pendanaan` varchar(15) NOT NULL,
-  `stok` int(5) NOT NULL,
-  `lokasi` varchar(20) NOT NULL,
-  `kondisi` varchar(15) NOT NULL,
-  `tipe` varchar(10) NOT NULL,
-  `status` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL,
+  `nama_bahan` varchar(150) NOT NULL,
+  `satuan_bahan` varchar(100) NOT NULL,
+  `kategori` varchar(150) NOT NULL,
+  `stock` int(11) NOT NULL,
+  `stock_minimal` int(11) NOT NULL,
+  `lokasi` varchar(100) NOT NULL,
+  `pendanaan` varchar(100) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `kondisi` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `kelola_bahan`
+-- Dumping data for table `kelola_bahan`
 --
 
-INSERT INTO `kelola_bahan` (`id`, `nama_bahan`, `nama_satuan`, `kategori`, `merk`, `seri`, `pendanaan`, `stok`, `lokasi`, `kondisi`, `tipe`, `status`) VALUES
-(1, '7', '3', '3', 'Pds', '12', '102', 12, '2', 'Baik', 'AS', 'Ada');
+INSERT INTO `kelola_bahan` (`id`, `nama_bahan`, `satuan_bahan`, `kategori`, `stock`, `stock_minimal`, `lokasi`, `pendanaan`, `harga`, `kondisi`) VALUES
+(1, '1', '1', '1', 2, 3, '4', '3', 10000, 'baik');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `kelola_bahan`
+-- Indexes for table `kelola_bahan`
 --
 ALTER TABLE `kelola_bahan`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `nama_bahan` (`nama_bahan`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `kelola_bahan`
+-- AUTO_INCREMENT for table `kelola_bahan`
 --
 ALTER TABLE `kelola_bahan`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
