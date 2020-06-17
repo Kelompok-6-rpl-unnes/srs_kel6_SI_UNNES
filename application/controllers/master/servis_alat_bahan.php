@@ -1,7 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+<<<<<<< HEAD
+class Servis_alat_bahan extends CI_Controller {
+=======
 class servis_alat_bahan extends CI_Controller {
+>>>>>>> 88123d084dd4b61a211d4c69fe3a29c5abf9a001
 
 	public function __construct()
 	{
@@ -35,11 +39,19 @@ class servis_alat_bahan extends CI_Controller {
 	public function show_addForm()
 	{
 		$this->fungsi->check_previleges('servis_alat_bahan');
+<<<<<<< HEAD
+		$this->load->library('servis_alat_bahan');
+		$config = array(
+				array(
+					'field'	=> 'servis_alat_bahan',
+					'label' => 'servis_alat_bahan',
+=======
 		$this->load->library('form_validation');
 		$config = array(
 				array(
 					'field'	=> 'alat_bahan',
 					'label' => 'alat_bahan',
+>>>>>>> 88123d084dd4b61a211d4c69fe3a29c5abf9a001
 					'rules' => 'required'
 				)
 			);
@@ -53,11 +65,19 @@ class servis_alat_bahan extends CI_Controller {
 		}
 		else
 		{
+<<<<<<< HEAD
+			$datapost = get_post_data(array('kode','alat_bahan','tgl_servis','status','keterangan','id_status'));
+			$this->m_servis_->insertData($datapost);
+			$this->fungsi->run_js('load_silent("master/servis_alat_bahan","#content")');
+			$this->fungsi->message_box("Data Master Servis Inventaris Alat dan Bahan sukses disimpan...","success");
+			$this->fungsi->catat($datapost,"Menambah Master servis_alat_bahan dengan data sbb:",true);
+=======
 			$datapost = get_post_data(array('kode','alat_bahan','tgl_servis','status','keterangan'));
 			$this->m_servis->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/servis_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Master Servis Inventaris Alat dan Bahan sukses disimpan...","success");
 			$this->fungsi->catat($datapost,"Menambah Master servis alat bahan dengan data sbb:",true);
+>>>>>>> 88123d084dd4b61a211d4c69fe3a29c5abf9a001
 		}
 	}
 
@@ -72,8 +92,13 @@ class servis_alat_bahan extends CI_Controller {
 					'rules' => ''
 				),
 				array(
+<<<<<<< HEAD
+					'field'	=> 'servis_alat_bahan',
+					'label' => 'servis_alat_bahan',
+=======
 					'field'	=> 'alat_bahan',
 					'label' => 'alat_bahan',
+>>>>>>> 88123d084dd4b61a211d4c69fe3a29c5abf9a001
 					'rules' => 'required'
 				)
 			);
@@ -82,7 +107,11 @@ class servis_alat_bahan extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
+<<<<<<< HEAD
+			$data['edit'] = $this->db->get_where('servis_alat_bahan',array('id'=>$id));
+=======
 			$data['edit'] = $this->db->get_where('master_servis',array('id'=>$id));
+>>>>>>> 88123d084dd4b61a211d4c69fe3a29c5abf9a001
 			$data['status']='';
 			$this->load->view('master/servis_alat_bahan/v_servis_alat_bahan_edit',$data);
 		}
@@ -92,6 +121,12 @@ class servis_alat_bahan extends CI_Controller {
 			$this->m_servis->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/servis_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Servis Inventaris Alat dan Bahan sukses diperbarui...","success");
+<<<<<<< HEAD
+			$this->fungsi->catat($datapost,"Mengedit Master servis_alat_bahan dengan data sbb:",true);
+		}
+	}
+}
+=======
 			$this->fungsi->catat($datapost,"Mengedit Master servis alat bahan dengan data sbb:",true);
 		}
 	}
@@ -102,3 +137,4 @@ class servis_alat_bahan extends CI_Controller {
     redirect('admin');
     }
 }
+>>>>>>> 88123d084dd4b61a211d4c69fe3a29c5abf9a001

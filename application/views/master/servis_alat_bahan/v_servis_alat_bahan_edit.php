@@ -24,16 +24,34 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal Servis</label>
             <div class="col-sm-8">
+<<<<<<< HEAD
+            <?php echo form_input(array('name'=>'tgl_servis','value'=>$row->tgl_servis,'class'=>'form-control'));?>
+=======
             <?php echo form_input(array('name'=>'tgl_servis','type'=>'date','value'=>$row->tgl_servis,'class'=>'form-control'));?>
+>>>>>>> 88123d084dd4b61a211d4c69fe3a29c5abf9a001
             <?php echo form_error('tgl_servis');?>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Status</label>
+<<<<<<< HEAD
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'status','value'=>$row->status,'class'=>'form-control'));?>
+            <?php echo form_error('status');?>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Keterangan</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'keterangan','value'=>$row->keterangan,'class'=>'form-control'));?>
+            <?php echo form_error('keterangan');?>
+            </div>
+=======
             <select name ='status'>
           <div class="col-sm-8">
           <option value ='Sudah Diservice'>Sudah Diservice</option>
           </select>
+>>>>>>> 88123d084dd4b61a211d4c69fe3a29c5abf9a001
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>

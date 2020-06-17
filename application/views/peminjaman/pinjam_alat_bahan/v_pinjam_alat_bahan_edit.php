@@ -15,12 +15,20 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Peminjaman Alat dan Bahan</label>
+            <label class="col-sm-4 control-label">Nama Alat dan Bahan</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'pesan_alat_bahan','value'=>$row->pesan_alat_bahan,'class'=>'form-control'));?>
-            <?php echo form_error('pesan_alat_bahan');?>
+            <?php echo form_input(array('name'=>'pinjam_alat_bahan','value'=>$row->pinjam_alat_bahan,'class'=>'form-control'));?>
+            <?php echo form_error('pinjam_alat_bahan');?>
             </div>
         </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Kategori Peminjaman</label>
+            <select name ='kategori_pinjam'>
+          <div class="col-sm-8">
+          <option value ='alat'>Alat</option>
+          <option value ='bahan'>Bahan</option>
+          </select>
+            </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Jumlah</label>
             <div class="col-sm-8">
@@ -29,10 +37,18 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Tanggal</label>
+            <label class="col-sm-4 control-label">Tanggal Peminjaman</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'tanggal','type'=>'date','class'=>'form-control'));?>
             <?php echo form_error('tanggal');?>
+            <span id="check_data"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Tanggal Kembali</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'tgl_kembali','type'=>'date','class'=>'form-control'));?>
+            <?php echo form_error('tgl_kembali');?>
             <span id="check_data"></span>
             </div>
         </div>
@@ -45,6 +61,13 @@
           <option value ='Sudah Dikembalikan'>Sudah Dikembalikan</option>
           </select>
             </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Keperluan</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'keperluan','value'=>$row->keperluan,'class'=>'form-control'));?>
+            <?php echo form_error('keperluan');?>
+            </div>
+        </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">

@@ -38,8 +38,8 @@ class Pinjam_alat_bahan extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'pesan_alat_bahan',
-					'label' => 'pesan_alat_bahan',
+					'field'	=> 'pinjam_alat_bahan',
+					'label' => 'pinjam_alat_bahan',
 					'rules' => 'required'
 				)
 			);
@@ -53,7 +53,7 @@ class Pinjam_alat_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('kode','pesan_alat_bahan','jumlah','tanggal','keterangan'));
+			$datapost = get_post_data(array('kode','pinjam_alat_bahan','kategori_pinjam','jumlah','tanggal','tgl_kembali','keterangan','keperluan'));
 			$this->m_pinjam_alat_bahan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("peminjaman/pinjam_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Peminjaman Alat dan Bahan sukses disimpan...","success");
@@ -72,8 +72,8 @@ class Pinjam_alat_bahan extends CI_Controller {
 					'rules' => ''
 				),
 				array(
-					'field'	=> 'pesan_alat_bahan',
-					'label' => 'pesan_alat_bahan',
+					'field'	=> 'pinjam_alat_bahan',
+					'label' => 'pinjam_alat_bahan',
 					'rules' => 'required'
 				)
 			);
@@ -88,7 +88,7 @@ class Pinjam_alat_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','kode','pesan_alat_bahan','jumlah','tanggal','keterangan'));
+			$datapost = get_post_data(array('id','kode','pinjam_alat_bahan','kategori_pinjam','jumlah','tanggal','tgl_kembali','keterangan','keperluan'));
 			$this->m_pinjam_alat_bahan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("peminjaman/pinjam_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Peminjaman Alat dan Bahan sukses diperbarui...","success");
