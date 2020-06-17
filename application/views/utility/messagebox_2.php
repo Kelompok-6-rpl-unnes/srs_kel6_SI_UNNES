@@ -13,7 +13,7 @@
 		<script type='text/javascript'>
 		    $(function(){
 		        var text = "<?php echo $text;?>";
-		        $.growl.error({ title: 'Gagal', message: text});
+		        $.growl.error({ title: 'Sukses', message: text});
 		        // Messenger().post(text);
 		    });
 		</script>

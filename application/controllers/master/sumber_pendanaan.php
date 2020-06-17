@@ -51,7 +51,7 @@ class sumber_pendanaan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','sumber_pendanaan','keterangan',));
+			$datapost = get_post_data(array('id','sumber_pendanaan','sejumlah','keterangan',));
 			$this->m_sumber_pendanaan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/sumber_pendanaan","#content")');
 			$this->fungsi->message_box("Data Master Sumber Pendanaan sukses disimpan...","success");
@@ -85,7 +85,7 @@ class sumber_pendanaan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','sumber_pendanaan','keterangan'));
+			$datapost = get_post_data(array('id','sumber_pendanaan','sejumlah','keterangan'));
 			$this->m_sumber_pendanaan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/sumber_pendanaan","#content")');
 			$this->fungsi->message_box("Data Master Sumber Pendanaan sukses disimpan...","success");

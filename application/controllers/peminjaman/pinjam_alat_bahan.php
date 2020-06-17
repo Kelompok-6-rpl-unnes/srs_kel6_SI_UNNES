@@ -53,7 +53,7 @@ class Pinjam_alat_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('kode','pesan_alat_bahan','jumlah','tanggal','keterangan'));
+			$datapost = get_post_data(array('kode','pinjam_alat_bahan','jumlah','tanggal','keterangan'));
 			$this->m_pinjam_alat_bahan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("peminjaman/pinjam_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Peminjaman Alat dan Bahan sukses disimpan...","success");
@@ -88,13 +88,20 @@ class Pinjam_alat_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','kode','pesan_alat_bahan','jumlah','tanggal','keterangan'));
+			$datapost = get_post_data(array('id','kode','pinjam_alat_bahan','jumlah','tanggal','keterangan'));
 			$this->m_pinjam_alat_bahan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("peminjaman/pinjam_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Peminjaman Alat dan Bahan sukses diperbarui...","success");
 			$this->fungsi->catat($datapost,"Mengedit Peminjaman Alat Dan Bahan dengan data sbb:",true);
 		}
 	}
-}
+	public function delete()
+	{
+		$id = $this->uri->segment(4);
+		$this->m_pinjam_alat_bahan->deleteData($id);
+		redirect('admin');
+	}
+	}
+
 /* End of file pinjam_alat_bahan.php */
 /* Location: ./application/controllers/peminjaman/pinjam_alat_bahan.php */

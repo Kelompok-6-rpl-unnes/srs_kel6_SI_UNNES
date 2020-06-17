@@ -38,8 +38,8 @@ class kategori_no_induk extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'no_induk',
-					'label' => 'no_induk',
+					'field'	=> 'kategori_no_induk',
+					'label' => 'kategori_no_induk',
 					'rules' => 'required'
 				)
 			);
@@ -53,7 +53,7 @@ class kategori_no_induk extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','no_induk','nama','keterangan'));
+			$datapost = get_post_data(array('id','kategori_no_induk','no_induk','nama','keterangan'));
 			$this->m_kategori_no_induk->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/kategori_no_induk","#content")');
 			$this->fungsi->message_box("Data Master No Induk sukses disimpan...","success");
@@ -71,8 +71,8 @@ class kategori_no_induk extends CI_Controller {
 					'rules' => ''
 				),
 				array(
-					'field'	=> 'no_induk',
-					'label' => 'no_induk',
+					'field'	=> 'kategori_no_induk',
+					'label' => 'kategori_no_induk',
 					'rules' => 'required'
 				)
 			);
@@ -87,7 +87,7 @@ class kategori_no_induk extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','no_induk','nama','keterangan'));
+			$datapost = get_post_data(array('id','kategori_no_induk','no_induk','nama','keterangan'));
 			$this->m_kategori_no_induk->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/kategori_no_induk","#content")');
 			$this->fungsi->message_box("Data Master No Induk sukses diperbarui...","success");

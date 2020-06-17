@@ -44,10 +44,10 @@
             </div>
         </div>
         <div class="form-group">
-        <label class="col-sm-4 control-label">Tanggal Pinjam</label>
-        <div class="col-sm-8">
-        <?php echo form_input(array('name'=>'tanggal_pinjam','class'=>'form-control'));?>
-        <?php echo form_error('tanggal_pinjam');?>
+            <label class="col-sm-4 control-label">Tanggal Pinjam</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'tanggal_pinjam','type'=>'date','class'=>'form-control'));?>
+            <?php echo form_error('tanggal_pinjam');?>
             <span id="check_data"></span>
             </div>
         </div>
@@ -55,9 +55,8 @@
             <label class="col-sm-4 control-label">Status Peminjaman</label>
             <select name ='status_peminjaman'>
           <div class="col-sm-8">
-          <option value ='Peminjaman Disetujui'>Peminjaman Disetujui</option>
-          <option value ='Peminjaman Belum Disetujui'>Peminjaman Belum Disetujui</option>
-          <option value ='Sedang Menunggu Antrian'>Sedang Menunggu Antrian</option>
+          <option value ='Sedang Dipinjam'>Sedang Dipinjam</option>
+          <option value ='Sudah Dikembalikan'>Sudah Dikembalikan</option>
           </select>
         </div>
         <div class="form-group">

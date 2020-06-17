@@ -63,7 +63,7 @@ function parse_avatar($avatar,$nama,$size,$class='')
 {
     if($avatar == '')
     {
-        $pic = 'nophoto.png';
+        $pic = 'avatar2.png';
         return img(array('src'=>'assets/img/'.$pic,'alt'=>$nama,'title'=>$nama,'width'=>$size,'height'=>$size,'class'=>$class));
     }
     else

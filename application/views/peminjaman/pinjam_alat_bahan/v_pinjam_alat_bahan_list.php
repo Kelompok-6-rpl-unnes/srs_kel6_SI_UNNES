@@ -38,7 +38,7 @@
             <td align="center"><?=$row->pinjam_alat_bahan?></td>
             <td align="center"><?=$row->jumlah?></td>
             <td align="center"><?=$row->tanggal?></td>
-            <td align="center"><?=$row->keterangan?></td>
+            <td align="center"><span class="badge bg-green"><?=$row->keterangan?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');
@@ -48,6 +48,7 @@
                 # code...
               }
               ?>
+               <a href="<?= site_url('peminjaman/pinjam_alat_bahan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus peminjaman ?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
         <?php endforeach;?>

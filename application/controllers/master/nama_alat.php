@@ -95,6 +95,12 @@ class Nama_alat extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit Master nama_alat dengan data sbb:",true);
 		}
 	}
+		public function delete()
+	{
+		$id = $this->uri->segment(4);
+		$this->m_nama_alat->deleteData($id);
+		redirect('admin');
+	}
 }
 
 /* End of file nama_alat.php */

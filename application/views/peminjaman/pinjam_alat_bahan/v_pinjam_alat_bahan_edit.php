@@ -17,7 +17,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Peminjaman Alat dan Bahan</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'pesan_alat_bahan','value'=>$row->pinjam_alat_bahan,'class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'pinjam_alat_bahan','value'=>$row->pinjam_alat_bahan,'class'=>'form-control'));?>
             <?php echo form_error('pinjam_alat_bahan');?>
             </div>
         </div>
@@ -31,17 +31,20 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tanggal','value'=>$row->tanggal,'class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'tanggal','type'=>'date','class'=>'form-control'));?>
             <?php echo form_error('tanggal');?>
+            <span id="check_data"></span>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Keterangan</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'keterangan','value'=>$row->keterangan,'class'=>'form-control'));?>
-            <?php echo form_error('keterangan');?>
+            <select name ='keterangan'>
+          <div class="col-sm-8">
+          <option value ='Menunggu Persetujuan'>Menunggu Persetujuan</option>
+          <option value ='Peminjaman Disetujui'>Peminjaman Disetujui</option>
+          <option value ='Sudah Dikembalikan'>Sudah Dikembalikan</option>
+          </select>
             </div>
-        </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">

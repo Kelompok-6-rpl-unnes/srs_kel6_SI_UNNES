@@ -23,20 +23,20 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tanggal','class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'tanggal','type'=>'date','class'=>'form-control'));?>
             <?php echo form_error('tanggal');?>
             <span id="check_data"></span>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Keterangan</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'keterangan','class'=>'form-control'));?>
-            <?php echo form_error('keterangan');?>
+            <select name ='keterangan'>
+          <div class="col-sm-8">
+          <option value ='Ada dan Kondisi Baik'>Ada dan Kondisi Baik</option>
+          <option value ='Rusak'>Rusak</option>
+          </select>
             <span id="check_data"></span>
             </div>
-        </div>
-
         <div class="form-group">
             <label class="col-sm-4 control-label">Save</label>
             <div class="col-sm-8 tutup">

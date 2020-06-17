@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?php echo $this->config->item('title')?></title>
-    <link rel="shortcut icon" href="<?php echo base_url('assets/img/title.png'); ?>" />
+    <link rel="shortcut icon" href="<?php echo base_url('assets/img/hai.png'); ?>" />
     <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.5 -->
@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="<?=base_url();?>assets/plugins/pace/pace.min.css">
   <link href="<?=base_url();?>assets/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
   </head>
-  <body class="hold-transition skin-purple-light sidebar-mini fixed">
+  <body class="hold-transition skin-green-light sidebar-mini fixed">
   <style type="text/css">
   .not-active {
    pointer-events: none;
