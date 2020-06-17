@@ -59,8 +59,7 @@
                             # code...
                         }
                         ?>
-                        
-                        <?php echo button('load_silent("kelola/kelola_bahan/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');?>
+                         <a href="<?= site_url('kelola/kelola_bahan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus Data Kelola Bahan?')"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                 <?php endforeach;?>

@@ -25,4 +25,9 @@ class M_kelola_bahan extends CI_Model
         $this->db->where('id',$data['id']);
         $this->db->update('kelola_bahan',$data);
     }
+    public function deleteData($id='')
+	{
+		$this->db->where('id', $id);
+        $this->db->delete('kelola_bahan');
+	}
 }
