@@ -22,10 +22,13 @@
               <thead>
                 <th>No</th>
                 <th>Kode</th>
-                <th>Peminjaman Alat dan Bahan</th>
+                <th>Nama Alat dan Bahan</th>
+                <th>Kategori Peminjaman</th>
                 <th>Jumlah</th>
-                <th>Tanggal</th>
+                <th>Tanggal Peminjaman</th>
+                <th>Tanggal Pengembalian</th>
                 <th>Keterangan</th>
+                <th>Keperluan</th>
                 <th>Act</th>
               </thead>
               <tbody>
@@ -36,9 +39,12 @@
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->kode?></td>
             <td align="center"><?=$row->pinjam_alat_bahan?></td>
+            <td align="center"><span class="badge bg-green"><?=$row->kategori_pinjam?></td>
             <td align="center"><?=$row->jumlah?></td>
             <td align="center"><?=$row->tanggal?></td>
+            <td align="center"><?=$row->tgl_kembali?></td>
             <td align="center"><span class="badge bg-green"><?=$row->keterangan?></td>
+            <td align="center"><?=$row->keperluan?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');
