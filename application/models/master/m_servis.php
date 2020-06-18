@@ -30,9 +30,4 @@ class M_servis extends CI_Model {
 		$this->db->where('id', $id);
         $this->db->delete('master_servis');
 	}
-
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 88123d084dd4b61a211d4c69fe3a29c5abf9a001
