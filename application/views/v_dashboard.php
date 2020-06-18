@@ -36,4 +36,5 @@
           </div>
           <!-- /.widget-user -->
         </div>
-		
+    <?php require_once 
+    ('application/views/timeline.php')?>
