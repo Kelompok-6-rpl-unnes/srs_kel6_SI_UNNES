@@ -44,7 +44,7 @@
             <td align="center"><?=$row->stok_minimal?></td>
             <td align="center"><?=$row->nama_lokasi_penyimpanan?></td>
             <td align="center"><?=$row->sumber_pendanaan?></td>
-            <td align="center"><?=$row->harga?></td>
+            <td align="left">Rp. <?=number_format($row->harga)?></td>
             <td align="center"><span class="badge bg-green"><?=$row->kondisi?></td>
             <td align="center">
             <?php

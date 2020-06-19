@@ -48,9 +48,9 @@
             <td align="center"><?=$row->merk?></td>
             <td align="center"><?=$row->satuan_grosir?></td>
             <td align="center"><?=$row->jumlah_grosir?></td>
-            <td align="center"><?=$row->harga_grosir?></td>
+            <td align="left">Rp. <?=number_format($row->harga_grosir)?></td>
             <td align="center"><?=$row->estimasi_jumlah?></td>
-            <td align="center"><?=$row->harga_dasar?></td>
+            <td align="left">Rp. <?=number_format($row->harga_dasar)?></td>
             <td align="center"><?=$row->nama_lab?></td>
             <td align="center"><span class="badge bg-green"><?=$row->status?></td>
             <td align="center">
