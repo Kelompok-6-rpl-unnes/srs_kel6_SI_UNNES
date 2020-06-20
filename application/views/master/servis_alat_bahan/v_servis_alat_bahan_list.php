@@ -39,9 +39,9 @@
             <td align="center"><?=$row->kode?></td>
             <td align="center"><?=$row->alat_bahan?></td>
             <td align="center"><?=$row->tgl_servis?></td>
+            <td align="center"><?=$row->tgl_selesai?></td>
             <td align="center"><?=$row->status?></td>
             <td align="center"><?=$row->keterangan?></td>
-            <td align="center"><?=$row->tgl_selesai?></td>
             <td align="center"><span class="badge bg-green"><?=$row->keterangan?></td>
             <td align="center"><span class="badge bg-green"><?=$row->status?></td>
             <td align="center">
