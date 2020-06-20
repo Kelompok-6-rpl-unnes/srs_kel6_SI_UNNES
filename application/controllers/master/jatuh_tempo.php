@@ -53,7 +53,7 @@ class jatuh_tempo extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id_peminjaman','nama_peminjam','nomor_induk','status_user','kategori_peminjaman','tanggal_pinjam','status_peminjaman','status'));
+			$datapost = get_post_data(array('id_peminjaman','nama_peminjam','nomor_induk','status_user','kategori_peminjaman','tanggal_pinjam','tanggal_kembali','status_peminjaman','status'));
 			$this->m_jatuh_tempo->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/jatuh_tempo","#content")');
 			$this->fungsi->message_box("Data Jatuh Tempo sukses disimpan...","success");
@@ -88,7 +88,7 @@ class jatuh_tempo extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','id_peminjaman','nama_peminjam','nomor_induk','status_user','kategori_peminjaman','tanggal_pinjam','status_peminjaman','status'));
+			$datapost = get_post_data(array('id','id_peminjaman','nama_peminjam','nomor_induk','status_user','kategori_peminjaman','tanggal_pinjam','tanggal_kembali','status_peminjaman','status'));
 			$this->m_jatuh_tempo->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/jatuh_tempo","#content")');
 			$this->fungsi->message_box("Data Jatuh Tempo sukses diperbarui...","success");

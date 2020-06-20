@@ -5,7 +5,7 @@
         
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">Periode Pengajuan Alat</label>
+            <label class="col-sm-4 control-label">ID</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'pengajuan_alat','class'=>'form-control'));?>
             <?php echo form_error('pengajuan_alat');?>

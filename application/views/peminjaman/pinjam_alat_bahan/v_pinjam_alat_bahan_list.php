@@ -26,7 +26,7 @@
                 <th>Kategori Peminjaman</th>
                 <th>Jumlah</th>
                 <th>Tanggal Peminjaman</th>
-                <th>Tanggal Pengembalian</th>
+                <th>Tanggal Harus Dikembalikan</th>
                 <th>Keterangan</th>
                 <th>Keperluan</th>
                 <th>Act</th>

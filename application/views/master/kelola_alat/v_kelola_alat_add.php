@@ -107,7 +107,6 @@
           <option value ='Perlu Diservice'>Perlu Diservice</option>
           </select>
           </div>
-        </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">

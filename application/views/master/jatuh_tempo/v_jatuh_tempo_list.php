@@ -27,6 +27,7 @@
                 <th>Status User</th>
                 <th>Kategori Peminjaman</th>
                 <th>Tanggal Pinjam</th>
+                <th>Tanggal Kembali</th>
                 <th>Status Peminjaman</th>
                 <th>Status</th>
                 <th>Act</th>
@@ -43,6 +44,7 @@
             <td align="center"><?=$row->status_user?></td>
             <td align="center"><?=$row->kategori_peminjaman?></td>
             <td align="center"><?=$row->tanggal_pinjam?></td>
+            <td align="center"><?=$row->tanggal_kembali?></td>
             <td align="center"><?=$row->status_peminjaman?></td>
             <td align="center"><span class="badge bg-green"><?=$row->status?></td>
             <td align="center">

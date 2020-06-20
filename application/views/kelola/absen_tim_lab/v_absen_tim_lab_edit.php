@@ -57,7 +57,6 @@
           <option value ='Laboran'>Laboran</option>
           <option value ='Koordinator Laboratorium'>Koordinator Laboratorium</option>
           </select>
-          </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>

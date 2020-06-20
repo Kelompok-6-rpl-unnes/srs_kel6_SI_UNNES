@@ -15,7 +15,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Sejumlah</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'sejumlah','value'=>$row->sejumlah,'class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'sejumlah','class'=>'form-control'));?>
             <?php echo form_error('sejumlah');?>
             <span id="check_data"></span>
             </div>

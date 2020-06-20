@@ -66,7 +66,7 @@
             <?php echo form_error('status');?>
             <span id="check_data"></span>
             </div>
-        </div>
+            </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">

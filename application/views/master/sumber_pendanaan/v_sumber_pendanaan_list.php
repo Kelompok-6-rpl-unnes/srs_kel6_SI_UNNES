@@ -33,7 +33,7 @@
           <tr>
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->sumber_pendanaan?></td>
-            <td align="left">Rp. <?=number_format($row->sejumlah)?></td>
+            <td align="left"> Rp. <?=number_format($row->sejumlah)?></td>
             <td align="center"><span class="badge bg-green"><?=$row->keterangan?></td>
             <td align="center">
             <?php
