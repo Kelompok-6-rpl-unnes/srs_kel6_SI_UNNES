@@ -48,7 +48,7 @@
               ?>
               <?php
             $sesi = from_session('level');
-            if ($sesi == '1' || $sesi == '4' $sesi == '4') {
+            if ($sesi == '1' || $sesi == '4' || $sesi == '4') {
              echo button('load_silent("master/nama_alat/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
             } else {
               # code...

@@ -51,7 +51,7 @@ class pengajuan_alat extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','pengajuan_alat','no_induk','nama_alat','seri','merk','status_grosir','jumlah_grosir','harga_grosir','estimasi_jumlah','harga_dasar','nama_lab','status'));
+			$datapost = get_post_data(array('id','pengajuan_alat','no_induk','nama_alat','seri','merk','satuan_grosir','jumlah_grosir','harga_grosir','estimasi_jumlah','harga_dasar','nama_lab','status'));
 			$this->m_pengajuan_alat->insertData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_alat","#content")');
 			$this->fungsi->message_box("Data Periode Pengajuan sukses disimpan...","success");
@@ -85,7 +85,7 @@ class pengajuan_alat extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','pengajuan_alat','no_induk','nama_alat','seri','merk','status_grosir','jumlah_grosir','harga_grosir','estimasi_jumlah','harga_dasar','nama_lab','status'));
+			$datapost = get_post_data(array('id','pengajuan_alat','no_induk','nama_alat','seri','merk','satuan_grosir','jumlah_grosir','harga_grosir','estimasi_jumlah','harga_dasar','nama_lab','status'));
 			$this->m_pengajuan_alat->updateData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_alat","#content")');
 			$this->fungsi->message_box("Data Pengajuan Alat sukses diperbarui...","success");

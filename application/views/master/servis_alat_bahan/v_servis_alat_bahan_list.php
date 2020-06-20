@@ -47,7 +47,7 @@
             <td align="center">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '4' $sesi == '6') {
+              if ($sesi == '1' || $sesi == '4' || $sesi == '6') {
                 echo button('load_silent("master/servis_alat_bahan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
               } else {
                 # code...
@@ -55,7 +55,7 @@
               ?>
                 <?php
             $sesi = from_session('level');
-            if ($sesi == '1' || $sesi == '4' $sesi == '6') {
+            if ($sesi == '1' || $sesi == '4' || $sesi == '6') {
              echo button('load_silent("master/servis_alat_bahan/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
             } else {
               # code...
