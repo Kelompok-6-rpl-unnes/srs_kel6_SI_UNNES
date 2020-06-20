@@ -57,14 +57,7 @@
             <span id="check_data"></span>
             </div>
         </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Seri</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'seri','class'=>'form-control', 'value'=>$row->seri));?>
-            <?php echo form_error('kode');?>
-            <span id="check_data"></span>
-            </div>
-        </div>
+       
         <div class="form-group">
             <label class="col-sm-4 control-label">Pendanaan</label>
             <div class="col-sm-8">
@@ -105,14 +98,6 @@
             <label class="col-sm-4 control-label">Kondisi</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'kondisi','class'=>'form-control', 'value'=>$row->kondisi));?>
-            <?php echo form_error('kode');?>
-            <span id="check_data"></span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Tipe</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tipe','class'=>'form-control', 'value'=>$row->tipe));?>
             <?php echo form_error('kode');?>
             <span id="check_data"></span>
             </div>

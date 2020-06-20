@@ -50,13 +50,7 @@
             <?php echo form_error('merk');?>
             </div>
         </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Seri</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'seri','class'=>'form-control'));?>
-            <?php echo form_error('seri');?>
-            </div>
-        </div>
+       
         <div class="form-group">
             <label class="col-sm-4 control-label">Pendanaan</label>
             <div class="col-sm-8">
@@ -97,13 +91,7 @@
             <?php echo form_error('kondisi');?>
             </div>
         </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Tipe</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tipe','class'=>'form-control'));?>
-            <?php echo form_error('tipe');?>
-            </div>
-        </div>
+       
         <div class="form-group">
             <label class="col-sm-4 control-label">Status</label>
             <div class="col-sm-8">
