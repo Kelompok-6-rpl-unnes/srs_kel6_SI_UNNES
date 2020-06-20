@@ -26,6 +26,7 @@
                 <th>Bulan</th>
                 <th>Tahun</th>
                 <th>Sumber Pendanaan</th>
+                <th>Tanggal Pendanaan Turun</th>
                 <th>Pajak</th>
                 <th>Status Pengajuan</th>
                 <th>Status</th>
@@ -42,6 +43,7 @@
             <td align="center"><?=$row->bulan?></td>
             <td align="center"><?=$row->tahun?></td>
             <td align="center"><?=$row->sumber_pendanaan?></td>
+            <td align="center"><?=$row->tanggal_pendanaan?></td>
             <td align="center"><?=$row->pajak?></td>
             <td align="center"><?=$row->status_pengajuan?></td>
             <td align="center"><span class="badge bg-green"><?=$row->status?></td>

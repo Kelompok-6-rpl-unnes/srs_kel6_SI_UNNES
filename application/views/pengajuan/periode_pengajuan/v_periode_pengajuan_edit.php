@@ -44,6 +44,15 @@
             </div>
         </div>
         <div class="form-group">
+            <label class="col-sm-4 control-label">Tanggal Pendanaan Turun</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'tanggal_pendanaan','type'=>'date','class'=>'form-control'));?>
+            <?php echo form_error('tanggal_pendanaan');?>
+            <span id="check_data"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
             <label class="col-sm-4 control-label">Pajak</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'pajak','value'=>$row->pajak,'class'=>'form-control'));?>
@@ -57,6 +66,7 @@
           <option value ='Sudah Disetujui'>Sudah Disetujui</option>
           <option value ='Belum Disetujui'>Belum Disetujui</option>
           <option value ='Sudah Terdistribusikan'>Sudah Terdistribusikan</option>
+          <option value ='Pendanaan Sudah Turun'>Pendanaan Sudah Turun</option>
           </select>
         </div>
         <div class="form-group">
