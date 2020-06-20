@@ -24,12 +24,10 @@
                     <th>Nama Satuan</th>
                     <th>Kategori</th>
                     <th>Merk</th>
-                    <th>Seri</th>
                     <th>Pendanaan</th>
                     <th>Stok</th>
                     <th>Lokasi</th>
                     <th>Kondisi</th>
-                    <th>Tipe</th>
                     <th>Status</th>
                     <th>Act</th>
                 </thead>
@@ -43,12 +41,10 @@
                         <td align="center"><?=$row->Nama?></td>
                         <td align="center"><?=$row->Kategori?></td>
                         <td align="center"><?=$row->merk?></td>
-                        <td align="center"><?=$row->seri?></td>
                         <td align="center"><?=$row->sumber_pendanaan?></td>
                         <td align="center"><?=$row->stok?></td>
                         <td align="center"><?=$row->nama_lokasi_penyimpanan?></td>
                         <td align="center"><?=$row->kondisi?></td>
-                        <td align="center"><?=$row->tipe?></td>
                         <td align="center"><span class="badge bg-green"><?=$row->status?></td>
                         <td align="center">
                         <?php

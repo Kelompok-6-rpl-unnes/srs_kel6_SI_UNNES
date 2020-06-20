@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Bulan Mei 2020 pada 09.57
+-- Waktu pembuatan: 20 Jun 2020 pada 08.34
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 5.6.40
 
@@ -35,6 +35,7 @@ CREATE TABLE `periode_pengajuan` (
   `bulan` varchar(10) NOT NULL,
   `tahun` int(10) NOT NULL,
   `sumber_pendanaan` varchar(20) NOT NULL,
+  `tanggal_pendanaan` date NOT NULL,
   `pajak` int(10) NOT NULL,
   `status_pengajuan` varchar(20) NOT NULL,
   `status` varchar(10) NOT NULL
@@ -44,10 +45,10 @@ CREATE TABLE `periode_pengajuan` (
 -- Dumping data untuk tabel `periode_pengajuan`
 --
 
-INSERT INTO `periode_pengajuan` (`id`, `periode_pengajuan`, `semester`, `bulan`, `tahun`, `sumber_pendanaan`, `pajak`, `status_pengajuan`, `status`) VALUES
-(1, 'Pa13241', 'Ganjil', 'Februari', 2020, 'Universitas', 1, 'Sudah Disetujui', 'Ada'),
-(2, 'Pb1435', 'Genap', 'Maret', 2020, 'Fakultas', 3, 'Sudah Didistribusika', 'Ada'),
-(4, 'pa1234676', 'Antara', 'Desember', 2020, 'Jurusan', 2, 'Tidak Disetujui', 'Ada');
+INSERT INTO `periode_pengajuan` (`id`, `periode_pengajuan`, `semester`, `bulan`, `tahun`, `sumber_pendanaan`, `tanggal_pendanaan`, `pajak`, `status_pengajuan`, `status`) VALUES
+(1, 'Pa13241', 'Ganjil', 'Februari', 2020, 'Universitas', '2020-06-29', 1, 'Sudah Disetujui', 'Ada'),
+(2, 'Pb1435', 'Genap', 'Maret', 2020, 'Fakultas', '2020-06-23', 3, 'Sudah Disetujui', 'Ada'),
+(5, 'pa1234676', 'Antara', 'Desember', 2020, 'Jurusan', '2020-06-20', 3, 'Pendanaan Sudah Turu', 'Ada');
 
 --
 -- Indexes for dumped tables
@@ -67,7 +68,7 @@ ALTER TABLE `periode_pengajuan`
 -- AUTO_INCREMENT untuk tabel `periode_pengajuan`
 --
 ALTER TABLE `periode_pengajuan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
