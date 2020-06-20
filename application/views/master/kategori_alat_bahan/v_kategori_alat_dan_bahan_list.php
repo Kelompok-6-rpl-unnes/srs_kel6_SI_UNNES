@@ -9,8 +9,8 @@
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("master/kategori_alat_bahan/form/base","#modal")','Add New kategori Alat','btn btn-success');
+              if ($sesi == '1' || $sesi == '2') {
+                echo button('load_silent("master/Kategori_Alat_Bahan/form/base","#modal")','Add New kategori Alat','btn btn-success');
               } else {
                 # code...
               }
@@ -36,15 +36,21 @@
             <td align="center">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+              if ($sesi == '1' || $sesi == '2') {
                 echo button('load_silent("master/Kategori_Alat_Bahan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
  
               } else {
                 # code...
               }
               ?>
-              <a href="<?= site_url('master/Kategori_Alat_Bahan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus Kategori Alat dan Bahan ?')"><i class="fa fa-trash"></i></a>
-
+                <?php
+            $sesi = from_session('level');
+            if ($sesi == '1' || $sesi == '2') {
+             echo button('load_silent("master/Kategori_Alat_Bahan/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
+            } else {
+              # code...
+            }
+             ?>   
             </td>
           </tr>
 

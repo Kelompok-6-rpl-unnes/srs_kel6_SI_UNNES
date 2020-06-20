@@ -24,11 +24,6 @@
                 <div class="box-body">
                 <div class="row">
                 <div class="col-sm-12 border-right">
-                <?php require_once ('application/views/dasbord.php') ?>
-                </div>
-                </div>
-                </div>
-                
                 <!-- /.col -->
               </div>
               <!-- /.row -->
@@ -36,5 +31,4 @@
           </div>
           <!-- /.widget-user -->
         </div>
-    <?php require_once 
-    ('application/views/timeline.php')?>
+        <?php require_once ('application/views/dasbord.php') ?>

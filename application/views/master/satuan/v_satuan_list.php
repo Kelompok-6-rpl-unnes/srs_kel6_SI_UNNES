@@ -9,7 +9,7 @@
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+              if ($sesi == '1' || $sesi == '2' || $sesi == '4') {
                 echo button('load_silent("master/satuan/form/base","#modal")','Add New Satuan','btn btn-success');
               } else {
                 # code...
@@ -36,14 +36,20 @@
             <td align="center">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+              if ($sesi == '1' || $sesi == '2' || $sesi == '4') {
                 echo button('load_silent("master/satuan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
             } else {
                 # code...
               }
               ?>
-              <a href="<?= site_url('master/satuan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus satuan?')"><i class="fa fa-trash"></i></a>
-              
+             <?php
+              $sesi = from_session('level');
+              if ($sesi == '1' || $sesi == '2'|| $sesi == '4') {
+                echo button('load_silent("master/satuan/delete/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
+              } else {
+                # code...
+              }
+              ?>
             </td>
           </tr>
         <?php endforeach;?>

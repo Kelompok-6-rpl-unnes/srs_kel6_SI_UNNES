@@ -8,7 +8,7 @@
             <div class="box-tools pull-right">
             <?php
                 $sesi = from_session('level');
-                if ($sesi == '1' || $sesi == '4') {
+                if ($sesi == '1' || $sesi == '2'|| $sesi == '4') {
                 echo button('load_silent("kelola/kelola_bahan/form/base","#modal")','Tambah kelola bahan','btn btn-success');
                 } else {
                 # code...
@@ -53,13 +53,20 @@
                         <td align="center">
                         <?php
                         $sesi = from_session('level');
-                        if ($sesi == '1' || $sesi == '4') {
+                        if ($sesi == '1' || $sesi == '2' || $sesi == '4') {
                             echo button('load_silent("kelola/kelola_bahan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
                         } else {
                             # code...
                         }
                         ?>
-                         <a href="<?= site_url('kelola/kelola_bahan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus Data Kelola Bahan?')"><i class="fa fa-trash"></i></a>
+                        <?php
+                         $sesi = from_session('level');
+                        if ($sesi == '1' || $sesi == '2' || $sesi == '4') {
+                        echo button('load_silent("kelola/kelola_bahan/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
+                         } else {
+                         # code...
+                         }
+                        ?>   
                         </td>
                     </tr>
                 <?php endforeach;?>

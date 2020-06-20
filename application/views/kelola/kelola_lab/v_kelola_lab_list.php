@@ -16,7 +16,7 @@
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+              if ($sesi == '1' || $sesi == '3') {
                 echo button('load_silent("kelola/kelola_lab/form/base","#modal")','Add New Kelola Laboratorium','btn btn-success');
               } else {
                 # code...
@@ -54,13 +54,20 @@
             <td align="center">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("kelola_lab/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
+              if ($sesi == '1' || $sesi == '3') {
+                echo button('load_silent("kelola/kelola_lab/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
               } else {
                 # code...
               }
               ?>
-              <a href="<?= site_url('kelola/kelola_lab/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus Kelola Laboratorium')"><i class="fa fa-trash"></i></a>
+           <?php
+            $sesi = from_session('level');
+            if ($sesi == '1' || $sesi == '3') {
+             echo button('load_silent("kelola/kelola_lab/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
+            } else {
+              # code...
+            }
+             ?>   
             </td>
           </tr>
           <?php endforeach;?>

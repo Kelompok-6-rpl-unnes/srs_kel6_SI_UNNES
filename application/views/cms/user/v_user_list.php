@@ -8,7 +8,14 @@
             <h3 class="box-title">Kelola User</h3>
 
             <div class="box-tools pull-right">
-              <?php echo button('load_silent("kelola/kelola_user/show_addForm/","#content")','Add New User','btn btn-success','data-toggle="tooltip" title="Add New User"');?> 
+            <?php
+              $sesi = from_session('level');
+              if ($sesi == '1' || $sesi == '2') {
+                echo button ('load_silent("kelola/kelola_user/show_addForm/","#content")','Add New User','btn btn-success','data-toggle="tooltip" title="Add New User"');#
+              } else {
+                # code...
+              }
+                ?> 
             </div>
           </div>
 
@@ -43,8 +50,22 @@
           <td align="center"><?=$row->status?></td>
           <td align="center"><?=$row->no_hp?></td>
           <td align="center">
-          <?php echo button('load_silent("kelola/kelola_user/show_editForm/'.$row->id.'","#content")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');?>
-            <?php echo button('load_silent("kelola/kelola_user/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');?>   
+          <?php 
+           $sesi = from_session('level');
+           if ($sesi == '1' || $sesi == '2') {
+          echo button('load_silent("kelola/kelola_user/show_editForm/'.$row->id.'","#content")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
+        } else {
+          # code...
+        }
+          ?>
+            <?php
+            $sesi = from_session('level');
+            if ($sesi == '1' || $sesi == '2') {
+             echo button('load_silent("kelola/kelola_user/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
+            } else {
+              # code...
+            }
+             ?>   
             </td>
 					</tr>
 

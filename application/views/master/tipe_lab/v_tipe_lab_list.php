@@ -9,7 +9,7 @@
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+              if ($sesi == '1' || $sesi == '2') {
                 echo button('load_silent("master/tipe_lab/form/base","#modal")','Add Tipe Lab','btn btn-success');
               } else {
                 # code...
@@ -38,14 +38,21 @@
             <td align="center">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+              if ($sesi == '1' || $sesi == '2') {
                 echo button('load_silent("master/tipe_lab/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
              
               } else {
                 # code...
               }
               ?>
-              <a href="<?= site_url('master/tipe_lab/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus tipe lab ?')"><i class="fa fa-trash"></i></a>
+               <?php
+              $sesi = from_session('level');
+              if ($sesi == '1' || $sesi == '2') {
+                echo button('load_silent("master/tipe_lab/delete/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
+              } else {
+                # code...
+              }
+              ?>
             </td>
           </tr>
 

@@ -17,7 +17,7 @@
  <span class="time"><i class="fa fa-clock-o"></i> 15:18 </span>
  <h3 class="timeline-header"><a href="#">My Bubu</a> sent you an email</h3> 
  <div class="timeline-body">
- Bby, i love you i will sent my love
+ Bby, i love you i will sent my love for you
  </div>
  <div class="timeline-footer">
 <a class="btn btn-primary btn-xs">Read more</a> 
@@ -43,7 +43,7 @@
 <h3 class="timeline-header no-border"><a href="#">Justin Bieber</a> commented on your post</h3>
 <div class="timeline-body">
 Hi bby ! 
-long time no see! i wish, i will meet again and buy some cookies..
+long time no see! i wish, i will meet you again and buy some cookies..
 </div>
 <div class="timeline-footer">
 <a class="btn btn-warning btn-flat btn-xs"> View comment </a>
