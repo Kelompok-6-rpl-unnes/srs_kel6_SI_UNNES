@@ -51,7 +51,7 @@ class periode_pengajuan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','periode_pengajuan','semester','bulan','tahun','sumber_pendanaan','pajak','status_pengajuan','status'));
+			$datapost = get_post_data(array('id','periode_pengajuan','semester','bulan','tahun','sumber_pendanaan','tanggal_pendanaan','pajak','status_pengajuan','status'));
 			$this->m_periode_pengajuan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/periode_pengajuan","#content")');
 			$this->fungsi->message_box("Data Periode Pengajuan sukses disimpan...","success");
@@ -85,7 +85,7 @@ class periode_pengajuan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','periode_pengajuan','semester','bulan','tahun','sumber_pendanaan','pajak','status_pengajuan','status'));
+			$datapost = get_post_data(array('id','periode_pengajuan','semester','bulan','tahun','sumber_pendanaan','tanggal_pendanaan','pajak','status_pengajuan','status'));
 			$this->m_periode_pengajuan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/periode_pengajuan","#content")');
 			$this->fungsi->message_box("Data Periode Pengajuan sukses diperbarui...","success");
