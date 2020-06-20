@@ -54,8 +54,15 @@
               } else {
                 # code...
               }
-              ?>
-              <a href="<?= site_url('pengajuan/periode_pengajuan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus periode pengajuan ?')"><i class="fa fa-trash"></i></a>
+               ?>
+              <?php
+            $sesi = from_session('level');
+            if ($sesi == '1' || $sesi == '2') {
+             echo button('load_silent("pengajuan/periode/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
+            } else {
+              # code...
+            }
+            ?>
 
             </td>
           </tr>

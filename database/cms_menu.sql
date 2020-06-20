@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Bulan Mei 2020 pada 09.53
+-- Waktu pembuatan: 20 Jun 2020 pada 06.57
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 5.6.40
 
@@ -53,20 +53,31 @@ INSERT INTO `cms_menu` (`id`, `alias`, `nama`, `deskripsi`, `allowed_level`, `ur
 (14, 'sumber_pendanaan', 'Sumber Pendanaan', '-', '+1+3+', 'master/sumber_pendanaan', 1, 1, 2),
 (104, 'status_pak', 'Home', 'Status Pengajuan PAK', '+1+2+3+4+5+6+', 'pak/dashboard/status_pak', 1, 1, 101),
 (11, 'nama_bahan', 'Nama Bahan', '-', '+1+2+4+', 'master/master_bahan', 1, 2, 2),
-(134, 'nama_alat', 'Nama Alat', '-', '+1+', 'master/nama_alat', 1, 7, 2),
+(134, 'nama_alat', 'Nama Alat', '-', '+1+2+4+', 'master/nama_alat', 1, 7, 2),
 (133, 'mata_kuliah', 'Mata Kuliah', '-', '+1+2+', 'master/mata_kuliah', 1, 6, 2),
 (132, 'tipe_lab', 'Tipe Lab', '-', '+1+2+', 'master/tipe_lab', 1, 5, 2),
 (131, 'kategori_alat_bahan', 'Kategori Alat dan Bahan', '-', '+1+2+', 'master/kategori_alat_bahan', 1, 4, 2),
 (129, 'gambar_depan', 'Gambar Depan', '-', '+1+2+', 'master/gambar_depan', 1, 2, 2),
 (128, 'instansi', 'Instansi', '-', '+1+2+', 'master/instansi', 1, 1, 2),
-(5, 'user', 'user', '-', '+1+2+', 'Kelola/user', 1, 1, 4),
+(5, 'kelola_user', 'Kelola User', '-', '+1+2+', 'Kelola/kelola_user', 1, 1, 4),
 (8, 'lokasi_penyimpanan', 'Lokasi Penyimpanan', '-', '+1+4+', 'kelola/lokasi_penyimpanan', 1, 4, 4),
-(10, 'absen', 'absen', '-', '+1+2+3+4+5+6+7+8+', 'kelola/absen', 1, 2, 4),
-(12, 'master_inven', 'inventaris', '-', '+1+2+4+', 'master/inven', 1, 7, 4),
+(20, 'pengajuan_bahan', 'Pengajuan Bahan', '-', '+1+2+4+5+7+', 'pengajuan/pengajuan_bahan', 1, 3, 5),
+(12, 'inven_alat_bahan', 'inventaris ', '-', '+1+4+6+', 'master/inven_alat_bahan', 1, 7, 4),
 (13, 'kategori_no_induk', 'Kategori No Induk', '-', '+1+2+', 'master/kategori_no_induk', 1, 3, 2),
-(15, 'pesan_alat_bahan', 'pesan alat bahan', '-', '+1+2+4+5+6+7+8+', 'master/pesan_alat_bahan', 1, 1, 6),
+(24, 'kelola_bahan', 'Kelola Bahan', '-', '+1+4+', 'kelola/kelola_bahan', 1, 6, 4),
 (16, 'periode_pengajuan', 'Periode Pengajuan', '-', '+1+3+', 'pengajuan/periode_pengajuan', 1, 1, 5),
-(17, 'satuan', 'Satuan', '-', '+1+2+', 'master/satuan', 1, 8, 2);
+(17, 'satuan', 'Satuan', '-', '+1+2+4+', 'master/satuan', 1, 8, 2),
+(138, 'kelola_alat', 'Kelola Alat', '-', '+1+4+', 'master/kelola_alat', 1, 5, 4),
+(137, 'jatuh_tempo', 'Jatuh Tempo', '-', '+1+4+5+6+7+8+', 'master/jatuh_tempo', 1, 2, 6),
+(140, 'cek_status', 'Cek Status', '-', '+1+4+5+6+7+8+', 'peminjaman/cek_status', 1, 3, 6),
+(18, 'pengajuan_alat', 'Pengajuan Alat', '-', '+1+2+4+5+7', 'pengajuan/pengajuan_alat', 1, 2, 5),
+(19, 'absen_mahasiswa', 'Absen Mahasiswa', '-', '+1+2+7+8+', 'kelola/absen_mahasiswa', 1, 3, 4),
+(22, 'absen_tim_lab', 'Absen Tim Laboratorium', '-', '+1+2+3+4+5+6+', 'kelola/absen_tim_lab', 1, 1, 4),
+(21, 'absen_dosen', 'Absen Dosen', '-', '+1+2+7+', 'kelola/absen_dosen', 1, 2, 4),
+(142, 'pinjam_alat_bahan', 'Peminjaman Alat dan Bahan', 'membuat peminjaman alat/bahan', '+1+4+5+6+7+8+', 'peminjaman/pinjam_alat_bahan', 1, 1, 6),
+(25, 'servis_alat_bahan', 'Inventaris Alat dan Bahan Yang Sudah Di Servis', 'Melihat Inventaris alat atau bahan yang sudah di servis', '+1+4+6+', 'master/servis_alat_bahan', 1, 14, 4),
+(26, 'kelola_lab', 'Kelola Laboratorium', '-', '+1+4+', 'kelola/kelola_lab', 1, 9, 4),
+(143, 'validasi', 'Validasi Absen Mahasiswa', '-', '+1+8+', 'kelola/validasi', 1, 9, 4);
 
 --
 -- Indexes for dumped tables
@@ -86,7 +97,7 @@ ALTER TABLE `cms_menu`
 -- AUTO_INCREMENT untuk tabel `cms_menu`
 --
 ALTER TABLE `cms_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
