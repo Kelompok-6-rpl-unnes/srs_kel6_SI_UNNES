@@ -45,7 +45,7 @@
              <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2'|| $sesi == '4') {
-                echo button('load_silent("master/satuan/delete/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("master/satuan/delete/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
                 # code...
               }

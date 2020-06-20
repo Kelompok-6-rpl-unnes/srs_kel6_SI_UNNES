@@ -25,8 +25,8 @@
             <label class="col-sm-4 control-label">Kategori Peminjaman</label>
             <select name ='kategori_pinjam'>
           <div class="col-sm-8">
-          <option value ='alat'>Alat</option>
-          <option value ='bahan'>Bahan</option>
+          <option value ='Alat'>Alat</option>
+          <option value ='Bahan'>Bahan</option>
           </select>
             </div>
         <div class="form-group">

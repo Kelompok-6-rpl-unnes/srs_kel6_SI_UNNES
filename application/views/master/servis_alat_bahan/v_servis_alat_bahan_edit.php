@@ -24,35 +24,33 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal Servis</label>
             <div class="col-sm-8">
-<<<<<<< HEAD
-            <?php echo form_input(array('name'=>'tgl_servis','value'=>$row->tgl_servis,'class'=>'form-control'));?>
-=======
             <?php echo form_input(array('name'=>'tgl_servis','type'=>'date','value'=>$row->tgl_servis,'class'=>'form-control'));?>
->>>>>>> 88123d084dd4b61a211d4c69fe3a29c5abf9a001
             <?php echo form_error('tgl_servis');?>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Status</label>
-<<<<<<< HEAD
+            <label class="col-sm-4 control-label">Tanggal Selesai Servis</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'status','value'=>$row->status,'class'=>'form-control'));?>
-            <?php echo form_error('status');?>
+            <?php echo form_input(array('name'=>'tgl_selesai','type'=>'date','value'=>$row->tgl_selesai,'class'=>'form-control'));?>
+            <?php echo form_error('tgl_selesai');?>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Keterangan</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'keterangan','value'=>$row->keterangan,'class'=>'form-control'));?>
-            <?php echo form_error('keterangan');?>
-            </div>
-=======
+            <label class="col-sm-4 control-label">Keterangan Kondisi</label>
+            <select name ='keterangan'>
+          <div class="col-sm-8">
+          <option value ='Baik'>Baik</option>
+          <option value ='Kerusakan Sedang'>Kerusakan Sedang</option>
+          <option value ='Kerusakan Parah'>Kerusakan Parah</option>
+          </select>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Status</label>
             <select name ='status'>
           <div class="col-sm-8">
+          <option value ='Belum Diservice'>Belum Diservice</option>
           <option value ='Sudah Diservice'>Sudah Diservice</option>
           </select>
->>>>>>> 88123d084dd4b61a211d4c69fe3a29c5abf9a001
-        </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">

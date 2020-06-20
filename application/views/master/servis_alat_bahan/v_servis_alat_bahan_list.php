@@ -4,7 +4,7 @@
       <div class="col-lg-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Inventaris Alat dan Bahan Yang Sudah Di Servis</h3>
+            <h3 class="box-title">Inventaris Alat dan Bahan Yang Perlu Di Servis</h3>
 
             <div class="box-tools pull-right">
             <?php
@@ -24,6 +24,8 @@
                 <th>Kode</th>
                 <th>Nama Alat atau Bahan</th>
                 <th>Tanggal Servis</th>
+                <th>Tanggal Selesai Service</th>
+                <th>keterangan</th>
                 <th>status</th>
                 <th>Keterangan</th>
                 <th>Act</th>
@@ -39,6 +41,8 @@
             <td align="center"><?=$row->tgl_servis?></td>
             <td align="center"><?=$row->status?></td>
             <td align="center"><?=$row->keterangan?></td>
+            <td align="center"><?=$row->tgl_selesai?></td>
+            <td align="center"><span class="badge bg-green"><?=$row->keterangan?></td>
             <td align="center"><span class="badge bg-green"><?=$row->status?></td>
             <td align="center">
             <?php
@@ -56,7 +60,7 @@
             } else {
               # code...
             }
-             ?>   
+            ?>
             </td>
           </tr>
 
