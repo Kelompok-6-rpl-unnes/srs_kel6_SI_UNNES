@@ -33,7 +33,7 @@
             <td align="center"><?=$row->tipe_lab?></td> 
             <td align="center"><?=$row->kor_lab?></td>
             <td align="center"><?=$row->laboran?></td>
-            <td align="center"><?=$row->foto_lab?></td>
+            <td align="center"><img src="<?php echo base_url().$row->foto_lab; ?>" class="file-preview-image"></td>
             <td align="center"><?=$row->status?></td>
             <td align="center">
             
