@@ -85,22 +85,22 @@ class seri_alat extends CI_Controller {
         }
         else
         {
-            $datapost = get_post_data(array('id','nomor_induk_mahasiswa','nama_lengkap','tanggal','keterangan','jumlah_kehadiran','prodi','mata_kuliah','rombel'));
-            $this->m_absen_mahasiswa->updateData($datapost);
-            $this->fungsi->run_js('load_silent("kelola/absen_mahasiswa","#content")');
-            $this->fungsi->message_box("Data absen mahasiswa sukses diperbarui...","success");
-            $this->fungsi->catat($datapost,"Mengedit absen mahasiswa dengan data sbb:",true);   
+            $datapost = get_post_data(array('id','kategori','merk','seri','gambar','sop_pengoperasian','sop_pemeliharaan','sop_pemeriksaan','sop_kalibrasi','sop_uji_fungsi','stok','stok_minimal','status'));
+            $this->m_seri_alat->updateData($datapost);
+            $this->fungsi->run_js('load_silent("kelola/seri_alat","#content")');
+            $this->fungsi->message_box("Data Seri Alat sukses diperbarui...","success");
+            $this->fungsi->catat($datapost,"Mengedit Seri Alat dengan data sbb:",true);   
         }  
     }
 
     public function delete()
             {
                 $id = $this->uri->segment(4);
-                $this->m_absen_mahasiswa->deleteData($id);
+                $this->m_seri_alat->deleteData($id);
                 redirect('admin');
             }
   
 }
 
-/* End of file absen_mahasiswa.php */
-/* Location: ./application/controllers/kelola/absen_mahasiswa.php */
+/* End of file seri_alat.php */
+/* Location: ./application/controllers/kelola/seri_alat.php */
