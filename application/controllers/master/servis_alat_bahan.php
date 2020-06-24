@@ -53,7 +53,7 @@ class Servis_alat_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('kode','alat_bahan','tgl_servis','status','keterangan'));
+			$datapost = get_post_data(array('id','kode','alat_bahan','tgl_servis','tgl_selesai','keterangan','status'));
 			$this->m_servis->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/servis_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Master Servis Inventaris Alat dan Bahan sukses disimpan...","success");
@@ -88,7 +88,7 @@ class Servis_alat_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','kode','alat_bahan','tgl_servis','status','keterangan'));
+			$datapost = get_post_data(array('id','kode','alat_bahan','tgl_servis','tgl_selesai','keterangan','status'));
 			$this->m_servis->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/servis_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Servis Inventaris Alat dan Bahan sukses diperbarui...","success");
