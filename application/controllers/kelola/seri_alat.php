@@ -13,7 +13,7 @@ class seri_alat extends CI_Controller {
 	{
 		$this->fungsi->check_previleges('seri_alat');
 		$data['seri_alat'] = $this->m_seri_alat->getData();
-		$this->load->view('kelola/aseri_alat/v_seri_alat_list',$data);
+		$this->load->view('kelola/seri_alat/v_seri_alat_list',$data);
 	}
 	public function form($param='')
     {
@@ -50,7 +50,7 @@ class seri_alat extends CI_Controller {
         }
         else
         {
-            $datapost = get_post_data(array('id','kategori','merk','seri','gambar','sop_pengoperasian','sop_pemeliharaan','sop_pemeriksaan',,'sop_kalibrasi','sop_uji_fungsi','stok','stok_minimal','status'));
+            $datapost = get_post_data(array('id','kategori','merk','seri','gambar','sop_pengoperasian','sop_pemeliharaan','sop_pemeriksaan','sop_kalibrasi','sop_uji_fungsi','stok','stok_minimal','status'));
             $this->m_seri_alat->insertData($datapost);
             $this->fungsi->run_js('load_silent("kelola/seri_alat","#content")');
             $this->fungsi->message_box("Data Seri Alat sukses disimpan...","success");
