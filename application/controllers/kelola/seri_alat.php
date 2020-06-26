@@ -13,7 +13,7 @@ class seri_alat extends CI_Controller {
 	{
 		$this->fungsi->check_previleges('seri_alat');
 		$data['seri_alat'] = $this->m_seri_alat->getData();
-		$this->load->view('kelola/aseri_alat/v_seri_alat_list',$data);
+		$this->load->view('kelola/seri_alat/v_seri_alat_list',$data);
 	}
 	public function form($param='')
     {
