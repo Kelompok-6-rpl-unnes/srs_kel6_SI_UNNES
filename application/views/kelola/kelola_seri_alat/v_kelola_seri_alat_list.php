@@ -17,7 +17,7 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '7') {
-                echo button('load_silent("kelola/seri_alat/form/base","#modal")','Add New Seri Alat','btn btn-success');
+                echo button('load_silent("kelola/kelola_seri_alat/form/base","#modal")','Add New Seri Alat','btn btn-success');
               } else {
                 # code...
               }
@@ -46,10 +46,10 @@
               <tbody>
               <?php 
           $i = 1;
-          foreach($seri_alat->result() as $row): ?>
+          foreach($kelola_seri_alat->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
-            <td align="center"><?=$row->katerogi?></td>
+            <td align="center"><?=$row->kategori?></td>
             <td align="center"><?=$row->merk?></td>
             <td align="center"><?=$row->seri?></td> 
             <td align="center"><img src="<?php echo base_url().$row->gambar; ?>" class="file-preview-image"></td>
@@ -66,7 +66,7 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '7') {
-                echo button('load_silent("kelola/seri_alat/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("kelola/kelola_seri_alat/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
               } else {
                 # code...
               }
@@ -74,7 +74,7 @@
               <?php
             $sesi = from_session('level');
             if ($sesi == '1' || $sesi == '2'|| $sesi == '7') {
-             echo button('load_silent("kelola/seri_alat/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
+             echo button('load_silent("kelola/kelola_seri_alat/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
             } else {
               # code...
             }
