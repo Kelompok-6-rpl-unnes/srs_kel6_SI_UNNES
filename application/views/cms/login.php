@@ -31,7 +31,7 @@
         <h4>Login <b><?php echo $this->config->item('project')?></b></h4>
         <?php echo form_open('login',array('name'=>'flogin')); ?>
           <div class="form-group has-feedback">
-            	<input placeholder="Username" type="text" id="username" name="username" value="<?php echo set_value('username'); ?>" class="form-control"  >
+            	<input placeholder="Nomor Induk" type="text" id="username" name="username" value="<?php echo set_value('username'); ?>" class="form-control"  >
 				<?php echo form_error('username', '<span class="error-span">', '</span>'); ?>
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>

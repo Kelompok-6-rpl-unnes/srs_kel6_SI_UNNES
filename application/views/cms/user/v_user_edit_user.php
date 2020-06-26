@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Username</label>
+                <label class="col-sm-2 control-label">Nomor Induk</label>
                 <div class="col-sm-8">
                 <?php echo form_input(array('name'=>'username','id'=>'username','value'=>$row->username,'class'=>'form-control'));?>
                 <?php echo form_error('username');?>
