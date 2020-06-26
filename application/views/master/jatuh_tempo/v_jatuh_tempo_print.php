@@ -56,7 +56,7 @@
       </div>
     </div>
     <div class="cel head-title">
-                <h5>Terima Kasih Meminjam Alat Di Lab</h5>
+                <h5>Jatuh Tempo Meminjam Alat Di Lab</h5>
     </div>
   <div>
 </div>
