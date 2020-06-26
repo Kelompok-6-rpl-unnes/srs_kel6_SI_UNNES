@@ -10,7 +10,7 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '4' || $sesi == '6') {
-                echo button('load_silent("master/servis_alat_bahan/form/base","#modal")','Tambah Data Alat Yang Di Servis','btn btn-success');
+                echo button('load_silent("master/servis_alat_bahan/form/base","#modal")','Tambah Data Alat Yang Perlu Diservis','btn btn-success');
               } else {
                 # code...
               }
@@ -25,9 +25,8 @@
                 <th>Nama Alat atau Bahan</th>
                 <th>Tanggal Servis</th>
                 <th>Tanggal Selesai Service</th>
-                <th>keterangan</th>
-                <th>status</th>
-                <th>Keterangan</th>
+                <th>Keterangan Kondisi</th>
+                <th>Status</th>
                 <th>Act</th>
               </thead>
               <tbody>
@@ -40,8 +39,6 @@
             <td align="center"><?=$row->alat_bahan?></td>
             <td align="center"><?=$row->tgl_servis?></td>
             <td align="center"><?=$row->tgl_selesai?></td>
-            <td align="center"><?=$row->status?></td>
-            <td align="center"><?=$row->keterangan?></td>
             <td align="center"><span class="badge bg-green"><?=$row->keterangan?></td>
             <td align="center"><span class="badge bg-green"><?=$row->status?></td>
             <td align="center">

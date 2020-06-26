@@ -15,9 +15,9 @@
  <i class="fa fa-envelope bg-blue"></i> 
  <div class="timeline-item"> 
  <span class="time"><i class="fa fa-clock-o"></i> 15:18 </span>
- <h3 class="timeline-header"><a href="#">My Bubu</a> sent you an email</h3> 
+ <h3 class="timeline-header"><a href="#">Laboran</a> sent you an email</h3> 
  <div class="timeline-body">
- Bby, i love you i will sent my love for you
+ Pak Kepala Lab tolong ke laboratorium sekarang
  </div>
  <div class="timeline-footer">
 <a class="btn btn-primary btn-xs">Read more</a> 
@@ -31,7 +31,7 @@
 <i class="fa fa-user bg-aqua"></i>
 <div class ="timeline-item"> 
 <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago </span>
-<h3 class="timeline-header no-border"><a href="#"> Nadin Amizah</a> accept you friend request</h3>
+<h3 class="timeline-header no-border"><a href="#"> Kevin Hugo</a> accept you friend request</h3>
 </div>
 <li>
 <!-- END timeline item --> 
@@ -40,10 +40,9 @@
 <i class="fa fa-comments bg-yellow"></i>
 <div class ="timeline-item"> 
 <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago </span>
-<h3 class="timeline-header no-border"><a href="#">Justin Bieber</a> commented on your post</h3>
+<h3 class="timeline-header no-border"><a href="#"> Sucining</a> commented on your post</h3>
 <div class="timeline-body">
-Hi bby ! 
-long time no see! i wish, i will meet you again and buy some cookies..
+Bu Tika jangan lupa menginven data alat dan bahan
 </div>
 <div class="timeline-footer">
 <a class="btn btn-warning btn-flat btn-xs"> View comment </a>
@@ -63,7 +62,7 @@ long time no see! i wish, i will meet you again and buy some cookies..
  <i class="fa fa-camera bg-purple"></i> 
  <div class="timeline-item"> 
  <span class="time"><i class="fa fa-clock-o"></i> 2 hour ago </span>
- <h3 class="timeline-header"><a href="#"> Lee Min Hoo </a>upload new photos</h3> 
+ <h3 class="timeline-header"><a href="#"> Susi </a>upload new photos</h3> 
  <div class="timeline-body">
  <img src="http://placehold.it/150x100" alt="..." class="margin">
  <img src="http://placehold.it/150x100" alt="..." class="margin">
@@ -78,7 +77,7 @@ long time no see! i wish, i will meet you again and buy some cookies..
 <i class="fa fa-video bg-maroon"></i>
 <div class ="timeline-item"> 
 <span class="time"><i class="fa fa-clock-o"></i> 5 hour ago </span>
-<h3 class="timeline-header"><a href="#"> Zayn Malik </a> share a video </h3>
+<h3 class="timeline-header"><a href="#"> Deddy </a> share a video </h3>
 <div class="timeline-body">
 <div class="embed-responsive embed-responsive-16by9">
 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Gfu_kdZ8034" allowfullscreen></iframe>

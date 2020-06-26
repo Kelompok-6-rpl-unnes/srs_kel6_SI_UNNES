@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Servis_alat_bahan extends CI_Controller {
+class servis_alat_bahan extends CI_Controller {
 
 	public function __construct()
 	{
@@ -20,7 +20,7 @@ class Servis_alat_bahan extends CI_Controller {
 	public function form($param='')
 	{
 		$content   = "<div id='divsubcontent'></div>";
-		$header    = "Form Master Inventaris Alat Bahan Yang Sudah Di Servis";
+		$header    = "Form Master Alat Bahan Yang Perlu Diservis";
 		$subheader = "servis_alat_bahan";
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
@@ -56,8 +56,8 @@ class Servis_alat_bahan extends CI_Controller {
 			$datapost = get_post_data(array('id','kode','alat_bahan','tgl_servis','tgl_selesai','keterangan','status'));
 			$this->m_servis->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/servis_alat_bahan","#content")');
-			$this->fungsi->message_box("Data Master Servis Inventaris Alat dan Bahan sukses disimpan...","success");
-			$this->fungsi->catat($datapost,"Menambah Master servis alat bahan dengan data sbb:",true);
+			$this->fungsi->message_box("Data Master Alat dan Bahan Yang Perlu Diservis sukses disimpan...","success");
+			$this->fungsi->catat($datapost,"Menambah Master Alat dan Bahan Yang Perlu Diservis dengan data sbb:",true);
 		}
 	}
 
@@ -91,8 +91,8 @@ class Servis_alat_bahan extends CI_Controller {
 			$datapost = get_post_data(array('id','kode','alat_bahan','tgl_servis','tgl_selesai','keterangan','status'));
 			$this->m_servis->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/servis_alat_bahan","#content")');
-			$this->fungsi->message_box("Data Servis Inventaris Alat dan Bahan sukses diperbarui...","success");
-			$this->fungsi->catat($datapost,"Mengedit Master servis alat bahan dengan data sbb:",true);
+			$this->fungsi->message_box("Data Master Alat dan Bahan Yang Perlu Diservis sukses diperbarui...","success");
+			$this->fungsi->catat($datapost,"Mengedit Master Alat dan Bahan Yang Perlu Diservis dengan data sbb:",true);
 		}
 	}
 	public function delete()
