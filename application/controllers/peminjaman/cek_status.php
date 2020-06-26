@@ -60,13 +60,13 @@ class cek_status extends CI_Controller {
             $this->fungsi->catat($datapost,"Menambah Data Peminjaman dengan data sbb:",true);
         }
 	}
-	public function cetak()
-	{
-		$id = $this->uri->segment(4);
-		$this->m_cek_status->cetakData($id);
-		redirect('admin');
-	}
 
+	public function view_print($id='')
+	{
+		//$this->fungsi->check_previleges('cek_status');
+		$data['id'] = $this->m_cek_status->getData();
+		$this->load->view('peminjaman/cek_status/v_cek_status_print',$data);
+	}
 }
 
 /* End of file cek_status.php */
