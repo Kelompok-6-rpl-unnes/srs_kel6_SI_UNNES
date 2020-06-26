@@ -16,7 +16,7 @@
           <thead>
             <th>No</th>
             <th>Nama</th>
-            <th>Username</th>
+            <th>Nomor Induk</th>
             <th>Jenis Kelamin</th>
             <th>Picture</th>
             <th>Email</th>

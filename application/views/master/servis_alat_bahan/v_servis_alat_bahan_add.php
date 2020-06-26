@@ -40,7 +40,7 @@
             <label class="col-sm-4 control-label">Keterangan Kondisi</label>
             <select name ='keterangan'>
           <div class="col-sm-8">
-          <option value ='Baik'>Baik</option>
+          <option value ='Kerusakan Ringan'>Kerusakan ringan</option>
           <option value ='Kerusakan Sedang'>Kerusakan Sedang</option>
           <option value ='Kerusakan Parah'>Kerusakan Parah</option>
           </select>

@@ -45,24 +45,28 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-            } else {
+            } 
+            else {
                 # code...
               }
-              ?>
-                 <b>
-                <a href ="application/page/cek_status/cetak.php" class="btn btn-primary" style="margin-bottom;
-                10px; "title=""><i class="fa fa-print"></i>Cetak</a>
-            </td>
-          </tr>
-        <?php endforeach;?>
-        </tbody>
-        </table>
-      </div>
+            ?>
+            <a href="<?= site_url('peminjaman/cek_status/view_print/'.$row->id) ?>" class="btn btn-warning" ><i class="fa fw fa-print"></i>Cetak</a>
+            
+
+          </td>
+        </tr>
+      <?php endforeach;?>
+      </tbody>
+      </table>
     </div>
+
+  </div>
+<div>
+</div>
 <script type="text/javascript">
-  $(document).ready(function() {
-    var table = $('#tableku').DataTable( {
-      "ordering": false,
-    } );
-  });
+$(document).ready(function() {
+  var table = $('#tableku').DataTable( {
+    "ordering": false,
+  } );
+});
 </script>
