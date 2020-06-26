@@ -101,6 +101,12 @@ class jatuh_tempo extends CI_Controller {
 		$this->m_jatuh_tempo->deleteData($id);
 		redirect('admin');
 	}
+	public function view_print($id='')
+	{
+		//$this->fungsi->check_previleges('jatuh_tempo');
+		$data['id'] = $this->m_jatuh_tempo->getData();
+		$this->load->view('master/jatuh_tempo/v_jatuh_tempo_print',$data);
+	}
 
 }
 

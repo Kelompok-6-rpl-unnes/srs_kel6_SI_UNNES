@@ -49,6 +49,7 @@
             <td align="center"><span class="badge bg-green"><?=$row->status?></td>
             <td align="center">
             <?php
+            
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
                 echo button('load_silent("master/jatuh_tempo/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
@@ -66,8 +67,7 @@
         <b>
           <a href="" class="btn btn-warning" style="margin-bottom;
         10px; "title="view/utily/v_dashboard.php"></i>Back</a>
-          <a href ="application/page/jatuh_tempo/cetak.php" class="btn btn-primary" style="margin-bottom;
-        10px; "title=""><i class="fa fa-print"></i>Cetak</a>
+         <a href="<?= site_url('master/jatuh_tempo/view_print/'.$row->id) ?>" class="btn btn-warning" ><i class="fa fw fa-print"></i>Cetak</a>
       </div>
     </div>
 <script type="text/javascript">
