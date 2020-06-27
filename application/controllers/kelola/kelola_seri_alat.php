@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class seri_alat extends CI_Controller {
+class kelola_seri_alat extends CI_Controller {
 
 	public function __construct()
     {
@@ -11,27 +11,27 @@ class seri_alat extends CI_Controller {
     }
     public function index()
 	{
-		$this->fungsi->check_previleges('seri_alat');
-		$data['seri_alat'] = $this->m_seri_alat->getData();
-		$this->load->view('kelola/seri_alat/v_seri_alat_list',$data);
+		$this->fungsi->check_previleges('kelola_seri_alat');
+		$data['kelola_seri_alat'] = $this->m_seri_alat->getData();
+		$this->load->view('kelola/kelola_seri_alat/v_kelola_seri_alat_list',$data);
 	}
 	public function form($param='')
     {
         $content   = "<div id='divsubcontent'></div>";
         $header    = "Form Kelola Seri Alat";
-        $subheader = "Seri Alat";
+        $subheader = "kelola_seri_alat";
         $buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
         echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
         if($param=='base'){
-            $this->fungsi->run_js('load_silent("kelola/seri_alat/show_addForm/","#divsubcontent")');    
+            $this->fungsi->run_js('load_silent("kelola/kelola_seri_alat/show_addForm/","#divsubcontent")');    
         }else{
             $base_kom=$this->uri->segment(5);
-            $this->fungsi->run_js('load_silent("kelola/seri_alat/show_editForm/'.$base_kom.'","#divsubcontent")');  
+            $this->fungsi->run_js('load_silent("kelola/kelola_seri_alat/show_editForm/'.$base_kom.'","#divsubcontent")');  
         }
     }
     public function show_addForm()
     {
-        $this->fungsi->check_previleges('seri_alat');
+        $this->fungsi->check_previleges('kelola_seri_alat');
         $this->load->library('form_validation');
         $config = array(
                 array(
@@ -46,13 +46,13 @@ class seri_alat extends CI_Controller {
         if ($this->form_validation->run() == FALSE)
         {
             $data['status']='';
-            $this->load->view('kelola/seri_alat/v_seri_alat_add',$data);
+            $this->load->view('kelola/kelola_seri_alat/v_kelola_seri_alat_add',$data);
         }
         else
         {
             $datapost = get_post_data(array('id','kategori','merk','seri','gambar','sop_pengoperasian','sop_pemeliharaan','sop_pemeriksaan','sop_kalibrasi','sop_uji_fungsi','stok','stok_minimal','status'));
             $this->m_seri_alat->insertData($datapost);
-            $this->fungsi->run_js('load_silent("kelola/seri_alat","#content")');
+            $this->fungsi->run_js('load_silent("kelola/kelola_seri_alat","#content")');
             $this->fungsi->message_box("Data Seri Alat sukses disimpan...","success");
             $this->fungsi->catat($datapost,"Menambah Seri Alat dengan data sbb:",true);
         }
@@ -60,7 +60,7 @@ class seri_alat extends CI_Controller {
 
     public function show_editForm($id='')
     {
-        $this->fungsi->check_previleges('seri_alat');
+        $this->fungsi->check_previleges('kelola_seri_alat');
         $this->load->library('form_validation');
         $config = array(
                 array(
@@ -81,13 +81,13 @@ class seri_alat extends CI_Controller {
         {
             $data['edit'] = $this->db->get_where('kelola_seri_alat',array('id'=>$id));
             $data['status']='';
-            $this->load->view('kelola/seri_alat/v_seri_alat_edit',$data);
+            $this->load->view('kelola/kelola_seri_alat/v_kelola_seri_alat_edit',$data);
         }
         else
         {
             $datapost = get_post_data(array('id','kategori','merk','seri','gambar','sop_pengoperasian','sop_pemeliharaan','sop_pemeriksaan','sop_kalibrasi','sop_uji_fungsi','stok','stok_minimal','status'));
             $this->m_seri_alat->updateData($datapost);
-            $this->fungsi->run_js('load_silent("kelola/seri_alat","#content")');
+            $this->fungsi->run_js('load_silent("kelola/kelola_seri_alat","#content")');
             $this->fungsi->message_box("Data Seri Alat sukses diperbarui...","success");
             $this->fungsi->catat($datapost,"Mengedit Seri Alat dengan data sbb:",true);   
         }  
@@ -102,5 +102,5 @@ class seri_alat extends CI_Controller {
   
 }
 
-/* End of file seri_alat.php */
-/* Location: ./application/controllers/kelola/seri_alat.php */
+/* End of file kelola_seri_alat.php */
+/* Location: ./application/controllers/kelola/kelola_seri_alat.php */

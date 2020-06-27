@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pinjam_alat_bahan extends CI_Controller {
+class pinjam_alat_bahan extends CI_Controller {
 
 	public function __construct()
 	{
@@ -38,8 +38,8 @@ class Pinjam_alat_bahan extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'pinjam_alat_bahan',
-					'label' => 'pinjam_alat_bahan',
+					'field'	=> 'kategori_pinjam',
+					'label' => 'kategori_pinjam',
 					'rules' => 'required'
 				)
 			);
@@ -68,12 +68,12 @@ class Pinjam_alat_bahan extends CI_Controller {
 		$config = array(
 				array(
 					'field'	=> 'id',
-					'label' => '',
+					'label' => 'id',
 					'rules' => ''
 				),
 				array(
-					'field'	=> 'pinjam_alat_bahan',
-					'label' => 'pinjam_alat_bahan',
+					'field'	=> 'kategori_pinjam',
+					'label' => 'kategori_pinjam',
 					'rules' => 'required'
 				)
 			);

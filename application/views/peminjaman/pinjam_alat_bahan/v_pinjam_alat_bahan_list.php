@@ -54,7 +54,14 @@
                 # code...
               }
               ?>
-               <a href="<?= site_url('peminjaman/pinjam_alat_bahan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus peminjaman ?')"><i class="fa fa-trash"></i></a>
+               <?php
+              $sesi = from_session('level');
+              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+                echo button('load_silent("peminjaman/pinjam_alat_bahan/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
+              } else {
+                # code...
+              }
+              ?>
             </td>
           </tr>
         <?php endforeach;?>
