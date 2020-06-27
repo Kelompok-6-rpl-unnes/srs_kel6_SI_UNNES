@@ -10,7 +10,7 @@ class kelola_bahan extends CI_Controller {
 		$this->load->model('kelola/m_kelola_bahan');
 		$this->load->model('master/m_master_bahan');
 		$this->load->model('master/m_satuan');
-		$this->load->model('master/m_kategori_alat_dan_bahan');
+		$this->load->model('master/m_kategori_bahan');
 		$this->load->model('master/m_sumber_pendanaan');
 		$this->load->model('kelola/m_lokasi_penyimpanan');
 	}
@@ -59,7 +59,7 @@ class kelola_bahan extends CI_Controller {
 		{
 			$data['nama_bahan'] = $this->m_master_bahan->getData();
 			$data['Nama'] = $this->m_satuan->getData();
-			$data['Kategori'] = $this->m_kategori_alat_dan_bahan->getData();
+			$data['Kategori'] = $this->m_kategori_bahan->getData();
 			$data['sumber_pendanaan'] = $this->m_sumber_pendanaan->getData();
 			$data['nama_lokasi_penyimpanan'] = $this->m_lokasi_penyimpanan->getData();
 			$this->load->view('kelola/kelola_bahan/kelola_bahan_add',$data);
@@ -98,7 +98,7 @@ class kelola_bahan extends CI_Controller {
 			$data['edit'] = $this->db->get_where('kelola_bahan',array('id'=>$id));
 			$data['nama_bahan'] = $this->m_master_bahan->getData();
 			$data['Nama'] = $this->m_satuan->getData();
-			$data['Kategori'] = $this->m_kategori_alat_dan_bahan->getData();
+			$data['Kategori'] = $this->m_kategori_bahan->getData();
 			$data['sumber_pendanaan'] = $this->m_sumber_pendanaan->getData();
 			$data['lokasi'] = $this->m_lokasi_penyimpanan->getData();
 			$this->load->view('kelola/kelola_bahan/kelola_bahan_edit',$data);
