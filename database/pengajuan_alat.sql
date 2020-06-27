@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2020 at 07:09 AM
+-- Generation Time: Jun 27, 2020 at 08:10 AM
 -- Server version: 10.1.19-MariaDB
--- PHP Version: 7.0.13
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -47,7 +47,8 @@ CREATE TABLE `pengajuan_alat` (
 --
 
 INSERT INTO `pengajuan_alat` (`id`, `pengajuan_alat`, `no_induk`, `nama_alat`, `seri`, `merk`, `satuan_grosir`, `jumlah_grosir`, `harga_grosir`, `estimasi_jumlah`, `harga_dasar`, `nama_lab`, `status`) VALUES
-(1, 'P12345', '654321', 'Infrared Ear Thermometer', 'OneMed', 'ThermoOne', 'Pack', '100', 'Rp. 200.000', '5', 'RP 400.000', 'Laboratorium kimia', 'ada');
+(2, '675675', '235', 'szdgg', '2352', 'sdgsd', 'swer', '215415', '2346236', '23523452', '2346264', 'sdfsg', 'sgdsg'),
+(3, '2325', '2325235', 'sdfseg', 'sdgs', 'sdgg', '2', '2134', '124', '124', '21421', 'sdfsw', 'sdfgr');
 
 --
 -- Indexes for dumped tables
@@ -67,7 +68,7 @@ ALTER TABLE `pengajuan_alat`
 -- AUTO_INCREMENT for table `pengajuan_alat`
 --
 ALTER TABLE `pengajuan_alat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
