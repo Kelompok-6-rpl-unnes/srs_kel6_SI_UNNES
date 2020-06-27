@@ -37,8 +37,8 @@
             <div class="col-sm-8">
             <div class="form-group">
                 <select class="form-control" name="kategori">
-                <?php foreach ($Kategori_Alat_Bahan->result() as $Kategori_Alat_Bahan): ?>
-                    <option value="<?= $Kategori_Alat_Bahan->id ?>" ><?= $Kategori_Alat_Bahan->Kategori?></option>
+                <?php foreach ($Kategori_Alat->result() as $Kategori_Alat): ?>
+                    <option value="<?= $Kategori_Alat->id ?>" ><?= $Kategori_Alat->Kategori?></option>
                 <?php endforeach; ?>
                 </select>
             </div>

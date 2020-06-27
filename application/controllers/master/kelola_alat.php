@@ -10,7 +10,7 @@ class kelola_alat extends CI_Controller {
 		$this->load->model('master/m_kelola_alat');
 		$this->load->model('master/m_nama_alat');
 		$this->load->model('master/m_satuan');
-		$this->load->model('master/m_kategori_alat_dan_bahan');
+		$this->load->model('master/m_kategori_alat');
 		$this->load->model('master/m_sumber_pendanaan');
 		$this->load->model('kelola/m_lokasi_penyimpanan');
 	}
@@ -59,7 +59,7 @@ class kelola_alat extends CI_Controller {
 		{
 			$data['nama_alat'] = $this->m_nama_alat->getData();
 			$data['satuan'] = $this->m_satuan->getData();
-			$data['Kategori_Alat_Bahan'] = $this->m_kategori_alat_dan_bahan->getData();
+			$data['Kategori_Alat'] = $this->m_kategori_alat->getData();
 			$data['sumber_pendanaan'] = $this->m_sumber_pendanaan->getData();
 			$data['lokasi_penyimpanan'] = $this->m_lokasi_penyimpanan->getData();
 			$this->load->view('master/kelola_alat/v_kelola_alat_add',$data);
@@ -98,7 +98,7 @@ class kelola_alat extends CI_Controller {
 			$data['edit'] = $this->db->get_where('kelola_alat',array('id'=>$id));
 			$data['nama_alat']=$this->m_nama_alat->getData();
 			$data['satuan']=$this->m_satuan->getData();
-			$data['Kategori_Alat_Bahan']=$this->m_kategori_alat_dan_bahan->getData();
+			$data['Kategori_Alat']=$this->m_kategori_alat->getData();
 			$data['sumber_pendanaan']=$this->m_sumber_pendanaan->getData();
 			$data['lokasi_penyimpanan']=$this->m_lokasi_penyimpanan->getData();
 			$this->load->view('master/kelola_alat/v_kelola_alat_edit',$data);
