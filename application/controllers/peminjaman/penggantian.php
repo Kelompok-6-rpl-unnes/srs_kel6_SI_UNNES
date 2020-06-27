@@ -35,8 +35,8 @@ class penggantian extends CI_Controller {
         $this->load->library('form_validation');
         $config = array(
                 array(
-                    'field' => 'nama',
-                    'label' => 'nama',
+                    'field' => 'id_peminjaman',
+                    'label' => 'id_peminjaman',
                     'rules' => 'required'
                 )
             );
@@ -69,8 +69,8 @@ class penggantian extends CI_Controller {
                     'rules' => ''
                 ),
                 array(
-                    'field' => 'nama',
-                    'label' => 'nama',
+                    'field' => 'id_peminjaman',
+                    'label' => 'id_peminjaman',
                     'rules' => 'required'
                 )
             );
