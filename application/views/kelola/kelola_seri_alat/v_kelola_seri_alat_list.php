@@ -59,7 +59,7 @@
             <td align="center"><?=$row->sop_kalibrasi?></td>
             <td align="center"><?=$row->sop_uji_fungsi?></td>
             <td align="center"><?=$row->stok?></td>
-            <td align="center"><?=$row->stok_minimali?></td>
+            <td align="center"><?=$row->stok_minimal?></td>
             <td align="center"><?=$row->sop_kalibrasi?></td>
             <td align="center"><span class="badge bg-green"><?=$row->status?></td>
             <td align="center">
