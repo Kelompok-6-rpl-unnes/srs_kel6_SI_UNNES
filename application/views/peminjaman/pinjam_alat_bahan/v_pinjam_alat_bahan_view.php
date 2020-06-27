@@ -5,14 +5,7 @@
           <div class="box-header with-border">
             <h3 class="box-title">Peminjaman Alat</h3>
             <div class="box-tools pull-right">
-            <?php
-              $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '4' || $sesi == '5' || $sesi == '6'|| $sesi == '7'|| $sesi == '8') {
-                echo button('load_silent("peminjaman/pinjam_alat_bahan/form/base","#modal")','Add Peminjaman Alat atau Bahan','btn btn-success');
-              } else {
-                # code...
-              }
-              ?>
+    
             </div>
           </div>
           <div class="box-body">
@@ -42,33 +35,20 @@
             <td align="center"><?=$row->nomor_induk?></td>
             <td align="center"><?=$row->kode?></td>
             <td align="center"><?=$row->nama_alat?></td>
-            <td align="center"><span class="badge bg-green"><?=$row->kategori_pinjam?></td>
+            <td align="center"><?=$row->kategori_pinjam?></td>
             <td align="center"><?=$row->jumlah?></td>
             <td align="center"><?=$row->tanggal?></td>
             <td align="center"><?=$row->tgl_kembali?></td>
             <td align="center"><?=$row->keperluan?></td>
             <td align="center">
-            <?php
-              $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("peminjaman/pinjam_alat_bahan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
-              } else {
-                # code...
-              }
-              ?>
-               <?php
-              $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("peminjaman/pinjam_alat_bahan/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
-              } else {
-                # code...
-              }
-              ?>
+    
             </td>
           </tr>
         <?php endforeach;?>
         </tbody>
             </table>
+        <a href="" class="btn btn-warning" style="margin-bottom;
+        10px; "title="view/utily/v_dashboard.php"></i>Back</a>
           </div>
         </div>
       </div>

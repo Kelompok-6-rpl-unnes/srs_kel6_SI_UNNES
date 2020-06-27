@@ -6,7 +6,7 @@ class M_pinjam_alat_bahan extends CI_Model {
     //select->read
 	public function getData($value='')
 	{
-		$this->db->from('pinjam_alat_bahan mb');
+		$this->db->from('pinjam_bahan mb');
 		$this->db->order_by('mb.id', 'desc');
 		return $this->db->get();
 	}
@@ -15,27 +15,27 @@ class M_pinjam_alat_bahan extends CI_Model {
 	public function insertData($data='')
 	{
 		
-        $this->db->insert('pinjam_alat_bahan',$data);
+        $this->db->insert('pinjam_bahan',$data);
        
 	}
     //update
 	public function updateData($data='')
 	{
 		 $this->db->where('id',$data['id']);
-            $this->db->update('pinjam_alat_bahan',$data);
+            $this->db->update('pinjam_bahan',$data);
 	}
     //delete
 	public function deleteData($id='')
 	{
 		$this->db->where('id', $id);
-        $this->db->delete('pinjam_alat_bahan');
+        $this->db->delete('pinjam_bahan');
 	}
 	public function join()
 	{
-		$this->db->select('pinjam_alat_bahan.*, master_nama_alat.kode, kelola_alat.nama_alat');
-		$this->db->from('pinjam_alat_bahan');
-		$this->db->join('master_nama_alat', 'master_nama_alat.id = pinjam_alat_bahan.kode');
-		$this->db->join('kelola_alat', 'kelola_alat.id = pinjam_alat_bahan.pinjam_alat_bahan');
+		$this->db->select('pinjam_bahan.*, master_nama_bahan.kode, kelola_bahan.nama_bahan');
+		$this->db->from('pinjam_bahan');
+		$this->db->join('master_nama_bahan', 'master_nama_bahan.id = pinjam_bahan.kode');
+		$this->db->join('kelola_bahan', 'kelola_bahan.id = pinjam_bahan.pinjam_bahan');
 		return $this->db->get();
 	}
 	public function getlist()
@@ -43,5 +43,5 @@ class M_pinjam_alat_bahan extends CI_Model {
 		$this->db->from('cms_user')->get();
 	}
 }
-/* End of file m_pinjam_alat_bahan.php */
-/* Location: ./application/models/peminjaman/m_pinjam_alat_bahan.php */
+/* End of file m_pinjam_bahan.php */
+/* Location: ./application/models/peminjaman/m_pinjam_bahan.php */

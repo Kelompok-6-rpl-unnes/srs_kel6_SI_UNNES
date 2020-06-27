@@ -60,7 +60,40 @@ class cek_status extends CI_Controller {
             $this->fungsi->catat($datapost,"Menambah Data Peminjaman dengan data sbb:",true);
         }
 	}
-
+	public function show_editForm($id='')
+	{
+		$this->fungsi->check_previleges('cek_status');
+		$this->load->library('form_validation');
+		$config = array(
+				array(
+					'field'	=> 'id',
+					'label' => '',
+					'label' => 'id',
+					'rules' => ''
+				),
+				array(
+					'field'	=> 'status_peminjaman',
+					'label' => 'status_peminjaman',
+					'rules' => 'required'
+				)
+			);
+		$this->form_validation->set_rules($config);
+		$this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
+		if ($this->form_validation->run() == FALSE)
+		{
+			$data['edit'] = $this->db->get_where('cek_status',array('id'=>$id));
+			$data['status']='';
+			$this->load->view('peminjaman/cek_status/v_cek_status_edit',$data);
+		}
+		else
+		{
+			$datapost = get_post_data(array('id','status_peminjaman'));
+			$this->m_cek_status->updateData($datapost);
+			$this->fungsi->run_js('load_silent("peminjaman/cek_status","#content")');
+			$this->fungsi->message_box("Data Cek Status Peminjaman Alat dan Bahan sukses diperbarui...","success");
+			$this->fungsi->catat($datapost,"Mengedit Cek Status Peminjaman Alat Dan Bahan dengan data sbb:",true);
+		}
+	}
 	public function view_print($id='')
 	{
 		//$this->fungsi->check_previleges('cek_status');

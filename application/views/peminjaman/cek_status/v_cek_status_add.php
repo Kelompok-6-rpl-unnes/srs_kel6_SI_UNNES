@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Tanggal kembali</label>
+            <label class="col-sm-4 control-label">Tanggal Harus Dikembalikan</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'tanggal_kembali','type'=>'date','class'=>'form-control'));?>
             <?php echo form_error('tanggal_kembali');?>

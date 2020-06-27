@@ -27,7 +27,7 @@
                 <th>Status User</th>
                 <th>Kategori Peminjaman</th>
                 <th>Tanggal Pinjam</th>
-                <th>Tanggal Kembali</th>
+                <th>Tanggal Harus Diembalikan</th>
                 <th>Status Peminjaman</th>
                 <th>Status</th>
                 <th>Act</th>

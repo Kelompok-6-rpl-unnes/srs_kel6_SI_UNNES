@@ -24,7 +24,7 @@
                 <th>ID Peminjaman</th>
                 <th>Kategori Peminjaman</th>
                 <th>Tanggal Pinjam</th>
-                <th>Tanggal kembali</th>
+                <th>Tanggal Harus Dikembalikan</th>
                 <th>Status Peminjaman</th>
                 <th>Status</th>
                 <th>Act</th>
@@ -39,9 +39,17 @@
             <td align="center"><?=$row->kategori_peminjaman?></td>
             <td align="center"><?=$row->tanggal_peminjaman?></td>
             <td align="center"><?=$row->tanggal_kembali?></td>
-            <td align="center"><?=$row->status_peminjaman?></td>
+            <td align="center"><span class="badge bg-green"><?=$row->status_peminjaman?></td>
             <td align="center"><span class="badge bg-green"><?=$row->status?></td>
             <td align="center">
+            <?php
+              $sesi = from_session('level');
+              if ($sesi == '4') {
+                echo button('load_silent("peminjaman/cek_status/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
+              } else {
+                # code...
+              }
+              ?>
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
