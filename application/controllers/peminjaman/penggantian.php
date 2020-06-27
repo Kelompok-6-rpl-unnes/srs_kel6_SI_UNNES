@@ -96,7 +96,7 @@ class penggantian extends CI_Controller {
     public function delete()
             {
                 $id = $this->uri->segment(4);
-                $this->m_seri_alat->deleteData($id);
+                $this->m_penggantian->deleteData($id);
                 redirect('admin');
             }
   

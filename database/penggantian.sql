@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 27, 2020 at 02:19 PM
+-- Generation Time: Jun 27, 2020 at 03:55 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `penggantian` (
+  `id` int(255) NOT NULL,
   `id_peminjaman` int(255) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `nomor_induk` int(255) NOT NULL,
@@ -48,7 +49,7 @@ CREATE TABLE `penggantian` (
 -- Indexes for table `penggantian`
 --
 ALTER TABLE `penggantian`
-  ADD PRIMARY KEY (`id_peminjaman`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -58,7 +59,7 @@ ALTER TABLE `penggantian`
 -- AUTO_INCREMENT for table `penggantian`
 --
 ALTER TABLE `penggantian`
-  MODIFY `id_peminjaman` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

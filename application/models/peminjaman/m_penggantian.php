@@ -26,7 +26,7 @@ class M_penggantian extends CI_Model {
 	public function deleteData($id='')
 	{
 		$this->db->where('id', $id);
-        $this->db->delete('penggantiant');
+        $this->db->delete('penggantian');
 	}
 
 }
