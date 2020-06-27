@@ -53,7 +53,7 @@ class Pinjam_alat_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('kode','pinjam_alat_bahan','kategori_pinjam','jumlah','tanggal','tgl_kembali','keterangan','keperluan'));
+			$datapost = get_post_data(array('kode','pinjam_alat_bahan','kategori_pinjam','jumlah','tanggal','tgl_kembali','keperluan'));
 			$this->m_pinjam_alat_bahan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("peminjaman/pinjam_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Peminjaman Alat dan Bahan sukses disimpan...","success");
@@ -68,12 +68,12 @@ class Pinjam_alat_bahan extends CI_Controller {
 		$config = array(
 				array(
 					'field'	=> 'id',
-					'label' => '',
+					'label' => 'bebas',
 					'rules' => ''
 				),
 				array(
-					'field'	=> 'pinjam_alat_bahan',
-					'label' => 'pinjam_alat_bahan',
+					'field'	=> 'kode',
+					'label' => 'kode',
 					'rules' => 'required'
 				)
 			);
@@ -88,11 +88,11 @@ class Pinjam_alat_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','kode','pinjam_alat_bahan','kategori_pinjam','jumlah','tanggal','tgl_kembali','keterangan','keperluan'));
+			$datapost = get_post_data(array('id','kode','pinjam_alat_bahan','keterangan'));
 			$this->m_pinjam_alat_bahan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("peminjaman/pinjam_alat_bahan","#content")');
-			$this->fungsi->message_box("Data Peminjaman Alat dan Bahan sukses diperbarui...","success");
-			$this->fungsi->catat($datapost,"Mengedit Peminjaman Alat Dan Bahan dengan data sbb:",true);
+			$this->fungsi->message_box("Data Kelola Peminjaman sukses diperbarui...","success");
+			$this->fungsi->catat($datapost,"Mengedit Kelola peminjaman_alat_bahan dengan data sbb:",true);
 		}
 	}
 	public function delete()
@@ -102,6 +102,3 @@ class Pinjam_alat_bahan extends CI_Controller {
 		redirect('admin');
 	}
 	}
-
-/* End of file pinjam_alat_bahan.php */
-/* Location: ./application/controllers/peminjaman/pinjam_alat_bahan.php */

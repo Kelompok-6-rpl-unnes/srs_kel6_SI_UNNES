@@ -54,16 +54,6 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Keterangan</label>
-            <select name ='keterangan'>
-          <div class="col-sm-8">
-          <option value ='Menunggu Persetujuan'>Menunggu Persetujuan</option>
-          <option value ='Peminjaman Disetujui'>Peminjaman Disetujui</option>
-          <option value ='Sudah Dikembalikan'>Sudah Dikembalikan</option>
-          </select>
-            <span id="check_data"></span>
-            </div>
-        <div class="form-group">
             <label class="col-sm-4 control-label">Keperluan</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'keperluan','class'=>'form-control'));?>

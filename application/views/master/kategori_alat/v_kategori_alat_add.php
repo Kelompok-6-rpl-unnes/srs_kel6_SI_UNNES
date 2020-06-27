@@ -6,29 +6,36 @@
         
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">Kategori Alat dan Bahan</label>
+            <label class="col-sm-4 control-label">Kategori Alat </label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'Kategori','class'=>'form-control'));?>
             <?php echo form_error('Kategori');?>
             <span id="check_data"></span>
-            </div>
-
-            
+            </div>     
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Keterangan</label>
+            <label class="col-sm-4 control-label">Nama Alat</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'Keterangan','class'=>'form-control'));?>
-            <?php echo form_error('Keterangan');?>
+            <?php echo form_input(array('name'=>'nama_alat','class'=>'form-control'));?>
+            <?php echo form_error('nama_alat');?>
             <span id="check_data"></span>
             </div>
+        </div>
+
+        <div class="form-group">
+        <label class="col-sm-4 control-label">Status</label>
+          <select name ='status'>
+          <div class="col-sm-8">
+          <option value ='Ada'>Ada</option>
+          <option value ='Tidak Ada'>Tidak Ada</option>
+          </select>
         </div>
         
         <div class="form-group">
             <label class="col-sm-4 control-label">Save</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"master/Kategori_Alat_Bahan/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"master/Kategori_Alat/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
             ?>
             </div>
         </div>
