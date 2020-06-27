@@ -28,14 +28,6 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Seri</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'seri','class'=>'form-control'));?>
-            <?php echo form_error('seri');?>
-            <span id="check_data"></span>
-            </div>
-        </div>
-        <div class="form-group">
             <label class="col-sm-4 control-label">Jenis</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'jenis','class'=>'form-control'));?>
@@ -68,14 +60,6 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">SOP Kalibrasi</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'sop_kalibrasi','class'=>'form-control'));?>
-            <?php echo form_error('sop_kalibrasi');?>
-            <span id="check_data"></span>
-            </div>
-        </div>
-        <div class="form-group">
             <label class="col-sm-4 control-label">Sistem Penggantian</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'sistem_penggantian','class'=>'form-control'));?>
@@ -84,12 +68,13 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Status</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'status','class'=>'form-control'));?>
-            <?php echo form_error('status');?>
-            <span id="check_data"></span>
-            </div>
+        <label class="col-sm-4 control-label">Status</label>
+          <select name ='status'>
+          <div class="col-sm-8">
+          <option value ='Ada'>Ada</option>
+          <option value ='Tidak Ada'>Tidak Ada</option>
+          </select>
+        </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">
