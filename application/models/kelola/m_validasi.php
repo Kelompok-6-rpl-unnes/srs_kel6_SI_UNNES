@@ -31,5 +31,5 @@ class M_validasi extends CI_Model {
 
 }
 
-/* End of file m_absen_mahasiswa.php */
-/* Location: ./application/models/kelola/m_absen_mahasiswa.php */
+/* End of file m_validasi.php */
+/* Location: ./application/models/kelola/m_validasi.php */

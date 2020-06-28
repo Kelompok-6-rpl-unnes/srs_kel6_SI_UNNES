@@ -9,7 +9,7 @@
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+              if ($sesi == '1' || $sesi == '4') {
                 echo button('load_silent("peminjaman/cek_status/form/base","#modal")','Add New Data Peminjaman','btn btn-success');
               } else {
                 # code...
@@ -44,22 +44,21 @@
             <td align="center">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '4') {
+              if ($sesi == '1'||$sesi == '4') {
                 echo button('load_silent("peminjaman/cek_status/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
               } else {
                 # code...
               }
               ?>
-            <?php
-              $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-            } 
-            else {
-                # code...
-              }
-            ?>
+           <?php
+            $sesi = from_session('level');
+            if ($sesi == '1'|| $sesi == '4') {
+             echo button('load_silent("peminjaman/cek_status/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
+            } else {
+              # code...
+            }
+             ?>   
             <a href="<?= site_url('peminjaman/cek_status/view_print/'.$row->id) ?>" class="btn btn-warning" ><i class="fa fw fa-print"></i>Cetak</a>
-            
 
           </td>
         </tr>

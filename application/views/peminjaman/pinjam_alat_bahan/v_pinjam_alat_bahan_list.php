@@ -8,7 +8,7 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '4' || $sesi == '5' || $sesi == '6'|| $sesi == '7'|| $sesi == '8') {
-                echo button('load_silent("peminjaman/pinjam_alat_bahan/form/base","#modal")','Add Peminjaman Alat atau Bahan','btn btn-success');
+                echo button('load_silent("peminjaman/pinjam_alat_bahan/form/base","#modal")','Add Peminjaman Alat','btn btn-success');
               } else {
                 # code...
               }
@@ -50,7 +50,7 @@
             <td align="center">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+              if ($sesi == '1' || $sesi == '4') {
                 echo button('load_silent("peminjaman/pinjam_alat_bahan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
               } else {
                 # code...
@@ -58,7 +58,7 @@
               ?>
                <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+              if ($sesi == '1' || $sesi == '4') {
                 echo button('load_silent("peminjaman/pinjam_alat_bahan/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
                 # code...

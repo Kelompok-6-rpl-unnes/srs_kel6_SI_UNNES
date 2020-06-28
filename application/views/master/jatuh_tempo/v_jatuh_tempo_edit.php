@@ -31,8 +31,8 @@
             <label class="col-sm-4 control-label">Status User</label>
             <select name ='status_user'>
           <div class="col-sm-8">
-          <option value ='Bebas Tanggungan'>Bebas Tanggungan</option>
-          <option value ='Ada Tanggungan'>Ada Tanggungan</option>
+          <option value ='Bebas Tanggungan'>Bebas Tanggungan</option><span class="badge bg-green">
+          <option value ='Ada Tanggungan'>Ada Tanggungan</option><span class="badge bg-red">
           </select>
         </div>
         <div class="form-group">
