@@ -47,7 +47,7 @@ class Pinjam_alat_bahan extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['nama_alat'] = $this->m_nama_alat->getData();
-			$data['kelola_alat'] = $this->m_kelola_alat->getData();
+			$data['kelola_alat'] = $this->m_kelola_alat->join();
 			$this->load->view('peminjaman/pinjam_alat_bahan/v_pinjam_alat_bahan_add',$data);
 		}
 		else

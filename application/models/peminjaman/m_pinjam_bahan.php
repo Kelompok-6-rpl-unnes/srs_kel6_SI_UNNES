@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_pinjam_alat_bahan extends CI_Model {
+class M_pinjam_bahan extends CI_Model {
 
     //select->read
 	public function getData($value='')
@@ -32,10 +32,10 @@ class M_pinjam_alat_bahan extends CI_Model {
 	}
 	public function join()
 	{
-		$this->db->select('pinjam_bahan.*, master_nama_bahan.kode, kelola_bahan.nama_bahan');
+		$this->db->select('pinjam_bahan.*, master_bahan.kode, kelola_bahan.nama_bahan');
 		$this->db->from('pinjam_bahan');
-		$this->db->join('master_nama_bahan', 'master_nama_bahan.id = pinjam_bahan.kode');
-		$this->db->join('kelola_bahan', 'kelola_bahan.id = pinjam_bahan.pinjam_bahan');
+		$this->db->join('master_bahan', 'master_bahan.id = pinjam_bahan.kode');
+		$this->db->join('kelola_bahan', 'kelola_bahan.id = pinjam_bahan.pinjam_alat_bahan');
 		return $this->db->get();
 	}
 	public function getlist()

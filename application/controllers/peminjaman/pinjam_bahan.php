@@ -8,20 +8,20 @@ class Pinjam_bahan extends CI_Controller {
 		parent::__construct();
 		$this->fungsi->restrict();
 		$this->load->model('peminjaman/m_pinjam_bahan');
-		$this->load->model('master/m_nama_bahan');
+		$this->load->model('master/m_master_bahan');
 		$this->load->model('master/m_kelola_bahan');
 	}
 	public function index()
 	{
 		$this->fungsi->check_previleges('pinjam_bahan');
-		$data['pinjam_alat_bahan'] = $this->m_pinjam_alat_bahan->join();
-		$this->load->view('peminjaman/pinjam_alat_bahan/v_pinjam_bahan_list',$data);
+		$data['pinjam_bahan'] = $this->m_pinjam_bahan->join();
+		$this->load->view('peminjaman/pinjam_bahan/v_pinjam_bahan_list',$data);
 	}
 	public function form($param='')
 	{
 		$content   = "<div id='divsubcontent'></div>";
 		$header    = "Form Peminjaman Bahan";
-		$subheader = "pinjam_alat_bahan";
+		$subheader = "pinjam_bahan";
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
 		if($param=='base'){
@@ -46,17 +46,17 @@ class Pinjam_bahan extends CI_Controller {
 		$this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['nama_bahan'] = $this->m_nama_bahan->getData();
+			$data['master_bahan'] = $this->m_master_bahan->getData();
 			$data['kelola_bahan'] = $this->m_kelola_bahan->getData();
-			$this->load->view('peminjaman/pinjam_alat_bahan/v_pinjam_bahan_add',$data);
+			$this->load->view('peminjaman/pinjam_bahan/v_pinjam_bahan_add',$data);
 		}
 		else
 		{
 			$datapost = get_post_data(array('id_peminjaman','nama_peminjam','nomor_induk','kode','pinjam_alat_bahan','kategori_pinjam','jumlah','tanggal','tgl_kembali','keterangan','keperluan'));
 			$this->m_pinjam_bahan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("peminjaman/pinjam_bahan","#content")');
-			$this->fungsi->message_box("Data Peminjaman Alat dan Bahan sukses disimpan...","success");
-			$this->fungsi->catat($datapost,"Menambah Peminjaman Alat Dan Bahan dengan data sbb:",true);
+			$this->fungsi->message_box("Data Peminjaman Bahan sukses disimpan...","success");
+			$this->fungsi->catat($datapost,"Menambah Peminjaman Bahan dengan data sbb:",true);
 		}
 	}
 	public function show_editForm($id='')
@@ -80,23 +80,23 @@ class Pinjam_bahan extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['edit'] = $this->db->get_where('pinjam_bahan',array('id'=>$id));
-			$data['nama_bahan']=$this->m_nama_bahan->getData();
+			$data['master_bahan']=$this->m_master_bahan->getData();
 			$data['kelola_bahan']=$this->m_kelola_bahan->getData();
-			$this->load->view('peminjaman/pinjam_alat_bahan/v_pinjam_bahan_edit',$data);
+			$this->load->view('peminjaman/pinjam_bahan/v_pinjam_bahan_edit',$data);
 		}
 		else
 		{
 			$datapost = get_post_data(array('id','id_peminjaman','nama_peminjam','nomor_induk','kode','pinjam_alat_bahan','keterangan'));
-			$this->m_pinjam_alat_bahan->updateData($datapost);
+			$this->m_pinjam_bahan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("peminjaman/pinjam_bahan","#content")');
-			$this->fungsi->message_box("Data Peminjaman Alat dan Bahan sukses diperbarui...","success");
-			$this->fungsi->catat($datapost,"Mengedit Peminjaman Alat Dan Bahan dengan data sbb:",true);
+			$this->fungsi->message_box("Data Peminjaman Bahan sukses diperbarui...","success");
+			$this->fungsi->catat($datapost,"Mengedit Peminjaman Bahan dengan data sbb:",true);
 		}
 	}
 	public function delete()
 	{
 		$id = $this->uri->segment(4);
-		$this->m_pinjam_alat_bahan->deleteData($id);
+		$this->m_pinjam_bahan->deleteData($id);
 		redirect('admin');
 	}
 	}
