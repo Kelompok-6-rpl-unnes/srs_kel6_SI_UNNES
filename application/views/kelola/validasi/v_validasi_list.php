@@ -5,8 +5,15 @@
     <div class="box box-primary">
       <div class="box-header with-border">
         <h3 class="box-title">Kelola Validasi Absen Mahasiswa</h3>
-       
+
         <div class="box-tools pull-right">
+        <?php
+          $sesi = from_session('level');
+          if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+          } else {
+            # code...
+          }
+          ?>
       </div>
      </div>
       <div class="box-body">
@@ -20,8 +27,6 @@
                 <th>Mata Kuliah</th>
                 <th>Rombel</th>
                 <th>Keterangan</th>
-                <th>Status</th>
-                <th>Act</th>
           </thead>
           <tbody>
           <?php 
@@ -36,17 +41,16 @@
             <td align="center"><?=$row->mata_kuliah?></td>
             <td align="center"><?=$row->rombel?></td>
             <td align="center"><?=$row->keterangan?></td>
-            <td align="center"><?=$row->status?></td>
             <td align="center">
-            <?php
+
+        <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '8') {
-                echo button('load_silent("kelola/validasi/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
- 
-              } else {
+              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+            } 
+            else {
                 # code...
               }
-              ?>
+            ?>
             </td>
           </tr>
         <?php endforeach;?>
@@ -55,6 +59,8 @@
         <b>
     <a href="" class="btn btn-warning" style="margin-bottom;
     10px; "title="view/utily/v_dashboard.php"></i>Back</a>
+    <a href="" class="btn btn-info" style="margin-bottom;
+    "<?= site_url('kelola/validasi/validasi'.$row->id) ?>" class="btn btn-success" onclick="return confirm('Anda yakin ingin Memvalidasi Pertemuan Ini??')"></i>Validasi</a>
     </div>
     </div>
 <script type="text/javascript">
