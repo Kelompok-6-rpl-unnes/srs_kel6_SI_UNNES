@@ -22,7 +22,7 @@
                 <th>ID Peminjaman</th>
                 <th>Nama Peminjam</th>
                 <th>Nomor Induk</th>
-                <th>Kode Alat</th>
+                <th>Kode Inventaris</th>
                 <th>Nama Alat</th>
                 <th>Kategori Peminjaman</th>
                 <th>Jumlah</th>
