@@ -28,11 +28,7 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
-<<<<<<< HEAD
                 <th>No</th>
-=======
-                <th>NO</th>
->>>>>>> e338c61a74bce3858faecdf44655f9aab0781418
                 <th>Nama Lab</th>
                 <th>Alamat Lab</th>
                 <th>Tipe Lab</th>
