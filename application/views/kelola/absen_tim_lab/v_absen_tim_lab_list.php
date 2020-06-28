@@ -52,7 +52,7 @@
             <td align="center">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2') {
+              if ($sesi == '1' || $sesi == '2'|| $sesi == '3') {
                 echo button('load_silent("kelola/absen_tim_lab/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
               } else {
                 # code...

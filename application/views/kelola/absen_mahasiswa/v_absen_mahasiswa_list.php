@@ -16,7 +16,7 @@
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '7' || $sesi == '8') {
+              if ($sesi == '1' || $sesi == '2' || $sesi == '7'|| $sesi == '8') {
                 echo button('load_silent("kelola/absen_mahasiswa/form/base","#modal")','Add New Absen Mahasiswa','btn btn-success');
               } else {
                 # code...
@@ -64,7 +64,7 @@
               ?>
               <?php
             $sesi = from_session('level');
-            if ($sesi == '1' || $sesi == '2'|| $sesi == '7') {
+            if ($sesi == '1' || $sesi == '2') {
              echo button('load_silent("kelola/absen_mahasiswa/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
             } else {
               # code...

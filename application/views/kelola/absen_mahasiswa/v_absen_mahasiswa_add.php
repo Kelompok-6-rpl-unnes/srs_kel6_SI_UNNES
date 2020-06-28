@@ -40,14 +40,6 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Jumlah Kehadiran</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'jumlah_kehadiran','class'=>'form-control'));?>
-            <?php echo form_error('jumlah_kehadiran');?>
-            <span id="check_data"></span>
-            </div>
-        </div>
-        <div class="form-group">
             <label class="col-sm-4 control-label">Prodi</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'prodi','class'=>'form-control'));?>
