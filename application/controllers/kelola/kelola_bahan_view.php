@@ -10,7 +10,7 @@ class kelola_bahan_view extends CI_Controller {
 		$this->load->model('kelola/m_kelola_bahan');
 		$this->load->model('master/m_master_bahan');
 		$this->load->model('master/m_satuan');
-		$this->load->model('master/m_kategori_alat_dan_bahan');
+		$this->load->model('master/m_kategori_bahan');
 		$this->load->model('master/m_sumber_pendanaan');
 		$this->load->model('kelola/m_lokasi_penyimpanan');
 	}

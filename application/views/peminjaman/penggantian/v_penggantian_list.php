@@ -53,7 +53,7 @@
             <td align="center"><?=$row->nama_barang?></td>
             <td align="center"><?=$row->merk_barang?></td>
             <td align="center"><?=$row->seri_barang?></td>
-            <td align="center"><?=$row->sistem_penggantian?></td>
+            <td align="center"><span class="badge bg-green"><?=$row->sistem_penggantian?></td>
             <td align="center"><span class="badge bg-green"><?=$row->status?></td>
             <td align="center">
             <?php

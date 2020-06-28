@@ -9,14 +9,23 @@
             <label class="col-sm-4 control-label">Kategori No Induk</label>
             <div class="col-sm-8">
             <select name ='kategori_no_induk'>
-          <option value ='Mahasiswa'>Mahasiswa</option>
+            <option value ='Super Admin'>Super Admin</option>
+          <option value ='Admin'>Admin</option>
+          <option value ='Kepala Laboratorium'>Kepala Laboratorium</option>
+          <option value ='Laboran'>Laboran</option>
+          <option value ='Koor Laboratorium'>Koor Laboratorium</option>
+          <option value ='Aslab'>Aslab</option>
           <option value ='Dosen'>Dosen</option>
+<<<<<<< HEAD
           <option value ='Super Admin'>Super Admin</option>
           <option value ='Admin'>Admin</option>
           <option value ='Laboran'>Laboran</option>
           <option value ='Asisten Laboratorium'>Asisten Laboratorium</option>
           <option value ='Ketua Laboratorium'>Ketua Laboratorium</option>
           <option value ='Koordinator Laboratorium'>Koordinator Laboratorium</option>
+=======
+          <option value ='Mahasiswa'>Mahasiswa</option>
+>>>>>>> e338c61a74bce3858faecdf44655f9aab0781418
           </select>
             <span id="check_data"></span>
             </div>

@@ -89,7 +89,7 @@ class penggantian extends CI_Controller {
             $this->m_penggantian->updateData($datapost);
             $this->fungsi->run_js('load_silent("peminjaman/penggantian","#content")');
             $this->fungsi->message_box("Data Penggantian sukses diperbarui...","success");
-            $this->fungsi->catat($datapost,"Mengedit Penggantian dengan data sbb:",true);   
+            $this->fungsi->catat($datapost,"Mengedit penggantian dengan data sbb:",true);   
         }  
     }
 
