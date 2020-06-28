@@ -22,7 +22,7 @@
               <thead>
                 <th>No</th>
                 <th>Kode</th>
-                <th>Nama</th>
+                <th>Nama Satuan</th>
                 <th>Act</th>
               </thead>
               <tbody>

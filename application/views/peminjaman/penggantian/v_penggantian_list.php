@@ -28,6 +28,7 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
+                <th>No</th>
                 <th>ID Peminjaman</th>
                 <th>Nama</th>
                 <th>Nomor Induk</th>
@@ -35,7 +36,6 @@
                 <th>Nama Barang</th>
                 <th>Merk Barang</th>
                 <th>Seri Barang</th>
-                <th>SOP Pemeriksaan</th>
                 <th>Sistem Penggantian</th>
                 <th>Status</th>
                 <th>Act</th>

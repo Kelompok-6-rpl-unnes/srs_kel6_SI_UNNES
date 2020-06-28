@@ -11,8 +11,12 @@
             <select name ='kategori_no_induk'>
           <option value ='Mahasiswa'>Mahasiswa</option>
           <option value ='Dosen'>Dosen</option>
-          <option value ='Birokrat'>Birokrat</option>
-          <option value ='Pegawai Instansi'>Pegawai Instansi</option>
+          <option value ='Super Admin'>Super Admin</option>
+          <option value ='Admin'>Admin</option>
+          <option value ='Laboran'>Laboran</option>
+          <option value ='Asisten Laboratorium'>Asisten Laboratorium</option>
+          <option value ='Ketua Laboratorium'>Ketua Laboratorium</option>
+          <option value ='Koordinator Laboratorium'>Koordinator Laboratorium</option>
           </select>
             <span id="check_data"></span>
             </div>

@@ -56,7 +56,7 @@
             <?php echo form_error('tanggal_pendanaan');?>
             <span id="check_data"></span>
             </div>
-
+            </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Pajak</label>
             <div class="col-sm-8">

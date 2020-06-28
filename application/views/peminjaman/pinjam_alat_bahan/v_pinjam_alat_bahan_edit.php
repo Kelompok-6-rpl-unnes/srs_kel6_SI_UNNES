@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Kode Alat</label>
+            <label class="col-sm-4 control-label">Kode Inventaris</label>
             <div class="col-sm-8">
             <div class="form-group">
             <select class="form-control" name="kode">
