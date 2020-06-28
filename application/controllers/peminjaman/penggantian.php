@@ -50,7 +50,7 @@ class penggantian extends CI_Controller {
         }
         else
         {
-            $datapost = get_post_data(array('id_peminjaman','nama','nomor_induk','jenis','nama_barang','merk_barang','seri_barang','sistem_penggantian','status'));
+            $datapost = get_post_data(array('id','id_peminjaman','nama','nomor_induk','jenis','nama_barang','merk_barang','seri_barang','sistem_penggantian','status'));
             $this->m_penggantian->insertData($datapost);
             $this->fungsi->run_js('load_silent("peminjaman/penggantian","#content")');
             $this->fungsi->message_box("Data Penggantian sukses disimpan...","success");
@@ -85,7 +85,7 @@ class penggantian extends CI_Controller {
         }
         else
         {
-            $datapost = get_post_data(array('id_peminjaman','nama','nomor_induk','jenis','nama_barang','merk_barang','seri_barang','sistem_penggantian','status'));
+            $datapost = get_post_data(array('id','id_peminjaman','nama','nomor_induk','jenis','nama_barang','merk_barang','seri_barang','sistem_penggantian','status'));
             $this->m_penggantian->updateData($datapost);
             $this->fungsi->run_js('load_silent("peminjaman/penggantian","#content")');
             $this->fungsi->message_box("Data Penggantian sukses diperbarui...","success");

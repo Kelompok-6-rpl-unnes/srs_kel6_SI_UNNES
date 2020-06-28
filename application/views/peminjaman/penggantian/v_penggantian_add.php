@@ -60,12 +60,12 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Sistem Penggantian</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'sistem_penggantian','class'=>'form-control'));?>
-            <?php echo form_error('sistem_penggantian');?>
-            <span id="check_data"></span>
-            </div>
+        <label class="col-sm-4 control-label">Sistem Penggantian</label>
+          <select name ='sistem_penggantian'>
+          <div class="col-sm-8">
+          <option value ='Belum Diganti'>Belum Diganti</option>
+          <option value ='Sudah Diganti'>Sudah Diganti</option>
+          </select>
         </div>
         <div class="form-group">
         <label class="col-sm-4 control-label">Status</label>

@@ -28,6 +28,7 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
+                <th>No</th>
                 <th>ID Peminjaman</th>
                 <th>Nama</th>
                 <th>Nomor Induk</th>
@@ -35,7 +36,6 @@
                 <th>Nama Barang</th>
                 <th>Merk Barang</th>
                 <th>Seri Barang</th>
-                <th>SOP Pemeriksaan</th>
                 <th>Sistem Penggantian</th>
                 <th>Status</th>
                 <th>Act</th>
@@ -53,7 +53,7 @@
             <td align="center"><?=$row->nama_barang?></td>
             <td align="center"><?=$row->merk_barang?></td>
             <td align="center"><?=$row->seri_barang?></td>
-            <td align="center"><?=$row->sistem_penggantian?></td>
+            <td align="center"><span class="badge bg-green"><?=$row->sistem_penggantian?></td>
             <td align="center"><span class="badge bg-green"><?=$row->status?></td>
             <td align="center">
             <?php
