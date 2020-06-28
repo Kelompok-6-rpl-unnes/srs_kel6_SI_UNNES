@@ -51,7 +51,7 @@ class pengajuan_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_bahan','seri','merk','satuan_grosir','jumlah_grosir','harga_grosir','estimasi_grosir','harga_dasar','nama_lab','status'));
+			$datapost = get_post_data(array('id','periode','nama_bahan','seri','merk','satuan_grosir','jumlah_grosir','harga_grosir','estimasi_grosir','harga_dasar','nama_lab','status'));
 			$this->m_pengajuan_bahan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_bahan","#content")');
 			$this->fungsi->message_box("Data Pengajuan Bahan sukses disimpan...","success");
@@ -65,7 +65,7 @@ class pengajuan_bahan extends CI_Controller {
 		$config = array(
 				array(
 					'field'	=> 'id',
-					'label' => 'bebas',
+					'label' => 'id',
 					'rules' => ''
 				),
 				array(
@@ -85,7 +85,7 @@ class pengajuan_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_bahan','seri','merk','satuan_grosir','jumlah_grosir','harga_grosir','estimasi_jumlah','harga_dasar','nama_lab','status'));
+			$datapost = get_post_data(array('id','periode','nama_bahan','seri','merk','satuan_grosir','jumlah_grosir','harga_grosir','estimasi_jumlah','harga_dasar','nama_lab','status'));
 			$this->m_pengajuan_bahan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_bahan","#content")');
 			$this->fungsi->message_box("Data Pengajuan Bahan sukses diperbarui...","success");
@@ -98,4 +98,7 @@ class pengajuan_bahan extends CI_Controller {
 		$this->m_pengajuan_bahan->deleteData($id);
 		redirect('admin');
 	}
-	}
+}
+
+/* End of file pengajuan_bahan.php */
+/* Location: ./application/controllers/pengajuan/pengajuan_bahan.php */

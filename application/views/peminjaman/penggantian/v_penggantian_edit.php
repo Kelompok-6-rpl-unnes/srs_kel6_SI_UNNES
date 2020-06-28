@@ -58,13 +58,8 @@
             </div>
         </div>
         <div class="form-group">
-<<<<<<< HEAD
             <label class="col-sm-4 control-label">Sistem Penggantian</label>
             <select name ='sistem_penggantian'>
-=======
-        <label class="col-sm-4 control-label">Sistem Penggantian</label>
-          <select name ='sistem_penggantian'>
->>>>>>> e338c61a74bce3858faecdf44655f9aab0781418
           <div class="col-sm-8">
           <option value ='Belum Diganti'>Belum Diganti</option>
           <option value ='Sudah Diganti'>Sudah Diganti</option>

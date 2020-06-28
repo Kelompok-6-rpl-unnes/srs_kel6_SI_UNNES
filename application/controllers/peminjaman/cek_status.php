@@ -100,6 +100,12 @@ class cek_status extends CI_Controller {
 		$data['id'] = $this->m_cek_status->getData();
 		$this->load->view('peminjaman/cek_status/v_cek_status_print',$data);
 	}
+	public function delete()
+	{
+		$id = $this->uri->segment(4);
+		$this->m_cek_status->deleteData($id);
+		redirect('admin');
+	}
 }
 
 /* End of file cek_status.php */

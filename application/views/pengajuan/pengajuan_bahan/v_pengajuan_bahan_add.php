@@ -5,10 +5,10 @@
         
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">ID</label>
+            <label class="col-sm-4 control-label">Periode</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'pengajuan_bahan','class'=>'form-control'));?>
-            <?php echo form_error('pengajuan_bahan');?>
+            <?php echo form_input(array('name'=>'periode','class'=>'form-control'));?>
+            <?php echo form_error('periode');?>
             <span id="check_data"></span>
             </div> 
         </div>

@@ -50,7 +50,7 @@ class kelola_seri_alat extends CI_Controller {
         }
         else
         {
-            $datapost = get_post_data(array('kategori','merk','seri','gambar','sop_pengoperasian','sop_pemeliharaan','sop_pemeriksaan','sop_kalibrasi','sop_uji_fungsi','stok','stok_minimal','status'));
+            $datapost = get_post_data(array('id','kategori','merk','seri','gambar','sop_pengoperasian','sop_pemeliharaan','sop_pemeriksaan','sop_kalibrasi','sop_uji_fungsi','stok','stok_minimal','status'));
             $this->m_seri_alat->insertData($datapost);
             $this->fungsi->run_js('load_silent("kelola/kelola_seri_alat","#content")');
             $this->fungsi->message_box("Data Seri Alat sukses disimpan...","success");

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class m_pengajuan_bahan extends CI_Model {
+class M_pengajuan_bahan extends CI_Model {
 
     //select->read
 	public function getData($value='')
@@ -19,8 +19,6 @@ class m_pengajuan_bahan extends CI_Model {
        
 	}
    //update
-
-
 	public function updateData($data='')
 	{
 		 $this->db->where('id',$data['id']);
@@ -34,3 +32,5 @@ class m_pengajuan_bahan extends CI_Model {
 	}
 
 }
+/* End of file m_pengajuan_bahan.php */
+/* Location: ./application/models/pengajuan/m_pengajuan_bahan.php */
