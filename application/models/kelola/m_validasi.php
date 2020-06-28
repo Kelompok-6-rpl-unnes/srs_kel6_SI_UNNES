@@ -12,9 +12,9 @@ class M_validasi extends CI_Model {
     //insert->create
 	public function insertData($data='')
 	{
-		
+
         $this->db->insert('kelola_validasi',$data);
-       
+
 	}
 //update
 	public function updateData($data='')
