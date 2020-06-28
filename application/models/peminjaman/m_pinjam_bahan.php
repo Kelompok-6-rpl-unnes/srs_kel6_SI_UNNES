@@ -32,10 +32,10 @@ class M_pinjam_bahan extends CI_Model {
 	}
 	public function join()
 	{
-		$this->db->select('pinjam_bahan.*, master_bahan.kode, kelola_bahan.nama_bahan');
+		$this->db->select('pinjam_bahan.*, master_inven.kode, master_bahan.nama_bahan');
 		$this->db->from('pinjam_bahan');
-		$this->db->join('master_bahan', 'master_bahan.id = pinjam_bahan.kode');
-		$this->db->join('kelola_bahan', 'kelola_bahan.id = pinjam_bahan.pinjam_alat_bahan');
+		$this->db->join('master_inven', 'master_inven.id = pinjam_bahan.kode');
+		$this->db->join('master_bahan', 'master_bahan.id = pinjam_bahan.pinjam_bahan');
 		return $this->db->get();
 	}
 	public function getlist()

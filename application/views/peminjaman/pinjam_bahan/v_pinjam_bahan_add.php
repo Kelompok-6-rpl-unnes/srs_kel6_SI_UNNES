@@ -32,8 +32,8 @@
             <div class="col-sm-8">
             <div class="form-group">
                 <select class="form-control" name="kode">
-                <?php foreach ($master_bahan->result() as $master_bahan): ?>
-                    <option value="<?= $master_bahan->id ?>" ><?= $master_bahan->kode?></option>
+                <?php foreach ($inven_alat_bahan->result() as $inven_alat_bahan): ?>
+                    <option value="<?= $inven_alat_bahan->id ?>" ><?= $inven_alat_bahan->kode?></option>
                 <?php endforeach; ?>
                 </select>
             </div>
@@ -45,13 +45,13 @@
             <label class="col-sm-4 control-label">Nama Bahan</label>
             <div class="col-sm-8">
             <div class="form-group">
-                <select class="form-control" name="pinjam_alat_bahan">
-                <?php foreach ($kelola_bahan->result() as $kelola_bahan): ?>
-                    <option value="<?= $kelola_bahan->id ?>" ><?= $kelola_bahan->nama_bahan ?></option>
+                <select class="form-control" name="pinjam_bahan">
+                <?php foreach ($master_bahan->result() as $master_bahan): ?>
+                    <option value="<?= $master_bahan->id ?>" ><?= $master_bahan->nama_bahan ?></option>
                 <?php endforeach; ?>
                 </select>
             </div>
-            <?php echo form_error('pinjam_alat_bahan');?>
+            <?php echo form_error('pinjam_bahan');?>
             <span id="check_data"></span>
             </div>
         </div>            
