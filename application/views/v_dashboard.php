@@ -121,3 +121,4 @@
                     <!-- Sales Chart Canvas -->
                     <canvas id="salesChart" style="height: 83px; width: 468px;" height="62" width="351"></canvas>
                   </div>
+                  <?php require_once ('application/views/timeline.php') ?>
