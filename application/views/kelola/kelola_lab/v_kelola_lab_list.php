@@ -16,7 +16,7 @@
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '3') {
+              if ($sesi == '1' || $sesi == '3' || $sesi == '4') {
                 echo button('load_silent("kelola/kelola_lab/form/base","#modal")','Add New Kelola Laboratorium','btn btn-success');
               } else {
                 # code...
@@ -54,7 +54,7 @@
             <td align="center">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '3') {
+              if ($sesi == '1' || $sesi == '3' || $sesi == '4') {
                 echo button('load_silent("kelola/kelola_lab/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
               } else {
                 # code...
@@ -62,7 +62,7 @@
               ?>
            <?php
             $sesi = from_session('level');
-            if ($sesi == '1' || $sesi == '3') {
+            if ($sesi == '1' || $sesi == '3' || $sesi == '4') {
              echo button('load_silent("kelola/kelola_lab/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
             } else {
               # code...

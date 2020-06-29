@@ -33,7 +33,7 @@
             <div class="col-sm-8">
             <div class="form-group">
             <select class="form-control" name="kode">
-            <?php foreach ($nama_alat->result() as $nama_alat): ?>
+            <?php foreach ($inven_alat_bahan->result() as $inven_alat_bahan): ?>
             <option value="<?= $nama_alat->id ?>" <?= $nama_alat->id == $row->kode ? "selected" : null ?>><?= $nama_alat->kode ?></option>
             <?php endforeach; ?>
             </select>
