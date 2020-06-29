@@ -61,7 +61,7 @@
               <div class="row">
                 <div class="col-md-8">
                   <p class="text-center">
-                    <strong>EDLABS: 1 Jan, 2014 - 30 Jul, 2014</strong>
+                    <strong>EDLABS: 1 Jul, 2020 - 30 Jul, 2020</strong>
                   </p>
 
                   <div class="chart">
@@ -78,7 +78,7 @@
 
                   <div class="progress-group">
                     <span class="progress-text">Menunggu Persetujuan</span>
-                    <span class="progress-number"><b>160</b>/200</span>
+                    <span class="progress-number"><b>20</b>/50</span>
 
                     <div class="progress sm">
                       <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
@@ -87,7 +87,7 @@
                   <!-- /.progress-group -->
                   <div class="progress-group">
                     <span class="progress-text">Disetujui</span>
-                    <span class="progress-number"><b>310</b>/400</span>
+                    <span class="progress-number"><b>30</b>/50</span>
 
                     <div class="progress sm">
                       <div class="progress-bar progress-bar-red" style="width: 80%"></div>
@@ -96,7 +96,7 @@
                   <!-- /.progress-group -->
                   <div class="progress-group">
                     <span class="progress-text">Sudah Dikembalikan</span>
-                    <span class="progress-number"><b>480</b>/800</span>
+                    <span class="progress-number"><b>10</b>/50</span>
 
                     <div class="progress sm">
                       <div class="progress-bar progress-bar-green" style="width: 80%"></div>
@@ -105,7 +105,7 @@
                   <!-- /.progress-group -->
                   <div class="progress-group">
                     <span class="progress-text">Tidak Disetujui</span>
-                    <span class="progress-number"><b>250</b>/500</span>
+                    <span class="progress-number"><b>5</b>/50</span>
 
                     <div class="progress sm">
                       <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
