@@ -34,20 +34,25 @@
             <div class="form-group">
             <select class="form-control" name="kode">
             <?php foreach ($inven_alat_bahan->result() as $inven_alat_bahan): ?>
+<<<<<<< HEAD
             <option value="<?= $nama_alat->id ?>" <?= $nama_alat->id == $row->kode ? "selected" : null ?>><?= $nama_alat->kode ?></option>
+=======
+            <option value="<?= $inven_alat_bahan->id ?>" <?= $inven_alat_bahan->id == $row->kode ? "selected" : null ?>><?= $inven_alat_bahan->kode ?></option>
+>>>>>>> 86010a7768df52727e0e7ed6b1a0c474b9c09eb8
             <?php endforeach; ?>
             </select>
             </div>
             <?php echo form_error('kode');?>
             </div>
         </div>
+       
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Alat</label>
             <div class="col-sm-8">
             <div class="form-group">
                 <select class="form-control" name="pinjam_alat_bahan">
-                <?php foreach ($kelola_alat->result() as $kelola_alat): ?>
-                <option value="<?= $kelola_alat->id ?>" <?= $kelola_alat->id == $row->pinjam_alat_bahan ? "selected" : null ?>><?= $kelola_alat->nama_alat ?></option>
+                <?php foreach ($nama_alat->result() as $nama_alat): ?>
+                <option value="<?= $nama_alat->id ?>" <?= $nama_alat->id == $row->pinjam_alat_bahan ? "selected" : null ?>><?= $nama_alat->nama_alat ?></option>
                 <?php endforeach; ?>
                 </select>
                 </div>

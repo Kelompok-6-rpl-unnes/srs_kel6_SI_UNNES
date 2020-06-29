@@ -21,7 +21,7 @@
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
                 <th>No</th>
-                <th>ID Pengajuan</th>
+                <th>Periode</th>
                 <th>Semester</th>
                 <th>Bulan</th>
                 <th>Tahun</th>

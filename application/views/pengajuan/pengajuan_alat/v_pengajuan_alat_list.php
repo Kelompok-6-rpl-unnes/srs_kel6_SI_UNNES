@@ -21,7 +21,7 @@
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
                 <th>No</th>
-                <th>ID</th>
+                <th>Periode</th>
                 <th>No Induk</th>
                 <th>Nama Alat</th>
                 <th>Seri</th>
