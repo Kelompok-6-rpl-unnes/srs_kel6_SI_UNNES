@@ -32,10 +32,10 @@ class M_pinjam_alat_bahan extends CI_Model {
 	}
 	public function join()
 	{
-		$this->db->select('pinjam_alat_bahan.*, master_nama_alat.kode, kelola_alat.nama_alat');
+		$this->db->select('pinjam_alat_bahan.*, master_inven.kode, master_nama_alat.nama_alat');
 		$this->db->from('pinjam_alat_bahan');
-		$this->db->join('master_nama_alat', 'master_nama_alat.id = pinjam_alat_bahan.kode');
-		$this->db->join('kelola_alat', 'kelola_alat.id = pinjam_alat_bahan.pinjam_alat_bahan');
+		$this->db->join('master_inven', 'master_inven.id = pinjam_alat_bahan.kode');
+		$this->db->join('master_nama_alat', 'master_nama_alat.id = pinjam_alat_bahan.pinjam_alat_bahan');
 		return $this->db->get();
 	}
 	public function getlist()
