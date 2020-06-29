@@ -5,7 +5,7 @@
         
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">ID Pengajuan</label>
+            <label class="col-sm-4 control-label">Periode</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'periode_pengajuan','class'=>'form-control'));?>
             <?php echo form_error('periode_pengajuan');?>

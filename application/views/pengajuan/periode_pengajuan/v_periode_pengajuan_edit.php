@@ -7,7 +7,7 @@
     <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">ID Pengajuan</label>
+            <label class="col-sm-4 control-label">Periode</label>
             <div class="col-sm-8">
             <?php echo form_hidden('id',$row->id); ?>
             <?php echo form_input(array('name'=>'periode_pengajuan','value'=>$row->periode_pengajuan,'class'=>'form-control'));?>
