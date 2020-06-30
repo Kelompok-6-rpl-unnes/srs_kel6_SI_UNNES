@@ -68,14 +68,6 @@
             <span id="check_data"></span>
             </div>
         </div>
-         
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Jumlah</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'jumlah','value'=>$row->jumlah,'class'=>'form-control'));?>
-            <?php echo form_error('jumlah');?>
-            </div>
-        </div>        
 
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal Peminjaman</label>
@@ -94,20 +86,11 @@
         </div>       
 
         <div class="form-group">
-            <label class="col-sm-4 control-label">Status</label>
-            <div class="col-sm-8">
-            <select name="status" id="" class="form-control">
-                <option value="Menunggu Persetujuan" <?= $row->status == 'Menunggu Persetujuan' ? 'selected' : null ?>>Menunggu Persetujuan</option>
-            </select>
-            <?php echo form_error('tgl_pinjam');?>
-            </div>
-        </div>
-
-        <div class="form-group">
             <label class="col-sm-4 control-label">Status Pengembalian</label>
             <div class="col-sm-8">
             <select name="status" id="" class="form-control">
-                <option value="Belum Dikembalikan" <?= $row->status_pengembalian == 'Belum Dikembalikan' ? 'selected' : null ?>>-</option>
+                <option value="Belum Dikembalikan" <?= $row->status_pengembalian == 'Belum Dikembalikan' ? 'selected' : null ?>>Belum Dikembalikan</option>
+                <option value="Belum Dikembalikan" >Belum Dikembalikan</option>
             </select>
             <?php echo form_error('tanggal_kembali');?>
             </div>
@@ -117,7 +100,7 @@
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"peminjaman/buat_peminjaman/show_editForm/","#divsubcontent")','Save','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"kelola/kelola_jatuh_tempo/show_editForm/","#divsubcontent")','Save','btn btn-success')." ";
             ?>
             </div>
         </div>

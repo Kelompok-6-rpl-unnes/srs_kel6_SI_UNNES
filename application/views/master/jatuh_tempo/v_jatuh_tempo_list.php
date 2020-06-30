@@ -17,14 +17,13 @@
                     <th>No</th>
                     <th>ID Peminjaman</th>
                     <th>Nama Peminjam</th>
-                    <th>Status User</th>
                     <th>Kode</th>
                     <th>Nama Alat</th>
                     <th>Nama Bahan</th>
                     <th>Jumlah</th>
                     <th>Tanggal Peminjaman</th>
                     <th>Tanggal Pengembalian</th>
-                    <th>Status</th>
+                    <th>Status Pengembalian</th>
                     <th>Act</th>
                 </thead>
                 <tbody>
@@ -33,14 +32,13 @@
                     <td align="center"><?= $i++?></td>
                     <td align="center"><?= $row->kode_peminjaman ?></td>
                     <td align="center"><?= $row->nama_peminjaman ?></td>
-                    <td align="center"><?= $row->status_user ?></td>
                     <td align="center"><?= $row->kode ?></td>
                     <td align="center"><?= $row->nama_alat ?></td>
                     <td align="center"><?= $row->nama_bahan ?></td>
                     <td align="center"><?= $row->jumlah ?></td>
                     <td align="center"><?= date($row->tgl_pinjam) ?></td>
                     <td align="center"><?= date($row->tanggal_kembali) ?></td>
-                    <td align="center"><?= $row->status ?></td>
+                    <td align="center"><?= $row->status_pengembalian ?></td>
                     <td align="center">
                     <?php
                      $sesi = from_session('level');

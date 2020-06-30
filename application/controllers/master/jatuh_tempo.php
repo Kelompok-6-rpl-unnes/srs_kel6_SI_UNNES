@@ -56,7 +56,7 @@ class jatuh_tempo extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','id_peminjaman','nama_peminjam','status_user','kode','nama_alat','nama_bahan','jumlah','tgl_pinjam','tanggal_kembali','status'));
+			$datapost = get_post_data(array('id','id_peminjaman','nama_peminjam','status_user','kode','nama_alat','nama_bahan','jumlah','tgl_pinjam','tanggal_kembali','status_pengembalian'));
 			$this->m_jatuh_tempo->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/jatuh_tempo","#content")');
 			$this->fungsi->message_box("Data Peminjaman disimpan...","success");

@@ -72,9 +72,9 @@
         </div>
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">Tanggal Pinjam</label>
+            <label class="col-sm-4 control-label">Tanggal Peminjaman</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tgl_pinjam','class'=>'form-control', 'readonly'=>'readonly', 'value'=> NOW()));?>
+            <?php echo form_input(array('name'=>'tgl_pinjam','class'=>'form-control', 'readonly'=>'readonly', 'value'=> now()));?>
             <?php echo form_error('stock');?>
             </div>
         </div>
@@ -95,9 +95,18 @@
             <select name="status" id="" class="form-control">
                 <option value="Menunggu Persetujuan">Menunggu Persetujuan</option>
             </select>
-            
             </div>
         </div>
+
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Status Pengembalian</label>
+            <div class="col-sm-8">
+            <select name="status_pengembalian" id="" class="form-control">
+                <option value="Belum Dikembalikan">Belum Dikembalikan</option>
+            </select>
+            </div>
+        </div>
+        
         
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
