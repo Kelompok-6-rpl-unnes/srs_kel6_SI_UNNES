@@ -34,11 +34,8 @@
             <div class="form-group">
             <select class="form-control" name="kode">
             <?php foreach ($inven_alat_bahan->result() as $inven_alat_bahan): ?>
-<<<<<<< HEAD
             <option value="<?= $nama_alat->id ?>" <?= $nama_alat->id == $row->kode ? "selected" : null ?>><?= $nama_alat->kode ?></option>
-=======
             <option value="<?= $inven_alat_bahan->id ?>" <?= $inven_alat_bahan->id == $row->kode ? "selected" : null ?>><?= $inven_alat_bahan->kode ?></option>
->>>>>>> 86010a7768df52727e0e7ed6b1a0c474b9c09eb8
             <?php endforeach; ?>
             </select>
             </div>

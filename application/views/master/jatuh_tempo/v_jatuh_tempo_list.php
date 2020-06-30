@@ -1,85 +1,72 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
 
-    <div class="row" id="form_pembelian">
-      <div class="col-lg-12">
+    <div class="col-lg-12">
         <div class="box box-primary">
-          <div class="box-header with-border">
-            <h3 class="box-title"> Jatuh Tempo</h3>
+            <div class="box-header with-border">
+            <h3 class="box-title">Jatuh Tempo</h3>
 
             <div class="box-tools pull-right">
             <?php
-              $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '4') {
-                echo button('load_silent("master/jatuh_tempo/form/base","#modal")','Add New Jatuh Tempo','btn btn-success');
-              } else {
-                # code...
-              }
-              ?>
+                ?>
             </div>
-          </div>
-          <div class="box-body">
-            <table width="100%" id="tableku" class="table table-striped">
-              <thead>
-                <th>No</th>
-                <th>ID Peminjaman</th>
-                <th>Nama Peminjam</th>
-                <th>Nomor Induk</th>
-                <th>Status User</th>
-                <th>Kategori Peminjaman</th>
-                <th>Tanggal Pinjam</th>
-                <th>Tanggal Harus Diembalikan</th>
-                <th>Status Peminjaman</th>
-                <th>Status</th>
-                <th>Act</th>
-              </thead>
-              <tbody>
-              <?php 
-          $i = 1;
-          foreach($jatuh_tempo->result() as $row): ?>
-          <tr>
-            <td align="center"><?=$i++?></td>
-            <td align="center"><?=$row->id_peminjaman?></td>
-            <td align="center"><?=$row->nama_peminjam?></td>
-            <td align="center"><?=$row->nomor_induk?></td>
-            <td align="center"><span class="badge bg-red"><?=$row->status_user?></td>
-            <td align="center"><?=$row->kategori_peminjaman?></td>
-            <td align="center"><?=$row->tanggal_pinjam?></td>
-            <td align="center"><?=$row->tanggal_kembali?></td>
-            <td align="center"><?=$row->status_peminjaman?></td>
-            <td align="center"><span class="badge bg-green"><?=$row->status?></td>
-            <td align="center">
-            <?php
+            </div>
+            <div class="box-body">
             
-              $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '4') {
-                echo button('load_silent("master/jatuh_tempo/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
-            } else {
-                # code...
-              }
-              ?>
-              <?php
-            $sesi = from_session('level');
-            if ($sesi == '1'|| $sesi == '4') {
-             echo button('load_silent("master/jatuh_tempo/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
-            } else {
-              # code...
-            }
-             ?>
-            </td>
-          </tr>
-        <?php endforeach;?>
-        </tbody>
-        </table>
-        <b>
-          <a href="" class="btn btn-warning" style="margin-bottom;
-        10px; "title="view/utily/v_dashboard.php"></i>Back</a>
-         <a href="<?= site_url('master/jatuh_tempo/view_print/'.$row->id) ?>" class="btn btn-warning" ><i class="fa fw fa-print"></i>Cetak</a>
-      </div>
+            <table width="100%" id="tableku" class="table table-striped">
+                <thead>
+                    <th>No</th>
+                    <th>ID Peminjaman</th>
+                    <th>Nama Peminjam</th>
+                    <th>Status User</th>
+                    <th>Kode</th>
+                    <th>Nama Alat</th>
+                    <th>Nama Bahan</th>
+                    <th>Jumlah</th>
+                    <th>Tanggal Peminjaman</th>
+                    <th>Tanggal Pengembalian</th>
+                    <th>Status</th>
+                    <th>Act</th>
+                </thead>
+                <tbody>
+                <?php $i = 1; foreach($peminjaman->result() as $row): ?>
+                <tr>
+                    <td align="center"><?= $i++?></td>
+                    <td align="center"><?= $row->kode_peminjaman ?></td>
+                    <td align="center"><?= $row->nama_peminjaman ?></td>
+                    <td align="center"><?= $row->status_user ?></td>
+                    <td align="center"><?= $row->kode ?></td>
+                    <td align="center"><?= $row->nama_alat ?></td>
+                    <td align="center"><?= $row->nama_bahan ?></td>
+                    <td align="center"><?= $row->jumlah ?></td>
+                    <td align="center"><?= date($row->tgl_pinjam) ?></td>
+                    <td align="center"><?= date($row->tanggal_kembali) ?></td>
+                    <td align="center"><?= $row->status ?></td>
+                    <td align="center">
+                    <?php
+                     $sesi = from_session('level');
+                     if ($sesi == '1' || $sesi == '6' || $sesi == '7' || $sesi == '8') {
+                         echo button('load_silent("peminjaman/buat_peminjaman/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
+                     } else {
+                         
+                     }
+                        echo button('load_silent("peminjaman/buat_peminjaman/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
+                        echo button('load_silent("peminjaman/buat_peminjaman/view_print/'.'","#content")','  Print','btn btn-warning fa fw fa-print','data-toggle="tooltip" title="Print"');
+
+             ?>   
+          </td>
+        </tr>
+      <?php endforeach;?>
+      </tbody>
+      </table>
     </div>
+
+  </div>
+<div>
+</div>
 <script type="text/javascript">
-  $(document).ready(function() {
-    var table = $('#tableku').DataTable( {
-      "ordering": false,
-    } );
-  });
+$(document).ready(function() {
+  var table = $('#tableku').DataTable( {
+    "ordering": false,
+  } );
+});
 </script>
