@@ -22,7 +22,7 @@
               <thead>
                 <th>No</th>
                 <th>Periode</th>
-                <th>No Induk</th>
+                <th>Nama</th>
                 <th>Nama Alat</th>
                 <th>Seri</th>
                 <th>Merk</th>

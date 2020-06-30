@@ -7,26 +7,32 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Periode</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'pengajuan_alat','class'=>'form-control'));?>
-            <?php echo form_error('pengajuan_alat');?>
-            <span id="check_data"></span>
+            <select class="form-control" name="pengajuan_alat">
+                <?php foreach ($periode_pengajuan->result() as $periode_pengajuan): ?>
+                    <option value="<?= $periode_pengajuan->id ?>"><?= $periode_pengajuan->periode_pengajuan ?></option>
+                <?php endforeach; ?>
+                </select>
+                <?php echo form_error('pengajuan_alat');?>
             </div> 
         </div>
 
         <div class="form-group">
-            <label class="col-sm-4 control-label">No Induk</label>
+            <label class="col-sm-4 control-label">Nama</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'no_induk','class'=>'form-control'));?>
-            <?php echo form_error('no_induk');?>
-            <span id="check_data"></span>
+            <?php echo form_input(array('name'=>'no_induk', 'readonly'=>'readonly', 'class'=>'form-control', 'value'=> from_session('nama')));?>
+            <?php echo form_error('stock');?>
             </div> 
         </div>
 
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Alat</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nama_alat','class'=>'form-control'));?>
-            <?php echo form_error('nama_alat');?>
+            <select class="form-control" name="nama_alat">
+                <?php foreach ($nama_alat->result() as $nama_alat): ?>
+                    <option value="<?= $nama_alat->id ?>"><?= $nama_alat->nama_alat ?></option>
+                <?php endforeach; ?>
+                </select>
+                <?php echo form_error('nama_alat');?>
             <span id="check_data"></span>
             </div>
         </div>
@@ -88,8 +94,12 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Harga Dasar</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'harga_dasar','class'=>'form-control'));?>
-            <?php echo form_error('harga_dasar');?>
+            <select class="form-control" name="harga_dasar">
+                <?php foreach ($kelola_alat->result() as $kelola_alat): ?>
+                    <option value="<?= $kelola_alat->id ?>"><?= $kelola_alat->harga ?></option>
+                <?php endforeach; ?>
+                </select>
+                <?php echo form_error('harga_dasar');?>
             <span id="check_data"></span>
             </div>
         </div>
@@ -97,8 +107,12 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Lab</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nama_lab','class'=>'form-control'));?>
-            <?php echo form_error('nama_lab');?>
+            <select class="form-control" name="nama_lab">
+                <?php foreach ($kelola_lab->result() as $kelola_lab): ?>
+                    <option value="<?= $kelola_lab->id ?>"><?= $kelola_lab->nama_lab ?></option>
+                <?php endforeach; ?>
+                </select>
+                <?php echo form_error('nama_lab');?>
             <span id="check_data"></span>
             </div>
         </div>
