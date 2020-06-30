@@ -71,11 +71,17 @@
             </div>
         </div>
         
+       
         <div class="form-group">
-            <label class="col-sm-4 control-label">Tanggal Pinjam</label>
+            <label class="col-sm-4 control-label">Tanggal Peminjaman</label>
             <div class="col-sm-8">
+<<<<<<< HEAD
             <?php echo form_input(array('name'=>'tgl_pinjam','class'=>'form-control',  'type'=>'datetime-local'));?>
             <?php echo form_error('tgl_pinjam');?>
+=======
+            <?php echo form_input(array('name'=>'tgl_pinjam','class'=>'form-control', 'type'=>'datetime-local'));?>
+            <?php echo form_error('stock');?>
+>>>>>>> c2e844ad4a48ef9838448a030d500765851dba71
             </div>
         </div>
       
@@ -95,9 +101,18 @@
             <select name="status" id="" class="form-control">
                 <option value="Menunggu Persetujuan">Menunggu Persetujuan</option>
             </select>
-            
             </div>
         </div>
+
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Status Pengembalian</label>
+            <div class="col-sm-8">
+            <select name="status_pengembalian" id="" class="form-control">
+                <option value="Belum Dikembalikan">Belum Dikembalikan</option>
+            </select>
+            </div>
+        </div>
+        
         
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>

@@ -34,11 +34,18 @@
         </div>
          <?php
         $sesi = from_session('level');
-         if ($sesi == '4')
+         if ($sesi == '4'|| $sesi == '1')
          require_once ('application/views/pengumuman.php')
          ?>
          <?php
         $sesi = from_session('level');
          if ($sesi == '4')
          require_once ('application/views/nyoba.php')
+<<<<<<< HEAD
          ?>
+=======
+         ?>
+
+
+       
+>>>>>>> c2e844ad4a48ef9838448a030d500765851dba71

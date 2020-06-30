@@ -3,6 +3,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_buat_peminjaman extends CI_Model {
 
+	function hitung(){      
+		 
+		$ce = $this->db->query('SELECT * FROM peminjaman WHERE tanggal_kembali BETWEEN DATE_SUB(NOW(), INTERVAL 2 MONTH) AND NOW()');
+			$nullex = $ce->num_rows();
+			return $nullex;     
+	}
+	function jatuh_tempo(){
+		
+		
+	
+		return $this->db->query('SELECT * FROM peminjaman WHERE tanggal_kembali BETWEEN NOW() AND DATE_ADD(NOW(), INTERVAL 7 DAY)');
+	}
 
     public function kode_peminjaman()
     {
