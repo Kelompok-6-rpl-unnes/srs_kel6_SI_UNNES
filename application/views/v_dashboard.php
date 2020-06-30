@@ -32,93 +32,13 @@
           </div>
           <!-- /.widget-user -->
         </div>
-
-        <div class="box-body">
-              <div class="callout callout-danger">
-                <h4>Anda Memiliki Tanggungan Pengembalian!</h4>
-
-                <p>Silahkan selesaikan tanggungan pengembalian.</p>
-              </div>
-              <div class="callout callout-info">
-                <h4>Pengumuman Libur Semester!</h4>
-
-                <p>Libur Semester Mulai 4 Juni-5 Juli 2020.</p>
-              </div>
-              <div class="callout callout-warning">
-                <h4>Peminjaman Masih Menunggu Persetujuan!</h4>
-
-                <p>Menunggu Sampai Disetujui.</p>
-              </div>
-              <div class="callout callout-success">
-                <h4>Tanggungan Jatuh Tempo</h4>
-
-                <p>Harap Segera Dikembalikan.</p>
-              </div>
-              <div class="callout callout-success">
-
-            </div>
-           
-              <div class="row">
-                <div class="col-md-8">
-                  <p class="text-center">
-                    <strong>EDLABS: 1 Jul, 2020 - 30 Jul, 2020</strong>
-                  </p>
-
-                  <div class="chart">
-                    <!-- Sales Chart Canvas -->
-                    <canvas id="salesChart" style="height: 83px; width: 468px;" height="62" width="351"></canvas>
-                  </div>
-                  <!-- /.chart-responsive -->
-                </div>
-                <!-- /.col -->
-                <div class="col-md-4">
-                  <p class="text-center">
-                    <strong>Peminjaman</strong>
-                  </p>
-
-                  <div class="progress-group">
-                    <span class="progress-text">Menunggu Persetujuan</span>
-                    <span class="progress-number"><b>20</b>/50</span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
-                    </div>
-                  </div>
-                  <!-- /.progress-group -->
-                  <div class="progress-group">
-                    <span class="progress-text">Disetujui</span>
-                    <span class="progress-number"><b>30</b>/50</span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar progress-bar-red" style="width: 80%"></div>
-                    </div>
-                  </div>
-                  <!-- /.progress-group -->
-                  <div class="progress-group">
-                    <span class="progress-text">Sudah Dikembalikan</span>
-                    <span class="progress-number"><b>10</b>/50</span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar progress-bar-green" style="width: 80%"></div>
-                    </div>
-                  </div>
-                  <!-- /.progress-group -->
-                  <div class="progress-group">
-                    <span class="progress-text">Tidak Disetujui</span>
-                    <span class="progress-number"><b>5</b>/50</span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
-                    </div>
-                  </div>
-                  <!-- /.progress-group -->
-                </div>
-                <!-- /.col -->
-              </div>
-              <!-- /.row -->
-            </div>
-            <div class="chart">
-                    <!-- Sales Chart Canvas -->
-                    <canvas id="salesChart" style="height: 83px; width: 468px;" height="62" width="351"></canvas>
-                  </div>
-                  <?php require_once ('application/views/timeline.php') ?>
+         <?php
+        $sesi = from_session('level');
+         if ($sesi == '4')
+         require_once ('application/views/pengumuman.php')
+         ?>
+         <?php
+        $sesi = from_session('level');
+         if ($sesi == '4')
+         require_once ('application/views/nyoba.php')
+         ?>
