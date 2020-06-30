@@ -44,7 +44,7 @@
                 <?php endforeach; ?>
                 </select>
             
-            <?php echo form_error('satuan_alat');?>
+            <?php echo form_error('nama_alat');?>
             </div>
         </div>
 
@@ -58,7 +58,7 @@
                 <?php endforeach; ?>
                 </select>
             
-            <?php echo form_error('nama_alat');?>
+            <?php echo form_error('nama_bahan');?>
             </div>
         </div>
 
@@ -74,8 +74,8 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal Pinjam</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tgl_pinjam','class'=>'form-control', 'readonly'=>'readonly', 'value'=> NOW()));?>
-            <?php echo form_error('stock');?>
+            <?php echo form_input(array('name'=>'tgl_pinjam','class'=>'form-control',  'type'=>'datetime-local'));?>
+            <?php echo form_error('tgl_pinjam');?>
             </div>
         </div>
       
@@ -84,7 +84,7 @@
             <label class="col-sm-4 control-label">Tanggal Kembali</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'tanggal_kembali','class'=>'form-control', 'type'=>'datetime-local'));?>
-            <?php echo form_error('stock');?>
+            <?php echo form_error('tanggal_kembali');?>
             </div>
         </div>
 
