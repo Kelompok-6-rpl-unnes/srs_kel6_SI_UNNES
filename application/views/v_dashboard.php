@@ -41,11 +41,4 @@
         $sesi = from_session('level');
          if ($sesi == '4')
          require_once ('application/views/nyoba.php')
-<<<<<<< HEAD
          ?>
-=======
-         ?>
-
-
-       
->>>>>>> c2e844ad4a48ef9838448a030d500765851dba71
