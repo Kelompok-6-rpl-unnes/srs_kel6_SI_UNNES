@@ -8,12 +8,15 @@ class cek_status extends CI_Controller {
 		parent::__construct();
 		$this->fungsi->restrict();
 		$this->load->model('peminjaman/m_cek_status');
+		$this->load->model('peminjaman/m_buat_peminjaman');
 	}
 
 	public function index()
 	{
 		$this->fungsi->check_previleges('cek_status');
-		$data['cek_status'] = $this->m_cek_status->getData();
+		$data = [
+            'peminjaman' => $this->m_buat_peminjaman->getData(),
+        ];
 		$this->load->view('peminjaman/cek_status/v_cek_status_list',$data);
 	}
 
@@ -53,7 +56,7 @@ class cek_status extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id_peminjaman','kategori_peminjaman','tanggal_peminjaman','tanggal_kembali','status_peminjaman','status'));
+			$datapost = get_post_data(array('id_peminjaman','kategori_peminjaman','tgl_pinjam','tanggal_kembali','status_peminjaman','status'));
 			$this->m_cek_status->insertData($datapost);
 			$this->fungsi->run_js('load_silent("peminjaman/cek_status","#content")');
 			$this->fungsi->message_box("Data Peminjaman disimpan...","success");
