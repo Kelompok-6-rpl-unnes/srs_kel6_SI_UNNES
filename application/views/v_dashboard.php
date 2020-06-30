@@ -32,10 +32,9 @@
           </div>
           <!-- /.widget-user -->
         </div>
-<<<<<<< HEAD
          <?php
         $sesi = from_session('level');
-         if ($sesi == '4')
+         if ($sesi == '4'|| $sesi == '1')
          require_once ('application/views/pengumuman.php')
          ?>
          <?php
@@ -43,7 +42,6 @@
          if ($sesi == '4')
          require_once ('application/views/nyoba.php')
          ?>
-=======
+
 
        
->>>>>>> 08d91d2a07c50e5c20191ef66e7e2926a80bcce7

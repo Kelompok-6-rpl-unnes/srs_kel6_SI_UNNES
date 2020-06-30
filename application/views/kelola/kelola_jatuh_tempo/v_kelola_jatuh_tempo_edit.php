@@ -88,11 +88,11 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Status Pengembalian</label>
             <div class="col-sm-8">
-            <select name="status" id="" class="form-control">
+            <select name="status_pengembalian" id="" class="form-control">
                 <option value="Belum Dikembalikan" <?= $row->status_pengembalian == 'Belum Dikembalikan' ? 'selected' : null ?>>Belum Dikembalikan</option>
-                <option value="Belum Dikembalikan" >Belum Dikembalikan</option>
+                <option value="Sudah Dikembalikan" >Sudah Dikembalikan</option>
             </select>
-            <?php echo form_error('tanggal_kembali');?>
+            <?php echo form_error('tgl_pinjam');?>
             </div>
         </div>
         
