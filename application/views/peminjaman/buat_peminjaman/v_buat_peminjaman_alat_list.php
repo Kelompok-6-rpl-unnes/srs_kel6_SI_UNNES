@@ -46,7 +46,7 @@
                     <td align="center"><?= date($row->tgl_pinjam) ?></td>
                     <td align="center"><?= date($row->tanggal_kembali) ?></td>
                     <td align="center"><?= $row->status ?></td>
-                    <td align="center"><?= $row->status_pengembalian?></td>
+                    <td align="center" class="badge <?= $row->status_pengembalian == 'Belum Dikembalikan' ? 'bg-red' : 'bg-green'?>"><?= $row->status_pengembalian ?></td>
                     <td align="center">
                     <?php
                         $sesi = from_session('level');

@@ -7,16 +7,17 @@ class jatuh_tempo extends CI_Controller {
 	{
 		parent::__construct();
 		$this->fungsi->restrict();
-		$this->load->model('master/m_jatuh_tempo');
+		$this->load->model('master/m_inven');
+		$this->load->model('master/m_kelola_alat');
+		$this->load->model('kelola/m_kelola_bahan');
 		$this->load->model('peminjaman/m_buat_peminjaman');
 	}
 
 	public function index()
 	{
-		$this->fungsi->check_previleges('jatuh_tempo');
-		$data = [
-            'peminjaman' => $this->m_buat_peminjaman->getData(),
-        ];
+		//$this->fungsi->check_previleges('jatuh_tempo');
+		$data['jatuh_tempo'] = $this->m_buat_peminjaman->jatuh_tempo();
+		$data['hitung'] = $this->m_buat_peminjaman->hitung();
 		$this->load->view('master/jatuh_tempo/v_jatuh_tempo_list',$data);
 	}
 
@@ -24,7 +25,7 @@ class jatuh_tempo extends CI_Controller {
 	{
 		$content   = "<div id='divsubcontent'></div>";
 		$header    = "Form Jatuh Tempo";
-		$subheader = "jatuh_tempo";
+		$subheader = "jatuh_tempo"; //check kelolanya
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
 		if($param=='base'){
@@ -35,68 +36,50 @@ class jatuh_tempo extends CI_Controller {
 		}
 	}
 
-	public function show_addForm()
+	
+
+	public function show_editForm($id='')
 	{
-		$this->fungsi->check_previleges('jatuh_tempo');
+		//$this->fungsi->check_previleges('kelola_alat');
 		$this->load->library('form_validation');
 		$config = array(
-				array(
-					'field'	=> 'id_peminjaman',
-					'label' => 'id_peminjaman',
-					'rules' => 'required'
-				)
-			);
-		$this->form_validation->set_rules($config);
-		$this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
+			
+			array(
+				'field'	=> 'nama_alat',
+				'label' => 'nama_alat',
+				'rules' => 'required'
+            ),
+            array(
+				'field'	=> 'nama_bahan',
+				'label' => 'nama_bahan',
+				'rules' => 'required'
+			)
+		);
+	$this->form_validation->set_rules($config);
+	$this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['status']='';
-			$this->load->view('master/jatuh_tempo/v_jatuh_tempo_add',$data);
-		}
-		else
-		{
-			$datapost = get_post_data(array('id','id_peminjaman','nama_peminjam','status_user','kode','nama_alat','nama_bahan','jumlah','tgl_pinjam','tanggal_kembali','status_pengembalian'));
-			$this->m_jatuh_tempo->insertData($datapost);
-			$this->fungsi->run_js('load_silent("master/jatuh_tempo","#content")');
-			$this->fungsi->message_box("Data Peminjaman disimpan...","success");
-            $this->fungsi->catat($datapost,"Menambah Data Peminjaman dengan data sbb:",true);
-        }
-	}
-	public function show_editForm($id='')
-	{
-		$this->fungsi->check_previleges('jatuh_tempo');
-		$this->load->library('form_validation');
-		$config = array(
-				array(
-					'field'	=> 'id',
-					'label' => '',
-					'label' => 'id',
-					'rules' => ''
-				),
-				array(
-					'field'	=> 'status_user',
-					'label' => 'status_user',
-					'rules' => 'required'
-				)
-			);
-		$this->form_validation->set_rules($config);
-		$this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
-		if ($this->form_validation->run() == FALSE)
-		{
-			$data['edit'] = $this->db->get_where('jatuh tempo',array('id'=>$id));
-			$data['status']='';
+			$data = [
+				'edit' => $this->db->get_where('peminjaman',array('id'=>$id)),
+				'kode' => $this->m_inven->getData(),
+                'bahan' => $this->m_kelola_bahan->getData(),
+                'alat' => $this->m_kelola_alat->join(),
+                
+            ];
+
 			$this->load->view('master/jatuh_tempo/v_jatuh_tempo_edit',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','status_user'));
-			$this->m_jatuh_tempo->updateData($datapost);
+			$datapost = get_post_data(array('id','kode_peminjaman','nama_peminjaman','kode','nama_alat','nama_bahan','tgl_pinjam','tanggal_kembali','status_pengembalian'));
+			$this->m_buat_peminjaman->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/jatuh_tempo","#content")');
-			$this->fungsi->message_box("Data Jatuh Tempo Peminjaman Alat dan Bahan sukses diperbarui...","success");
-			$this->fungsi->catat($datapost,"Mengedit Jatuh Tempo Peminjaman Alat Dan Bahan dengan data sbb:",true);
+			$this->fungsi->message_box("Data Peminjaman sukses diperbarui...","success");
+			$this->fungsi->catat($datapost,"Mengedit jatuh_tempo dengan data sbb:",true);
 		}
 	}
+
 	public function view_print($id='')
 	{
 		//$this->fungsi->check_previleges('jatuh_tempo');

@@ -68,11 +68,12 @@ class buat_peminjaman extends CI_Controller {
                 
             ];
 			// $data['status']='';
+			// $data['status_pengembalian']='';
 			$this->load->view('peminjaman/buat_peminjaman/v_buat_peminjaman_add',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','kode_peminjaman','nama_peminjaman','kode','nama_alat','nama_bahan','jumlah','tgl_pinjam','tanggal_kembali','status'));
+			$datapost = get_post_data(array('id','kode_peminjaman','nama_peminjaman','kode','nama_alat','nama_bahan','jumlah','tgl_pinjam','tanggal_kembali','status','status_pengembalian'));
             $this->m_buat_peminjaman->insertData($datapost);
 			$this->fungsi->run_js('load_silent("peminjaman/buat_peminjaman","#content")');
 			$this->fungsi->message_box("Data Kelola Peminjaman sukses disimpan...","success");

@@ -27,7 +27,7 @@
                     <th>Act</th>
                 </thead>
                 <tbody>
-                <?php $i = 1; foreach($peminjaman->result() as $row): ?>
+                <?php $i = 1; foreach($jatuh_tempo->result() as $row): ?>
                 <tr>
                     <td align="center"><?= $i++?></td>
                     <td align="center"><?= $row->kode_peminjaman ?></td>
@@ -38,7 +38,7 @@
                     <td align="center"><?= $row->jumlah ?></td>
                     <td align="center"><?= date($row->tgl_pinjam) ?></td>
                     <td align="center"><?= date($row->tanggal_kembali) ?></td>
-                    <td align="center"><?= $row->status_pengembalian ?></td>
+                    <td align="center" class="badge <?= $row->status_pengembalian == 'Belum Dikembalikan' ? 'bg-red' : 'bg-green'?>"><?= $row->status_pengembalian ?></td>
                     <td align="center">
                     <?php
                      $sesi = from_session('level');

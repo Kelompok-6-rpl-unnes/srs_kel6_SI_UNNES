@@ -14,32 +14,26 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
-              <th>No</th>
-                    <th>ID Peminjaman</th>
-                    <th>Nama Peminjam</th>
-                    <th>Kode</th>
-                    <th>Nama Alat</th>
-                    <th>Nama Bahan</th>
-                    <th>Jumlah</th>
-                    <th>Tanggal Peminjaman</th>
-                    <th>Tanggal Pengembalian</th>
-                    <th>Status Pengembalian</th>
-                    <th>Act</th>
-                </thead>
-                <tbody>
-                <?php $i = 1; foreach($peminjaman->result() as $row): ?>
-                <tr>
-                    <td align="center"><?= $i++?></td>
-                    <td align="center"><?= $row->kode_peminjaman ?></td>
-                    <td align="center"><?= $row->nama_peminjaman ?></td>
-                    <td align="center"><?= $row->kode ?></td>
-                    <td align="center"><?= $row->nama_alat ?></td>
-                    <td align="center"><?= $row->nama_bahan ?></td>
-                    <td align="center"><?= $row->jumlah ?></td>
-                    <td align="center"><?= date($row->tgl_pinjam) ?></td>
-                    <td align="center"><?= date($row->tanggal_kembali) ?></td>
-                    <td align="center"><?= $row->status_pengembalian == 'Belum Dikembalikan' ?><?= $row->status_pengembalian ?></td>
-                     <td align="center">
+                <th>No</th>
+                <th>Id Peminjaman</th>
+                <th>Nama Peminjam</th>
+                <th>Tanggal Pinjamn</th>
+                <th>tanggal Kembali</th>
+                <th>Status Pengembalian</th>
+                <th>Act</th>
+              </thead>
+              <tbody>
+          <?php 
+          $i = 1;
+          foreach($jatuh_tempo->result() as $row): ?>
+          <tr>
+            <td align="center"><?=$i++?></td>
+            <td align="center"><?=$row->kode_peminjaman?></td>
+            <td align="center"><?=$row->peminjam?></td>
+            <td align="center"><?=$row->tgl_pinjam?></td>
+            <td align="center"><?=$row->tgl_pengembalian	?></td>
+            <td align="center" class="badge <?= $row->status_pengembalian == 'Belum Dikembalikan' ? 'bg-red' : 'bg-green'?>"><?= $row->status_pengembalian ?></td>
+            <td align="center">
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '4'|| $sesi == '6') {
@@ -68,5 +62,3 @@
     } );
   });
 </script>
-
-
