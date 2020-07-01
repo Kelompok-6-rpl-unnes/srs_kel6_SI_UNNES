@@ -40,7 +40,7 @@
             
                 <select class="form-control" name="nama_alat">
                 <?php foreach ($alat->result() as $alat): ?>
-                    <option value="<?= $alat->nama_alat ?>"><?= $alat->nama_alat ?></option>
+                    <option value="<?= $alat->id_nama_alat ?>"><?= $alat->nama_alat ?></option>
                 <?php endforeach; ?>
                 </select>
             
@@ -54,7 +54,7 @@
             
                 <select class="form-control" name="nama_bahan">
                 <?php foreach ($bahan->result() as $bahan): ?>
-                    <option value="<?= $bahan->nama_bahan ?>"><?= $bahan->nama_bahan ?></option>
+                    <option value="<?= $bahan->id_nama_bahan ?>"><?= $bahan->nama_bahan ?></option>
                 <?php endforeach; ?>
                 </select>
             
@@ -75,11 +75,9 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal Peminjaman</label>
             <div class="col-sm-8">
-<<<<<<< HEAD
-            <?php echo form_input(array('name'=>'tgl_pinjam','class'=>'form-control', 'type'=>'datetime-local'));?>
-=======
-            <?php echo form_input(array('name'=>'tgl_pinjam','class'=>'form-control',  'type'=>'datetime-local'));?>
->>>>>>> 8c35cc3759a825787ec86a2485e2366e3ac592ea
+
+            <?php echo form_input(array('name'=>'tgl_pinjam','class'=>'form-control', 'value'=>now()));?>
+
             <?php echo form_error('tgl_pinjam');?> 
             </div>
         </div>
