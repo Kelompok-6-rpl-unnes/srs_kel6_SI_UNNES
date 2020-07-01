@@ -10,16 +10,24 @@
             <label class="col-sm-4 control-label">Periode</label>
             <div class="col-sm-8">
             <?php echo form_hidden('id',$row->id); ?>
-            <?php echo form_input(array('name'=>'periode','value'=>$row->periode,'class'=>'form-control'));?>
-            <?php echo form_error('periode');?>
+            <select class="form-control" name="periode">
+                <?php foreach ($periode_pengajuan->result() as $periode_pengajuan): ?>
+                    <option value="<?= $periode_pengajuan->periode_pengajuan ?>"><?= $periode_pengajuan->periode_pengajuan ?></option>
+                <?php endforeach; ?>
+                </select>
+                <?php echo form_error('periode');?>
             <span id="check_data"></span>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Bahan</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nama_bahan','value'=>$row->nama_bahan,'class'=>'form-control'));?>
-            <?php echo form_error('nama_bahan');?>
+            <select class="form-control" name="nama_bahan">
+                <?php foreach ($master_bahan->result() as $master_bahan): ?>
+                    <option value="<?= $master_bahan->nama_bahan ?>"><?= $master_bahan->nama_bahan ?></option>
+                <?php endforeach; ?>
+                </select>
+                <?php echo form_error('nama_bahan');?>
             </div>
         </div>
         <div class="form-group">
@@ -74,8 +82,12 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Lab</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nama_lab','value'=>$row->nama_lab,'class'=>'form-control'));?>
-            <?php echo form_error('nama_lab');?>
+            <select class="form-control" name="nama_lab">
+                <?php foreach ($kelola_lab->result() as $kelola_lab): ?>
+                    <option value="<?= $kelola_lab->nama_lab ?>"><?= $kelola_lab->nama_lab ?></option>
+                <?php endforeach; ?>
+                </select>
+                <?php echo form_error('nama_lab');?>
             </div>
         </div>
         <div class="form-group">

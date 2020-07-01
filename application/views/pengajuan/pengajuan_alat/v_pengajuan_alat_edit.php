@@ -9,9 +9,10 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Periode</label>
             <div class="col-sm-8">
+            <?php echo form_hidden('id',$row->id); ?>
             <select class="form-control" name="pengajuan_alat">
                 <?php foreach ($periode_pengajuan->result() as $periode_pengajuan): ?>
-                    <option value="<?= $periode_pengajuan->id ?>"><?= $periode_pengajuan->periode_pengajuan ?></option>
+                    <option value="<?= $periode_pengajuan->periode_pengajuan ?>"><?= $periode_pengajuan->periode_pengajuan ?></option>
                 <?php endforeach; ?>
                 </select>
                 <?php echo form_error('pengajuan_alat');?>
@@ -30,7 +31,7 @@
             <div class="col-sm-8">
             <select class="form-control" name="nama_alat">
                 <?php foreach ($nama_alat->result() as $nama_alat): ?>
-                    <option value="<?= $nama_alat->id ?>"><?= $nama_alat->nama_alat ?></option>
+                    <option value="<?= $nama_alat->nama_alat ?>"><?= $nama_alat->nama_alat ?></option>
                 <?php endforeach; ?>
                 </select>
                 <?php echo form_error('nama_alat');?>
@@ -83,7 +84,7 @@
             <div class="col-sm-8">
             <select class="form-control" name="harga_dasar">
                 <?php foreach ($kelola_alat->result() as $kelola_alat): ?>
-                    <option value="<?= $kelola_alat->id ?>"><?= $kelola_alat->harga ?></option>
+                    <option value="<?= $kelola_alat->harga ?>"><?= $kelola_alat->harga ?></option>
                 <?php endforeach; ?>
                 </select>
                 <?php echo form_error('harga_dasar');?>
@@ -94,7 +95,7 @@
             <div class="col-sm-8">
             <select class="form-control" name="nama_lab">
                 <?php foreach ($kelola_lab->result() as $kelola_lab): ?>
-                    <option value="<?= $kelola_lab->id ?>"><?= $kelola_lab->nama_lab ?></option>
+                    <option value="<?= $kelola_lab->nama_lab ?>"><?= $kelola_lab->nama_lab ?></option>
                 <?php endforeach; ?>
                 </select>
                 <?php echo form_error('nama_lab');?>

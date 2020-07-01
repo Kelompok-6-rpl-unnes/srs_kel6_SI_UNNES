@@ -80,7 +80,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal Peminjaman</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tgl_pinjam','class'=>'form-control', 'readonly'=>'readonly', 'value'=> $row->tgl_pinjam));?>
+            <?php echo form_input(array('name'=>'tgl_pinjam','class'=>'form-control', 'type'=>'datetime-local', 'value'=> $row->tgl_pinjam));?>
             <?php echo form_error('tgl_pinjam');?>
             </div>
         </div>
@@ -88,7 +88,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal Pengembalian</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tanggal_kembali','class'=>'form-control', 'readonly'=>'readonly', 'value'=>$row->tanggal_kembali));?>
+            <?php echo form_input(array('name'=>'tanggal_kembali','class'=>'form-control', 'type'=>'datetime-local', 'value'=>$row->tanggal_kembali));?>
             <?php echo form_error('stock');?>
             </div>
         </div>       

@@ -50,7 +50,7 @@
             <td align="center"><?=$row->estimasi_jumlah?></td>
             <td align="left">Rp. <?=number_format($row->harga_dasar)?></td>
             <td align="center"><?=$row->nama_lab?></td>
-            <td align="center"><span class="badge bg-green"><?=$row->status?></td>
+            <td align="center" class="badge <?= $row->status == 'Ditolak' ? 'bg-red' : 'bg-green'?>"><?= $row->status ?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');

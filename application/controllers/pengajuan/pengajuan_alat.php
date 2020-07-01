@@ -106,10 +106,14 @@ class pengajuan_alat extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit pengajuan_alat dengan data sbb:",true);
 		}
 	}
-	public function delete()
-	{
-		$id = $this->uri->segment(4);
+	public function delete($id)
+    {
+        
+		if($id == '' || !is_numeric($id)) die;
 		$this->m_pengajuan_alat->deleteData($id);
-		redirect('admin');
-	}
-	}
+		$this->fungsi->run_js('load_silent("pengajuan/pengajuan_alat","#content")');
+		$this->fungsi->message_box("Data Pengajuan Berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus laporan dengan id ".$id);
+    
+    }
+}

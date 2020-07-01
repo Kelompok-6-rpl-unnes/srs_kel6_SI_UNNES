@@ -8,6 +8,9 @@ class pengajuan_bahan extends CI_Controller {
 		parent::__construct();
 		$this->fungsi->restrict();
 		$this->load->model('pengajuan/m_pengajuan_bahan');
+		$this->load->model('master/m_master_bahan');
+		$this->load->model('kelola/m_kelola_lab');
+		$this->load->model('pengajuan/m_periode_pengajuan');
 	}
 
 	public function index()
@@ -46,12 +49,18 @@ class pengajuan_bahan extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['status']='';
+			$data = [
+				'master_bahan' => $this->m_master_bahan->getData(),
+                'kelola_lab' => $this->m_kelola_lab->getData(),
+                'periode_pengajuan' =>$this->m_periode_pengajuan->getData(),
+                
+            ];
+			// $data['status']='';
 			$this->load->view('pengajuan/pengajuan_bahan/v_pengajuan_bahan_add',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','periode','nama_bahan','seri','merk','satuan_grosir','jumlah_grosir','harga_grosir','estimasi_grosir','harga_dasar','nama_lab','status'));
+			$datapost = get_post_data(array('id','periode','nama_bahan','seri','merk','satuan_grosir','jumlah_grosir','harga_grosir','estimasi_jumlah','harga_dasar','nama_lab','status'));
 			$this->m_pengajuan_bahan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_bahan","#content")');
 			$this->fungsi->message_box("Data Pengajuan Bahan sukses disimpan...","success");
@@ -80,7 +89,9 @@ class pengajuan_bahan extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['edit'] = $this->db->get_where('pengajuan_bahan',array('id'=>$id));
-			$data['status']='';
+			$data['periode_pengajuan']=$this->m_periode_pengajuan->getData();
+			$data['master_bahan']=$this->m_master_bahan->getData();
+			$data['kelola_lab']=$this->m_kelola_lab->getData();
 			$this->load->view('pengajuan/pengajuan_bahan/v_pengajuan_bahan_edit',$data);
 		}
 		else
@@ -92,11 +103,13 @@ class pengajuan_bahan extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit pengajuan_bahan dengan data sbb:",true);
 		}
 	}
-	public function delete()
+	public function delete($id)
 	{
-		$id = $this->uri->segment(4);
+		if($id == '' || !is_numeric($id)) die;
 		$this->m_pengajuan_bahan->deleteData($id);
-		redirect('admin');
+		$this->fungsi->run_js('load_silent("pengajuan/pengajuan_bahan","#content")');
+		$this->fungsi->message_box("Data Pengajuan Bahan Berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus laporan dengan id ".$id);
 	}
 }
 
