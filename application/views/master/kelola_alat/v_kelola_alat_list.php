@@ -9,7 +9,7 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '4') {
-                echo button('load_silent("kelola/kelola_alat/form/base","#modal")','Tambah kelola alat','btn btn-success');
+                echo button('load_silent("master/kelola_alat/form/base","#modal")','Tambah kelola alat','btn btn-success');
               } else {
                 # code...
               }

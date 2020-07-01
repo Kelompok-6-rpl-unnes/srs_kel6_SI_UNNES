@@ -76,7 +76,7 @@
             <label class="col-sm-4 control-label">Tanggal Peminjaman</label>
             <div class="col-sm-8">
 
-            <?php echo form_input(array('name'=>'tgl_pinjam','class'=>'form-control', 'value'=>now()));?>
+            <?php echo form_input(array('name'=>'tgl_pinjam','class'=>'form-control', 'type'=>'datetime-local'));?>
 
             <?php echo form_error('tgl_pinjam');?> 
             </div>

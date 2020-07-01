@@ -72,7 +72,7 @@ class jatuh_tempo extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','kode_peminjaman','nama_peminjaman','kode','nama_alat','nama_bahan','tgl_pinjam','tanggal_kembali','status_pengembalian'));
+			$datapost = get_post_data(array('id','kode_peminjaman','nama_peminjaman','kode','tgl_pinjam','tanggal_kembali','status_pengembalian'));
 			$this->m_buat_peminjaman->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/jatuh_tempo","#content")');
 			$this->fungsi->message_box("Data Peminjaman sukses diperbarui...","success");

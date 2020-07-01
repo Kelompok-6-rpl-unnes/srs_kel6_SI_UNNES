@@ -18,9 +18,6 @@
                     <th>ID Peminjaman</th>
                     <th>Nama Peminjam</th>
                     <th>Kode</th>
-                    <th>Nama Alat</th>
-                    <th>Nama Bahan</th>
-                    <th>Jumlah</th>
                     <th>Tanggal Peminjaman</th>
                     <th>Tanggal Pengembalian</th>
                     <th>Status Pengembalian</th>
@@ -33,9 +30,6 @@
                     <td align="center"><?= $row->kode_peminjaman ?></td>
                     <td align="center"><?= $row->nama_peminjaman ?></td>
                     <td align="center"><?= $row->kode ?></td>
-                    <td align="center"><?= $row->nama_alat ?></td>
-                    <td align="center"><?= $row->nama_bahan ?></td>
-                    <td align="center"><?= $row->jumlah ?></td>
                     <td align="center"><?= date($row->tgl_pinjam) ?></td>
                     <td align="center"><?= date($row->tanggal_kembali) ?></td>
                     <td align="center" class="badge <?= $row->status_pengembalian == 'Belum Dikembalikan' ? 'bg-red' : 'bg-green'?>"><?= $row->status_pengembalian ?></td>

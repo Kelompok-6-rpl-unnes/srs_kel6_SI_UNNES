@@ -45,7 +45,7 @@
             <div>
                 <select class="form-control" name="nama_alat">
                 <?php foreach ($alat->result() as $alat): ?>
-                    <option value="<?= $alat->nama_alat ?>" <?= $alat->nama_alat == $row->nama_alat ? "selected" : null ?>><?= $alat->nama_alat ?></option>
+                    <option value="<?= $alat->id_nama_alat ?>" <?= $alat->nama_alat == $row->nama_alat ? "selected" : null ?>><?= $alat->nama_alat ?></option>
                 <?php endforeach; ?>
                 </select>
             </div>
@@ -60,7 +60,7 @@
             <div>
                 <select class="form-control" name="nama_bahan">
                 <?php foreach ($bahan->result() as $bahan): ?>
-                    <option value="<?= $bahan->nama_bahan ?>" <?= $bahan->nama_bahan == $row->nama_bahan ? "selected" : null ?>><?= $bahan->nama_bahan ?></option>
+                    <option value="<?= $bahan->id_nama_bahan ?>" <?= $bahan->nama_bahan == $row->nama_bahan ? "selected" : null ?>><?= $bahan->nama_bahan ?></option>
                 <?php endforeach; ?>
                 </select>
             </div>
@@ -80,7 +80,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal Peminjaman</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tgl_pinjam','class'=>'form-control', 'type'=>'datetime-local', 'value'=> $row->tgl_pinjam));?>
+            <?php echo form_input(array('name'=>'tgl_pinjam','class'=>'form-control', 'readonly'=>'readonly','value'=> $row->tgl_pinjam));?>
             <?php echo form_error('tgl_pinjam');?>
             </div>
         </div>
@@ -88,7 +88,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal Pengembalian</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tanggal_kembali','class'=>'form-control', 'type'=>'datetime-local', 'value'=>$row->tanggal_kembali));?>
+            <?php echo form_input(array('name'=>'tanggal_kembali','class'=>'form-control', 'readonly'=>'readonly','value'=>$row->tanggal_kembali));?>
             <?php echo form_error('stock');?>
             </div>
         </div>       
