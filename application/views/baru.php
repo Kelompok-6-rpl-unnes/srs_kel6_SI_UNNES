@@ -40,13 +40,11 @@
             <!-- /.box-header -->
             <div class="box-body">
             </a>
-            <i class="btn btn-app" <a="" href="javascript:void(0)" onclick="load_silent(&quot;peminjaman/peminjaman_bahan&quot;,&quot;#content&quot;)">  Peminjaman Bahan <a class="fa fa-edit"></a></i>
+            <i class="btn btn-app" <a="" href="javascript:void(0)" onclick="load_silent(&quot;peminjaman/buat_peminjaman&quot;,&quot;#content&quot;)">  Peminjaman Alat Bahan <a class="fa fa-edit"></a></i>
             </a>
             <i class="btn btn-app" <a="" href="javascript:void(0)" onclick="load_silent(&quot;peminjaman/cek_status&quot;,&quot;#content&quot;)">  Cek Status <a class="fa fa-arrows-h"></a></i>
             </a>
             <i class="btn btn-app" <a="" href="javascript:void(0)" onclick="load_silent(&quot;master/jatuh_tempo&quot;,&quot;#content&quot;)">  Jatuh Tempo <a class="fa fa-exclamation-circle"></a></i>
-            </a>
-            <i class="btn btn-app" <a="" href="javascript:void(0)" onclick="load_silent(&quot;peminjaman/penggantian&quot;,&quot;#content&quot;)">  Penggantian <a class="fa fa-check-square-o"></a></i>
             </a>
             </div>
             <!-- /.box-body -->

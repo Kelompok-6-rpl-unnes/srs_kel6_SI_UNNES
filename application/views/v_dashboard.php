@@ -39,6 +39,6 @@
          ?>
          <?php
         $sesi = from_session('level');
-         if ($sesi == '4')
-         require_once ('application/views/nyoba.php')
+         if ($sesi == '4'|| $sesi == '1')
+         require_once ('application/views/baru.php')
          ?>
