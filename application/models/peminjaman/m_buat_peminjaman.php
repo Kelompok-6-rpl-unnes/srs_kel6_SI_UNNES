@@ -35,6 +35,9 @@ class M_buat_peminjaman extends CI_Model {
     //select->read
 	public function getData()
 	{
+		$this->db->select('peminjaman.*, master_bahan.nama_bahan, master_nama_alat.nama_alat');
+        $this->db->join('master_bahan', 'master_bahan.id = peminjaman.nama_bahan');
+        $this->db->join('master_nama_alat', 'master_nama_alat.id = peminjaman.nama_alat');
 		$this->db->from('peminjaman');
 		$this->db->order_by('peminjaman.id', 'desc');
 		return $this->db->get();

@@ -29,21 +29,21 @@ class kelola_alat extends CI_Controller {
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
 		if($param=='base'){
-			$this->fungsi->run_js('load_silent("master/kelola_alat/show_addForm/","#divsubcontent")');	
+			$this->fungsi->run_js('load_silent("kelola/kelola_alat/show_addForm/","#divsubcontent")');	
 		}else{
 			$base_kom=$this->uri->segment(5);
-			$this->fungsi->run_js('load_silent("master/kelola_alat/show_editForm/'.$base_kom.'","#divsubcontent")');	
+			$this->fungsi->run_js('load_silent("kelola/kelola_alat/show_editForm/'.$base_kom.'","#divsubcontent")');	
 		}
 	}
 
 	public function show_addForm()
 	{
-		$this->fungsi->check_previleges('kelola_alat');
+		//$this->fungsi->check_previleges('kelola_alat');
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'nama_alat',
-					'label' => 'nama_alat',
+					'field'	=> 'id_nama_alat',
+					'label' => 'id_nama_alat',
 					'rules' => 'required'
                 ),
                 array(
@@ -66,7 +66,7 @@ class kelola_alat extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('nama_alat','satuan_alat','kategori', 'stok', 'stok_minimal', 'lokasi', 'pendanaan', 'harga', 'kondisi'));
+			$datapost = get_post_data(array('id_nama_alat','satuan_alat','kategori', 'stok', 'stok_minimal', 'lokasi', 'pendanaan', 'harga', 'kondisi'));
 			$this->m_kelola_alat->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/kelola_alat","#content")');
 			$this->fungsi->message_box("Data Kelola Nama Alat sukses disimpan...","success");
@@ -85,8 +85,8 @@ class kelola_alat extends CI_Controller {
 				'rules' => ''
 			),
 			array(
-				'field'	=> 'nama_alat',
-				'label' => 'nama_alat',
+				'field'	=> 'id_nama_alat',
+				'label' => 'id_nama_alat',
 				'rules' => 'required'
             ),
 		);
@@ -105,7 +105,7 @@ class kelola_alat extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_alat','satuan_alat','kategori', 'stok', 'stok_minimal', 'lokasi', 'pendanaan', 'harga', 'kondisi'));
+			$datapost = get_post_data(array('id','id_nama_alat','satuan_alat','kategori', 'stok', 'stok_minimal', 'lokasi', 'pendanaan', 'harga', 'kondisi'));
 			$this->m_kelola_alat->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/kelola_alat","#content")');
 			$this->fungsi->message_box("Data Kelola Nama Alat sukses diperbarui...","success");

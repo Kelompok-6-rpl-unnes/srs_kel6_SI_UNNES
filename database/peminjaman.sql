@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Jul 2020 pada 03.40
--- Versi server: 10.1.32-MariaDB
--- Versi PHP: 5.6.36
+-- Generation Time: Jul 01, 2020 at 09:32 AM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 7.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -25,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `peminjaman`
+-- Table structure for table `peminjaman`
 --
 
 CREATE TABLE `peminjaman` (
@@ -43,39 +41,43 @@ CREATE TABLE `peminjaman` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `peminjaman`
+-- Dumping data for table `peminjaman`
 --
 
 INSERT INTO `peminjaman` (`id`, `kode_peminjaman`, `nama_peminjaman`, `kode`, `nama_alat`, `nama_bahan`, `jumlah`, `tgl_pinjam`, `tanggal_kembali`, `status`, `status_pengembalian`) VALUES
-(41, 'P2006300001', 'Erika Noor Dianti', 'MK04', 'Gunting', 'Asam Sulfat', 2, '2020-06-30 07:21:53', '2020-07-02 03:36:00', 'Disetujui', 'Sudah Dikembalikan'),
-(42, 'P2006300002', 'Erika Noor Dianti', 'MK06', 'Mikroskop', 'Alkolhol', 4, '2020-06-30 07:21:53', '2020-07-07 03:37:00', 'Disetujui', 'Sudah Dikembalikan'),
-(45, 'P2006300005', 'Erika Noor Dianti', 'MK06', 'Gunting', 'Alkolhol', 2, '2020-06-30 07:21:53', '2020-07-02 04:15:00', 'Disetujui', 'Belum Dikembalikan'),
-(57, 'P2006300008', 'Erika Noor Dianti', 'MK06', 'Gunting', 'Alkolhol', 4, '2020-06-30 07:22:00', '2020-07-03 07:22:00', 'Belum Dikembalikan', 'Belum Dikembalikan'),
-(62, 'P2006300011', 'Erika Noor Dianti', 'MK06', 'Gunting', 'Alkolhol', 2, '2020-06-01 09:30:00', '2020-07-09 09:30:00', 'Menunggu Persetujuan', 'Sudah Dikembalikan'),
-(63, 'P2007010001', 'Erika Noor Dianti', 'MK06', 'Gunting', 'Alkolhol', 3, '2020-07-08 17:28:00', '2020-07-21 17:28:00', 'Belum Dikembalikan', 'Sudah Dikembalikan'),
-(64, 'P2007010002', 'Erika Noor Dianti', 'MK06', 'Gunting', 'Alkolhol', 2, '2020-06-30 17:39:00', '2020-07-02 17:39:00', 'Menunggu Persetujuan', 'Belum Dikembalikan');
+(66, 'P2007010001', 'Erika Noor Dianti', 'MK06', '3', '5', 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Menunggu Persetujuan', 'Belum Dikembalikan');
+
+--
+-- Triggers `peminjaman`
+--
+DELIMITER $$
+CREATE TRIGGER `stok` BEFORE INSERT ON `peminjaman` FOR EACH ROW UPDATE `kelola_bahan`, `kelola_alat`
+SET `kelola_bahan`.`stok` = `kelola_bahan`.`stok` - NEW.jumlah,
+`kelola_alat`.`stok` = `kelola_alat`.`stok` - NEW.jumlah
+WHERE `kelola_bahan`.`id_nama_bahan` = NEW.nama_bahan
+AND `kelola_alat`.`id_nama_alat` = NEW.nama_alat
+$$
+DELIMITER ;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `peminjaman`
+-- Indexes for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `peminjaman`
+-- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
-COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

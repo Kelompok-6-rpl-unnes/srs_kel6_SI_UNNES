@@ -33,7 +33,7 @@ class M_kelola_alat extends CI_Model {
 	{
 		$this->db->select('kelola_alat.*, master_nama_alat.nama_alat, master_satuan.Nama, master_kategori_alat.Kategori, master_sumber_pendanaan.sumber_pendanaan, lokasi_penyimpanan.nama_lokasi_penyimpanan');
 		$this->db->from('kelola_alat');
-		$this->db->join('master_nama_alat', 'master_nama_alat.id = kelola_alat.nama_alat');
+		$this->db->join('master_nama_alat', 'master_nama_alat.id = kelola_alat.id_nama_alat');
 		$this->db->join('master_satuan', 'master_satuan.id = kelola_alat.satuan_alat');
 		$this->db->join('master_kategori_alat', 'master_kategori_alat.id = kelola_alat.kategori');
 		$this->db->join('master_sumber_pendanaan', 'master_sumber_pendanaan.id = kelola_alat.pendanaan');

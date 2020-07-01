@@ -8,13 +8,13 @@
             <label class="col-sm-4 control-label">Nama Alat</label>
             <div class="col-sm-8">
             <div class="form-group">
-                <select class="form-control" name="nama_alat">
+                <select class="form-control" name="id_nama_alat">
                 <?php foreach ($nama_alat->result() as $nama_alat): ?>
                     <option value="<?= $nama_alat->id ?>"><?= $nama_alat->nama_alat?></option>
                 <?php endforeach; ?>
                 </select>
             </div>
-            <?php echo form_error('nama_alat');?>
+            <?php echo form_error('id_nama_alat');?>
             <span id="check_data"></span>
             </div>
         </div>
@@ -111,7 +111,7 @@
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"master/kelola_alat/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"kelola/kelola_alat/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
             ?>
             </div>
         </div>

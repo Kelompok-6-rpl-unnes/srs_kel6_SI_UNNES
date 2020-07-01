@@ -8,13 +8,13 @@
             <label class="col-sm-4 control-label">Nama Bahan</label>
             <div class="col-sm-8">
             <div class="form-group">
-                <select class="form-control" name="nama_bahan">
+                <select class="form-control" name="id_nama_bahan">
                 <?php foreach ($nama_bahan->result() as $nama_bahan): ?>
                     <option value="<?= $nama_bahan->id ?>"><?= $nama_bahan->nama_bahan ?></option>
                 <?php endforeach; ?>
                 </select>
             </div>
-            <?php echo form_error('nama_bahan');?>
+            <?php echo form_error('id_nama_bahan');?>
             </div>
         </div>
         <div class="form-group">
