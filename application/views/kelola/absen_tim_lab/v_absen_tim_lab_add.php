@@ -43,10 +43,14 @@
             <label class="col-sm-4 control-label">Jabatan/Profesi</label>
             <select name ='jabatan'>
           <div class="col-sm-8">
-          <option value ='Asisten Laboratorium'>Asisten Laboratorium</option>
-          <option value ='Ketua Laboratorium'>Ketua Laboratorium</option>
+          <option value ='Kepala Laboratorium'>Kepala Laboratorium</option>
           <option value ='Laboran'>Laboran</option>
-          <option value ='Koordinator Laboratorium'>Koordinator Laboratorium</option>
+          <option value ='Koor Laboratorium'>Koor Laboratorium</option>
+<<<<<<< HEAD
+          <option value ='Aslab<'>Aslab</option>
+=======
+          <option value ='Aslab'>Aslab</option>
+>>>>>>> 86010a7768df52727e0e7ed6b1a0c474b9c09eb8
           </select>
         </div>
         <div class="form-group">

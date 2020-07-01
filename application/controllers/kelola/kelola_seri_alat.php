@@ -7,13 +7,13 @@ class kelola_seri_alat extends CI_Controller {
     {
         parent::__construct();
         $this->fungsi->restrict();
-        $this->load->model('kelola/m_seri_alat');
+        $this->load->model('kelola/m_kelola_seri_alat');
     }
     public function index()
 	{
 		$this->fungsi->check_previleges('kelola_seri_alat');
-		$data['kelola_seri_alat'] = $this->m_seri_alat->getData();
-		$this->load->view('kelola/kelola_seri_alat/v_kelola_seri_alat_list',$data);
+		$data['kelola_seri_alat'] = $this->m_kelola_seri_alat->getData();
+		$this->load->view('kelola/kelola_seri_alat/v_seri_alat_list',$data);
 	}
 	public function form($param='')
     {
@@ -46,12 +46,12 @@ class kelola_seri_alat extends CI_Controller {
         if ($this->form_validation->run() == FALSE)
         {
             $data['status']='';
-            $this->load->view('kelola/kelola_seri_alat/v_kelola_seri_alat_add',$data);
+            $this->load->view('kelola/kelola_seri_alat/v_seri_alat_add',$data);
         }
         else
         {
             $datapost = get_post_data(array('id','kategori','merk','seri','gambar','sop_pengoperasian','sop_pemeliharaan','sop_pemeriksaan','sop_kalibrasi','sop_uji_fungsi','stok','stok_minimal','status'));
-            $this->m_seri_alat->insertData($datapost);
+            $this->m_kelola_seri_alat->insertData($datapost);
             $this->fungsi->run_js('load_silent("kelola/kelola_seri_alat","#content")');
             $this->fungsi->message_box("Data Seri Alat sukses disimpan...","success");
             $this->fungsi->catat($datapost,"Menambah Seri Alat dengan data sbb:",true);
@@ -65,7 +65,7 @@ class kelola_seri_alat extends CI_Controller {
         $config = array(
                 array(
                     'field' => 'id',
-                    'label' => '',
+                    'label' => 'id',
                     'rules' => ''
                 ),
                 array(
@@ -81,12 +81,12 @@ class kelola_seri_alat extends CI_Controller {
         {
             $data['edit'] = $this->db->get_where('kelola_seri_alat',array('id'=>$id));
             $data['status']='';
-            $this->load->view('kelola/kelola_seri_alat/v_kelola_seri_alat_edit',$data);
+            $this->load->view('kelola/kelola_seri_alat/v_seri_alat_edit',$data);
         }
         else
         {
             $datapost = get_post_data(array('id','kategori','merk','seri','gambar','sop_pengoperasian','sop_pemeliharaan','sop_pemeriksaan','sop_kalibrasi','sop_uji_fungsi','stok','stok_minimal','status'));
-            $this->m_seri_alat->updateData($datapost);
+            $this->m_kelola_seri_alat->updateData($datapost);
             $this->fungsi->run_js('load_silent("kelola/kelola_seri_alat","#content")');
             $this->fungsi->message_box("Data Seri Alat sukses diperbarui...","success");
             $this->fungsi->catat($datapost,"Mengedit Seri Alat dengan data sbb:",true);   
@@ -96,11 +96,9 @@ class kelola_seri_alat extends CI_Controller {
     public function delete()
             {
                 $id = $this->uri->segment(4);
-                $this->m_seri_alat->deleteData($id);
+                $this->m_kelola_seri_alat->deleteData($id);
                 redirect('admin');
             }
-  
-}
-
+ }
 /* End of file kelola_seri_alat.php */
 /* Location: ./application/controllers/kelola/kelola_seri_alat.php */

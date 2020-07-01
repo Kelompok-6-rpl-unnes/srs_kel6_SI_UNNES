@@ -8,8 +8,8 @@ class Pinjam_alat_bahan extends CI_Controller {
 		parent::__construct();
 		$this->fungsi->restrict();
 		$this->load->model('peminjaman/m_pinjam_alat_bahan');
+		$this->load->model('master/m_inven');
 		$this->load->model('master/m_nama_alat');
-		$this->load->model('master/m_kelola_alat');
 	}
 	public function index()
 	{
@@ -46,8 +46,8 @@ class Pinjam_alat_bahan extends CI_Controller {
 		$this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['nama_alat'] = $this->m_nama_alat->getData();
-			$data['kelola_alat'] = $this->m_kelola_alat->join();
+			$data['inven_alat_bahan']=$this->m_inven->getData();
+			$data['nama_alat']=$this->m_nama_alat->getData();
 			$this->load->view('peminjaman/pinjam_alat_bahan/v_pinjam_alat_bahan_add',$data);
 		}
 		else
@@ -80,8 +80,8 @@ class Pinjam_alat_bahan extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['edit'] = $this->db->get_where('pinjam_alat_bahan',array('id'=>$id));
+			$data['inven_alat_bahan']=$this->m_inven->getData();
 			$data['nama_alat']=$this->m_nama_alat->getData();
-			$data['kelola_alat']=$this->m_kelola_alat->getData();
 			$this->load->view('peminjaman/pinjam_alat_bahan/v_pinjam_alat_bahan_edit',$data);
 		}
 		else

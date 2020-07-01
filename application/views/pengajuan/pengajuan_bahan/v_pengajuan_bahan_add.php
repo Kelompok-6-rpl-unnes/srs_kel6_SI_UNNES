@@ -5,10 +5,14 @@
         
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">ID</label>
+            <label class="col-sm-4 control-label">Periode</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'pengajuan_bahan','class'=>'form-control'));?>
-            <?php echo form_error('pengajuan_bahan');?>
+            <select class="form-control" name="periode">
+                <?php foreach ($periode_pengajuan->result() as $periode_pengajuan): ?>
+                    <option value="<?= $periode_pengajuan->periode_pengajuan ?>"><?= $periode_pengajuan->periode_pengajuan ?></option>
+                <?php endforeach; ?>
+                </select>
+                <?php echo form_error('periode');?>
             <span id="check_data"></span>
             </div> 
         </div>
@@ -19,7 +23,7 @@
             <?php echo form_input(array('name'=>'nama_bahan','class'=>'form-control'));?>
             <?php echo form_error('nama_bahan');?>
             <span id="check_data"></span>
-            </div>
+        </div>
         </div>
 
         <div class="form-group">
@@ -36,6 +40,15 @@
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'merk','class'=>'form-control'));?>
             <?php echo form_error('merk');?>
+            <span id="check_data"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Satuan Grosir</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'satuan_grosir','class'=>'form-control'));?>
+            <?php echo form_error('satuan_grosir');?>
             <span id="check_data"></span>
             </div>
         </div>
@@ -79,8 +92,12 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Lab</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nama_lab','class'=>'form-control'));?>
-            <?php echo form_error('nama_lab');?>
+            <select class="form-control" name="nama_lab">
+                <?php foreach ($kelola_lab->result() as $kelola_lab): ?>
+                    <option value="<?= $kelola_lab->nama_lab ?>"><?= $kelola_lab->nama_lab ?></option>
+                <?php endforeach; ?>
+                </select>
+                <?php echo form_error('nama_lab');?>
             <span id="check_data"></span>
             </div>
         </div>

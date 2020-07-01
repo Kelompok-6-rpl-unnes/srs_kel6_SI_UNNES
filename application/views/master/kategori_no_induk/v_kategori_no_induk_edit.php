@@ -19,7 +19,6 @@
           <option value ='Aslab'>Aslab</option>
           <option value ='Dosen'>Dosen</option>
           <option value ='Mahasiswa'>Mahasiswa</option>
-      
           </select>
             <span id="check_data"></span>
             </div>

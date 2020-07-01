@@ -52,10 +52,10 @@
             <label class="col-sm-4 control-label">Jabatan/Profesi</label>
             <select name ='jabatan'>
           <div class="col-sm-8">
-          <option value ='Asisten Laboratorium'>Asisten Laboratorium</option>
-          <option value ='Ketua Laboratorium'>Ketua Laboratorium</option>
+          <option value ='Kepala Laboratorium'>Kepala Laboratorium</option>
           <option value ='Laboran'>Laboran</option>
-          <option value ='Koordinator Laboratorium'>Koordinator Laboratorium</option>
+          <option value ='Koor Laboratorium'>Koor Laboratorium</option>
+          <option value ='Aslab<'>Aslab</option>
           </select>
         </div>
         <div class="form-group">

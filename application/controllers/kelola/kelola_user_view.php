@@ -15,5 +15,5 @@ class kelola_user_view extends CI_Controller {
 		$this->fungsi->check_previleges('kelola_user');
 		$data['user'] = $this->m_user->getList();
 		$this->load->view('cms/user/v_user_view',$data);
-    }
+	}
 }

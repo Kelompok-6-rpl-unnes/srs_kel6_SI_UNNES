@@ -8,6 +8,8 @@ class pengajuan_alat extends CI_Controller {
 		parent::__construct();
 		$this->fungsi->restrict();
 		$this->load->model('pengajuan/m_pengajuan_alat');
+		$this->load->model('kelola/m_kelola_lab');
+		$this->load->model('pengajuan/m_periode_pengajuan');
 	}
 
 	public function index()
@@ -46,7 +48,12 @@ class pengajuan_alat extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['status']='';
+			$data = [
+                'kelola_lab' => $this->m_kelola_lab->getData(),
+                'periode_pengajuan' =>$this->m_periode_pengajuan->getData(),
+                
+            ];
+			// $data['status']='';
 			$this->load->view('pengajuan/pengajuan_alat/v_pengajuan_alat_add',$data);
 		}
 		else
@@ -80,7 +87,8 @@ class pengajuan_alat extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['edit'] = $this->db->get_where('pengajuan_alat',array('id'=>$id));
-			$data['status']='';
+			$data['periode_pengajuan']=$this->m_periode_pengajuan->getData();
+			$data['kelola_lab']=$this->m_kelola_lab->getData();
 			$this->load->view('pengajuan/pengajuan_alat/v_pengajuan_alat_edit',$data);
 		}
 		else
@@ -92,10 +100,14 @@ class pengajuan_alat extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit pengajuan_alat dengan data sbb:",true);
 		}
 	}
-	public function delete()
-	{
-		$id = $this->uri->segment(4);
+	public function delete($id)
+    {
+        
+		if($id == '' || !is_numeric($id)) die;
 		$this->m_pengajuan_alat->deleteData($id);
-		redirect('admin');
-	}
-	}
+		$this->fungsi->run_js('load_silent("pengajuan/pengajuan_alat","#content")');
+		$this->fungsi->message_box("Data Pengajuan Berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus laporan dengan id ".$id);
+    
+    }
+}

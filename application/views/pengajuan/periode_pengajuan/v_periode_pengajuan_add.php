@@ -3,15 +3,14 @@
 <div class="box-body big">
     <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
         
-        
-        <div class="form-group">
-            <label class="col-sm-4 control-label">ID Pengajuan</label>
+    <div class="form-group">
+            <label class="col-sm-4 control-label">Periode</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'periode_pengajuan','class'=>'form-control'));?>
-            <?php echo form_error('periode_pengajuan');?>
-            <span id="check_data"></span>
-            </div> 
+            <?php echo form_input(array('name'=>'periode_pengajuan','class'=>'form-control','readonly'=>'readonly', 'value'=>$periode_pengajuan));?>
+            <?php echo form_error('stock');?>
+            </div>
         </div>
+
 
         <div class="form-group">
             <label class="col-sm-4 control-label">Semester</label>
@@ -56,7 +55,7 @@
             <?php echo form_error('tanggal_pendanaan');?>
             <span id="check_data"></span>
             </div>
-
+            </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Pajak</label>
             <div class="col-sm-8">
@@ -84,7 +83,7 @@
           <option value ='Tidak Ada'>Tidak Ada</option>
           </select>
         </div>
-        
+
         <div class="form-group">
             <label class="col-sm-4 control-label">Save</label>
             <div class="col-sm-8 tutup">
@@ -103,3 +102,5 @@ $(document).ready(function() {
     });
 });
 </script>
+
+

@@ -19,7 +19,7 @@ class absen_tim_lab extends CI_Controller {
     {
         $content   = "<div id='divsubcontent'></div>";
         $header    = "Form Kelola Absen Tim Lab";
-        $subheader = "Absen Tim Lab";
+        $subheader = "absen_tim_lab";
         $buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
         echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
         if($param=='base'){

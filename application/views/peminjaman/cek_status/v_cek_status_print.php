@@ -19,10 +19,13 @@
               <thead>
               <th>No</th>
                 <th>ID Peminjaman</th>
-                <th>Kategori Peminjaman</th>
+                <th>Nama Peminjaman</th>
+                <th>Kode</th>
+                <th>Nama Alat</th>
+                <th>Nama Bahan</th>
+                <th>Jumlah</th>
                 <th>Tanggal Pinjam</th>
                 <th>Tanggal kembali</th>
-                <th>Status Peminjaman</th>
                 <th>Status</th>
                 <th>Act</th>
                 <th></th>
@@ -30,14 +33,17 @@
               <tbody>
               <?php 
           $i = 1;
-          foreach($id->result() as $row): ?>
+          foreach($cek_status->result() as $row): ?>
           <tr>
           <td align="center"><?=$i++?></td>
-            <td align="center"><?=$row->id_peminjaman?></td>
-            <td align="center"><?=$row->kategori_peminjaman?></td>
-            <td align="center"><?=$row->tanggal_peminjaman?></td>
+            <td align="center"><?=$row->kode_peminjaman?></td>
+            <td align="center"><?=$row->nama_peminjaman?></td>
+            <td align="center"><?=$row->kode?></td>
+            <td align="center"><?=$row->nama_alat?></td>
+            <td align="center"><?=$row->nama_bahan?></td>
+            <td align="center"><?=$row->jumlah?></td>
+            <td align="center"><?=$row->tgl_pinjam?></td>
             <td align="center"><?=$row->tanggal_kembali?></td>
-            <td align="center"><?=$row->status_peminjaman?></td>
             <td align="center"><span class="badge bg-green"><?=$row->status?></td>
             <td align="center">
 

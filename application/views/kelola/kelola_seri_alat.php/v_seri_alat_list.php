@@ -12,12 +12,11 @@
             <tr>
             </div>
             </div>
-            &emsp;
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '7') {
-                echo button('load_silent("kelola/kelola_seri_alat/form/base","#modal")','Add New Seri Alat','btn btn-success');
+              if ($sesi == '1' || $sesi == '2'|| $sesi == '7') {
+                echo button('load_silent("kelola/seri_alat/form/base","#modal")','Add New Kelola Seri Alat','btn btn-success');
               } else {
                 # code...
               }
@@ -33,11 +32,11 @@
                 <th>Merk</th>
                 <th>Seri</th>
                 <th>Gambar</th>
-                <th>SOP Pengoperasian</th>
-                <th>SOP Pemeliharaan</th>
-                <th>SOP Pemeriksaan</th>
-                <th>SOP Kalibrasi</th>
-                <th>SOP Uji Fungsi</th>
+                <th>Sop Pengoperasian</th>
+                <th>Sop Pemeliharaan</th>
+                <th>Sop Pemeriksaan</th>
+                <th>Sop Kalibrasi</th>
+                <th>Sop Uji Fungsi</th>
                 <th>Stok</th>
                 <th>Stok Minimal</th>
                 <th>Status</th>
@@ -52,33 +51,31 @@
             <td align="center"><?=$row->kategori?></td>
             <td align="center"><?=$row->merk?></td>
             <td align="center"><?=$row->seri?></td> 
-            <td align="center"><img src="<?php echo base_url().$row->gambar; ?>" class="file-preview-image"></td>
-            <td align="center"><?=$row->sop_pengoperasian?></td>
-            <td align="center"><?=$row->sop_pemeliharaan?></td>
+            <td align="center"><?=$row->gambar?></td>
+            <td align="center"><?=$row->sop_pengopersian?></td>
             <td align="center"><?=$row->sop_pemeriksaan?></td>
             <td align="center"><?=$row->sop_kalibrasi?></td>
             <td align="center"><?=$row->sop_uji_fungsi?></td>
             <td align="center"><?=$row->stok?></td>
             <td align="center"><?=$row->stok_minimal?></td>
-            <td align="center"><?=$row->sop_kalibrasi?></td>
-            <td align="center"><span class="badge bg-green"><?=$row->status?></td>
+            <td align="center"><?=$row->status?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '7') {
-                echo button('load_silent("kelola/kelola_seri_alat/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
+              if ($sesi == '1' || $sesi == '2') {
+                echo button('load_silent("kelola/seri_alat/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
               } else {
                 # code...
               }
               ?>
               <?php
             $sesi = from_session('level');
-            if ($sesi == '1' || $sesi == '2'|| $sesi == '7') {
-             echo button('load_silent("kelola/kelola_seri_alat/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
+            if ($sesi == '1' || $sesi == '2') {
+             echo button('load_silent("kelola/seri_alat/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
             } else {
               # code...
             }
-             ?>   
+            ?>
             </td>
           </tr>
           <?php endforeach;?>

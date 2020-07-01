@@ -1,89 +1,30 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
-<?php
-    $row = fetch_single_row($edit);
-?>
+
+<?php $row = fetch_single_row($edit); ?>
+
 <div class="box-body big">
     <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
-        
-    <div class="form-group">
-            <label class="col-sm-4 control-label">ID Peminjaman</label>
-            <div class="col-sm-8">
-            <?php echo form_hidden('id',$row->id); ?>
-            <?php echo form_input(array('name'=>'id_peminjaman','value'=>$row->id_peminjaman,'class'=>'form-control'));?>
-            <?php echo form_error('id_peminjaman');?>
-            </div>
-        </div>
+
+        <?php echo form_hidden('id',$row->id); ?>
+
         <div class="form-group">
-            <label class="col-sm-4 control-label">Nama Peminjam</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nama_peminjam','value'=>$row->nama_peminjam,'class'=>'form-control'));?>
-            <?php echo form_error('nama_peminjam');?>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Nomor Induk</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nomor_induk','value'=>$row->nomor_induk,'class'=>'form-control'));?>
-            <?php echo form_error('nomor_induk');?>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Status User</label>
+            <label class="col-sm-4 control-label">Status Pengembalian</label>
             <select name ='status_user'>
           <div class="col-sm-8">
-          <option value ='Bebas Tanggungan'>Bebas Tanggungan</option><span class="badge bg-green">
-          <option value ='Ada Tanggungan'>Ada Tanggungan</option><span class="badge bg-red">
+          <option value ='Belum Dikembalikan'>Belum Dikembalikan</option><span class="badge bg-green">
           </select>
         </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Kategori Peminjaman</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'kategori_peminjaman','value'=>$row->kategori_peminjaman,'class'=>'form-control'));?>
-            <?php echo form_error('kategori_peminjaman');?>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Tanggal Pinjam</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tanggal_pinjam','type'=>'date','value'=>$row->tanggal_pinjam,'class'=>'form-control'));?>
-            <?php echo form_error('tanggal_pinjam');?>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Tanggal Harus Dikembalikan</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tanggal_kembali','type'=>'date','value'=>$row->tanggal_kembali,'class'=>'form-control'));?>
-            <?php echo form_error('tanggal_kembali');?>
-            </div>
-        </div>
-            <div class="form-group">
-            <label class="col-sm-4 control-label">Status Peminjaman</label>
-            <select name ='status_peminjaman'>
-          <div class="col-sm-8">
-          <option value ='Sedang Dipinjam'>Sedang Dipinjam</option>
-          <option value ='Sudah Dikembalikan'>Sudah Dikembalikan</option>
-          </select>
-        </div>
-        <div class="form-group">
-        <label class="col-sm-4 control-label">Status</label>
-          <select name ='status'>
-          <div class="col-sm-8">
-          <option value ='Ada'>Ada</option>
-          <option value ='Tidak Ada'>Tidak Ada</option>
-          </select>
-        </div>
+
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"master/jatuh_tempo/show_editForm/","#divsubcontent")','Simpan','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"master/jatuh_tempo/show_editForm/","#divsubcontent")','Save','btn btn-success')." ";
             ?>
             </div>
         </div>
     </form>
 </div>
-
-
 <script type="text/javascript">
 $(document).ready(function() {
     $(".select2").select2();
@@ -91,3 +32,6 @@ $(document).ready(function() {
         $('#myModal').modal('hide');
     });
 });
+</script>
+      
+     

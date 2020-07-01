@@ -3,22 +3,23 @@
 <div class="box-body big">
     <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
         
-        
         <div class="form-group">
-            <label class="col-sm-4 control-label">ID</label>
+            <label class="col-sm-4 control-label">Periode</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'pengajuan_alat','class'=>'form-control'));?>
-            <?php echo form_error('pengajuan_alat');?>
-            <span id="check_data"></span>
+            <select class="form-control" name="pengajuan_alat">
+                <?php foreach ($periode_pengajuan->result() as $periode_pengajuan): ?>
+                    <option value="<?= $periode_pengajuan->periode_pengajuan ?>"><?= $periode_pengajuan->periode_pengajuan ?></option>
+                <?php endforeach; ?>
+                </select>
+                <?php echo form_error('pengajuan_alat');?>
             </div> 
         </div>
 
         <div class="form-group">
-            <label class="col-sm-4 control-label">No Induk</label>
+            <label class="col-sm-4 control-label">Nama</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'no_induk','class'=>'form-control'));?>
-            <?php echo form_error('no_induk');?>
-            <span id="check_data"></span>
+            <?php echo form_input(array('name'=>'no_induk', 'readonly'=>'readonly', 'class'=>'form-control', 'value'=> from_session('nama')));?>
+            <?php echo form_error('stock');?>
             </div> 
         </div>
 
@@ -97,8 +98,12 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Lab</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nama_lab','class'=>'form-control'));?>
-            <?php echo form_error('nama_lab');?>
+            <select class="form-control" name="nama_lab">
+                <?php foreach ($kelola_lab->result() as $kelola_lab): ?>
+                    <option value="<?= $kelola_lab->nama_lab ?>"><?= $kelola_lab->nama_lab ?></option>
+                <?php endforeach; ?>
+                </select>
+                <?php echo form_error('nama_lab');?>
             <span id="check_data"></span>
             </div>
         </div>
@@ -110,7 +115,6 @@
           <option value ='Ajukan'>Ajukan</option>
           </select>
         </div>
-
         <div class="form-group">
             <label class="col-sm-4 control-label">Save</label>
             <div class="col-sm-8 tutup">
