@@ -19,7 +19,7 @@ class periode_pengajuan extends CI_Controller {
 	public function form($param='')
 	{
 		$content   = "<div id='divsubcontent'></div>";
-		$header    = "Form Periode Pengajuan";
+		$header    = "Form Periode Pengajuan ";
 		$subheader = "periode_pengajuan";
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
@@ -47,6 +47,7 @@ class periode_pengajuan extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['status']='';
+			$data['periode_pengajuan'] = $this->m_periode_pengajuan->periode_pengajuan();
 			$this->load->view('pengajuan/periode_pengajuan/v_periode_pengajuan_add',$data);
 		}
 		else
@@ -81,6 +82,7 @@ class periode_pengajuan extends CI_Controller {
 		{
 			$data['edit'] = $this->db->get_where('periode_pengajuan',array('id'=>$id));
 			$data['status']='';
+			$data['periode_pengajuan'] = $this->m_periode_pengajuan->periode_pengajuan();
 			$this->load->view('pengajuan/periode_pengajuan/v_periode_pengajuan_edit',$data);
 		}
 		else
