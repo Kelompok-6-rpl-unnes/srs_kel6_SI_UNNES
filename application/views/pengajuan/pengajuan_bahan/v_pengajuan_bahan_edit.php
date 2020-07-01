@@ -12,7 +12,7 @@
             <?php echo form_hidden('id',$row->id); ?>
             <select class="form-control" name="periode">
                 <?php foreach ($periode_pengajuan->result() as $periode_pengajuan): ?>
-                    <option value="<?= $periode_pengajuan->periode_pengajuan ?>"><?= $periode_pengajuan->periode_pengajuan ?></option>
+                <option value="<?= $periode_pengajuan->periode_pengajuan ?>"><?= $periode_pengajuan->periode_pengajuan ?></option>
                 <?php endforeach; ?>
                 </select>
                 <?php echo form_error('periode');?>
@@ -22,11 +22,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Bahan</label>
             <div class="col-sm-8">
-            <select class="form-control" name="nama_bahan">
-                <?php foreach ($master_bahan->result() as $master_bahan): ?>
-                    <option value="<?= $master_bahan->nama_bahan ?>"><?= $master_bahan->nama_bahan ?></option>
-                <?php endforeach; ?>
-                </select>
+            <?php echo form_input(array('name'=>'nama_bahan','value'=>$row->seri,'class'=>'form-control'));?>
                 <?php echo form_error('nama_bahan');?>
             </div>
         </div>

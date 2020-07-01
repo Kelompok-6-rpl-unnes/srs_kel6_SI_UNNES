@@ -53,11 +53,9 @@ class m_pengajuan_alat extends CI_Model {
 
 	public function join()
 	{
-		$this->db->select('pengajuan_alat.*, periode_pengajuan.periode_pengajuan, master_nama_alat.nama_alat, kelola_alat.harga, kelola_lab.nama_lab');
+		$this->db->select('pengajuan_alat.*, periode_pengajuan.periode_pengajuan, kelola_lab.nama_lab');
 		$this->db->from('pengajuan_alat');
 		$this->db->join('periode_pengajuan', 'periode_pengajuan.id = pengajuan_alat.pengajuan_alat');
-		$this->db->join('master_nama_alat', 'master_nama_alat.id = pengajuan_alat.nama_alat');
-		$this->db->join('kelola_alat', 'kelola_alat.id = pengajuan_alat.harga_dasar');
 		$this->db->join('kelola_lab', 'kelola_lab.id = pengajuan_alat.nama_lab');
 		return $this->db->get();
 	}
