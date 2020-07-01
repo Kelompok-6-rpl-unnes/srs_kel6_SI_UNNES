@@ -28,11 +28,8 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
-<<<<<<< HEAD
+
                 <th>NO</th>
-=======
-                <th>No</th>
->>>>>>> bb9487a33ed229f848963826010f810bb1e56780
                 <th>Nama Lab</th>
                 <th>Alamat Lab</th>
                 <th>Tipe Lab</th>
