@@ -10,13 +10,13 @@
             <div class="col-sm-8">
             <?php echo form_hidden('id',$row->id); ?>
             <div class="form-group">
-                <select class="form-control" name="nama_bahan">
+                <select class="form-control" name="id_nama_bahan">
                 <?php foreach ($nama_bahan->result() as $nama_bahan): ?>
-                    <option value="<?= $nama_bahan->id ?>" <?= $nama_bahan->id == $row->nama_bahan ? "selected" : null ?>><?= $nama_bahan->nama_bahan ?></option>
+                    <option value="<?= $nama_bahan->id ?>" <?= $nama_bahan->id == $row->id_nama_bahan ? "selected" : null ?>><?= $nama_bahan->nama_bahan ?></option>
                 <?php endforeach; ?>
                 </select>
             </div>
-            <?php echo form_error('nama_alat');?>
+            <?php echo form_error('id_nama_alat');?>
             <span id="check_data"></span>
             </div>
         </div>
