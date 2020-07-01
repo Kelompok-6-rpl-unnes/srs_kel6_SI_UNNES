@@ -20,12 +20,8 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Bahan</label>
             <div class="col-sm-8">
-            <select class="form-control" name="nama_bahan">
-                <?php foreach ($master_bahan->result() as $master_bahan): ?>
-                    <option value="<?= $master_bahan->nama_bahan ?>"><?= $master_bahan->nama_bahan ?></option>
-                <?php endforeach; ?>
-                </select>
-                <?php echo form_error('nama_bahan');?>
+            <?php echo form_input(array('name'=>'nama_bahan','class'=>'form-control'));?>
+            <?php echo form_error('nama_bahan');?>
             <span id="check_data"></span>
         </div>
         </div>

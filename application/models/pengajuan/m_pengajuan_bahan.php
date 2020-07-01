@@ -48,10 +48,9 @@ class M_pengajuan_bahan extends CI_Model {
 
 	public function join()
 	{
-		$this->db->select('pengajuan_bahan.*, periode_pengajuan.periode_pengajuan, master_bahan.nama_bahan, kelola_lab.nama_lab');
+		$this->db->select('pengajuan_bahan.*, periode_pengajuan.periode_pengajuan, kelola_lab.nama_lab');
 		$this->db->from('pengajuan_bahan');
 		$this->db->join('periode_pengajuan', 'periode_pengajuan.id = pengajuan_bahan.periode');
-		$this->db->join('master_bahan', 'master_bahan.id = pengajuan_bahan.nama_bahan');
 		$this->db->join('kelola_lab', 'kelola_lab.id = pengajuan_bahan.nama_lab');
 		return $this->db->get();
 	}

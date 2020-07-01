@@ -29,12 +29,8 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Alat</label>
             <div class="col-sm-8">
-            <select class="form-control" name="nama_alat">
-                <?php foreach ($nama_alat->result() as $nama_alat): ?>
-                    <option value="<?= $nama_alat->nama_alat ?>"><?= $nama_alat->nama_alat ?></option>
-                <?php endforeach; ?>
-                </select>
-                <?php echo form_error('nama_alat');?>
+            <?php echo form_input(array('name'=>'nama_alat','value'=>$row->nama_alat,'class'=>'form-control'));?>
+            <?php echo form_error('nama_alat');?>
             </div>
         </div>
         <div class="form-group">
@@ -82,12 +78,8 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Harga Dasar</label>
             <div class="col-sm-8">
-            <select class="form-control" name="harga_dasar">
-                <?php foreach ($kelola_alat->result() as $kelola_alat): ?>
-                    <option value="<?= $kelola_alat->harga ?>"><?= $kelola_alat->harga ?></option>
-                <?php endforeach; ?>
-                </select>
-                <?php echo form_error('harga_dasar');?>
+            <?php echo form_input(array('name'=>'harga_dasar','value'=>$row->harga_dasar,'class'=>'form-control'));?>
+            <?php echo form_error('harga_dasar');?>
             </div>
         </div>
         <div class="form-group">

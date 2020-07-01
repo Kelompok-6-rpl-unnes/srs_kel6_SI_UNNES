@@ -8,7 +8,6 @@ class pengajuan_bahan extends CI_Controller {
 		parent::__construct();
 		$this->fungsi->restrict();
 		$this->load->model('pengajuan/m_pengajuan_bahan');
-		$this->load->model('master/m_master_bahan');
 		$this->load->model('kelola/m_kelola_lab');
 		$this->load->model('pengajuan/m_periode_pengajuan');
 	}
@@ -50,7 +49,6 @@ class pengajuan_bahan extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data = [
-				'master_bahan' => $this->m_master_bahan->getData(),
                 'kelola_lab' => $this->m_kelola_lab->getData(),
                 'periode_pengajuan' =>$this->m_periode_pengajuan->getData(),
                 
@@ -90,7 +88,6 @@ class pengajuan_bahan extends CI_Controller {
 		{
 			$data['edit'] = $this->db->get_where('pengajuan_bahan',array('id'=>$id));
 			$data['periode_pengajuan']=$this->m_periode_pengajuan->getData();
-			$data['master_bahan']=$this->m_master_bahan->getData();
 			$data['kelola_lab']=$this->m_kelola_lab->getData();
 			$this->load->view('pengajuan/pengajuan_bahan/v_pengajuan_bahan_edit',$data);
 		}
